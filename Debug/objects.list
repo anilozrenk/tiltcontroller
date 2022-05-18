@@ -1,3 +1,6 @@
+"./Core/Src/bluetooth.o"
+"./Core/Src/controller.o"
+"./Core/Src/expAvg.o"
 "./Core/Src/main.o"
 "./Core/Src/mpu6050.o"
 "./Core/Src/stm32f0xx_hal_msp.o"
