@@ -49,7 +49,7 @@ void pwmSmooting(typPWMOutputHandler *out,typPWMInputHandler *input,double kf){
 	out->pwmOutputB = kf * out->pwmOutputB + input->pwmInputB *(1-kf);
 	out->pwmOutputC = kf * out->pwmOutputC + input->pwmInputC *(1-kf);
 	out->pwmOutputD = kf * out->pwmOutputD + input->pwmInputD *(1-kf);
-	//return exp->output = exp->kf * exp->output + exp->input * (1 - exp->kf);
+
 }
 
 
@@ -114,7 +114,7 @@ void vectorToPwm(typVector *hVec, typPWMInputHandler *pwmInput){
 			break;
 		default:
 			break;
-
+	}
 }
 
 	void deathzonefit(double *delta_x,double pmax,double nmax,double death_zone){
@@ -156,7 +156,7 @@ void angleToVector(typVector *hVec,double curr_angle_x,double start_angle_x,doub
 		 hVec->left=0; hVec->right=0; hVec->forward=0;
 	 }
 
-}}
+}
 
 
 
