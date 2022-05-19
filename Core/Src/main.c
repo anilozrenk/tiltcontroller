@@ -121,6 +121,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   MPU6050_Init(&hi2c1);
 
+  hoverInit(&hHover);
 
   HAL_Delay(500);
   MPU6050_Read_All(&hi2c1, &MPU6050);
@@ -137,9 +138,8 @@ int main(void)
   {
 	  MPU6050_Read_All(&hi2c1, &MPU6050);
 	  angleToVector(&hVector, MPU6050.KalmanAngleX, x_angle_base, MPU6050.KalmanAngleY, y_angle_base, 3);
-	  //	  angleToVector(&hVector, MPU6050.KalmanAngleX, MPU6050.KalmanAngleY, x_angle_base, y_angle_base, 3);
 	  vectorToPwm(&hVector, &hInput);
-	  pwmSmooting(&hOutput,&hInput, KF);
+	  pwmSmooting(&hHover,&hInput, KF);
 
 
 

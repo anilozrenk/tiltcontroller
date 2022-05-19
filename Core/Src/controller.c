@@ -6,6 +6,7 @@
  */
 
 #include "controller.h"
+
 void hoverInit(typHoverHandler *hhov){
 
 	hhov->status=0;
@@ -14,44 +15,22 @@ void hoverInit(typHoverHandler *hhov){
 	hhov->motorC.motorCode = 'C';
 	hhov->motorD.motorCode = 'D';
 }
-//uint8_t editBuffer(typHoverHandler *hhov, typPWMOutputHandler *pwmOut, char *buffer){
-//
-//	buffer="";
-//
-//	if(hhov->motorA.speed != hgyro->inputA){
-//
-//		hhov->motorA.speed = hgyro->inputA;
-//		//EDIT BUFFER
-//
-//	}
-//	if(hhov->motorB.speed != hgyro->inputB){
-//
-//		hhov->motorB.speed = hgyro->inputB;
-//		//EDIT BUFFER
-//
-//	}
-//	if(hhov->motorC.speed != hgyro->inputC){
-//
-//		hhov->motorC.speed = hgyro->inputC;
-//		//EDIT BUFFER
-//
-//	}
-//	if(hhov->motorD.speed != hgyro->inputD){
-//
-//		hhov->motorD.speed = hgyro->inputD;
-//		//EDIT BUFFER
-//
-//	}
+
+
+//void pwmSmooting(typPWMOutputHandler *out,typPWMInputHandler *input,double kf){
+//	out->pwmOutputA = kf * out->pwmOutputA + input->pwmInputA *(1-kf);
+//	out->pwmOutputB = kf * out->pwmOutputB + input->pwmInputB *(1-kf);
+//	out->pwmOutputC = kf * out->pwmOutputC + input->pwmInputC *(1-kf);
+//	out->pwmOutputD = kf * out->pwmOutputD + input->pwmInputD *(1-kf);
 //}
 
-void pwmSmooting(typPWMOutputHandler *out,typPWMInputHandler *input,double kf){
-	out->pwmOutputA = kf * out->pwmOutputA + input->pwmInputA *(1-kf);
-	out->pwmOutputB = kf * out->pwmOutputB + input->pwmInputB *(1-kf);
-	out->pwmOutputC = kf * out->pwmOutputC + input->pwmInputC *(1-kf);
-	out->pwmOutputD = kf * out->pwmOutputD + input->pwmInputD *(1-kf);
+void pwmSmooting(typHoverHandler *hHov,typPWMInputHandler *input,double kf){
+	hHov->motorA.speed = kf * hHov->motorA.speed + input->pwmInputA *(1-kf);
+	hHov->motorB.speed = kf * hHov->motorB.speed + input->pwmInputB *(1-kf);
+	hHov->motorC.speed = kf * hHov->motorC.speed + input->pwmInputC *(1-kf);
+	hHov->motorD.speed = kf * hHov->motorD.speed + input->pwmInputD *(1-kf);
 
 }
-
 
 
 uint8_t vectorState(typVector *vector){
@@ -159,6 +138,15 @@ void angleToVector(typVector *hVec,double curr_angle_x,double start_angle_x,doub
 }
 
 
+void pwmToAscii(typPWMOutputHandler *pwmout,typHoverHandler *hHov){
+
+	char highbytes = speed >> 4;
+	char sendfirst = (char)highbytes+97;
+	char lowbytes = speed & 0x0F;
+	char sendlast = (char)lowbytes+97;
+
+
+}
 
 
 

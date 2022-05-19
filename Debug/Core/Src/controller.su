@@ -1,4 +1,0 @@
-../Core/Src/controller.c:9:6:hoverInit	16	static
-../Core/Src/controller.c:47:6:pwmSmooting	40	static
-../Core/Src/controller.c:57:9:vectorState	16	static
-../Core/Src/controller.c:83:6:vectorToPwm	32	static

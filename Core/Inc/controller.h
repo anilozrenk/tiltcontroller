@@ -57,9 +57,13 @@ void vectorToPwm(typVector *hVec, typPWMInputHandler *pwmInput);
 void angleToVector(typVector *hVec,double curr_angle_x,double start_angle_x,double curr_angle_y,double start_angle_y ,double death_zone);
 void deathzone(double *delta_x,double pmax,double nmax,double death_zone);
 void hoverInit(typHoverHandler *hhov);
-uint8_t vectorState(typVector *vector);
-void pwmSmooting(typPWMOutputHandler *out,typPWMInputHandler *input,double kf);
+//uint8_t vectorState(typVector *vector);
+void pwmSmooting(typHoverHandler *hHov,typPWMInputHandler *input,double kf);
 void deathzonefit(double *delta_x,double pmax,double nmax,double death_zone);
+
+//void pwmToAscii(typPWMOutputHandler *pwmout);
+
+
 //uint8_t editBuffer((typHoverHandler *hhov, typPWMOutputHandler *pwmOut, char *buffer));
 
 
