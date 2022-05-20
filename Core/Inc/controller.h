@@ -60,7 +60,7 @@ void hoverInit(typHoverHandler *hhov);
 //uint8_t vectorState(typVector *vector);
 void pwmSmooting(typHoverHandler *hHov,typPWMInputHandler *input,double kf);
 void deathzonefit(double *delta_x,double pmax,double nmax,double death_zone);
-
+void command(typHoverHandler *hHov,char *buff);
 //void pwmToAscii(typPWMOutputHandler *pwmout);
 
 

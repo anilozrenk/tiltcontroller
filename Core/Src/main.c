@@ -33,7 +33,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define BUFFER_LEN  10
+#define BUFFER_LEN  13
 #define KF 0.8
 /* USER CODE END PD */
 
@@ -43,7 +43,8 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
- I2C_HandleTypeDef hi2c1;
+
+I2C_HandleTypeDef hi2c1;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
@@ -55,9 +56,11 @@ typPWMInputHandler hInput;
 typPWMOutputHandler hOutput;
 typVector hVector;
 
+double x_angle_base;
+double y_angle_base;
 
-uint8_t rx_buffer[BUFFER_LEN] = {0};
-uint8_t tx_buffer[BUFFER_LEN] = {0};
+char rx_buffer[BUFFER_LEN] = {0};
+char tx_buffer[BUFFER_LEN] = {0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -72,15 +75,13 @@ static void MX_USART1_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+	if( GPIO_PIN_13 == GPIO_Pin){
+		x_angle_base=MPU6050.KalmanAngleX;
+		y_angle_base=MPU6050.KalmanAngleY;
+	}
+}
 
- void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
- {
-     if(huart->Instance == huart1.Instance)
-     {
-     HAL_UART_Transmit_IT(&huart1, tx_buffer, sizeof(tx_buffer));
-     }
-
- }
 
 /* USER CODE END 0 */
 
@@ -91,8 +92,7 @@ static void MX_USART1_UART_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	double x_angle_base;
-	double y_angle_base;
+
 
 
   /* USER CODE END 1 */
@@ -140,14 +140,14 @@ int main(void)
 	  angleToVector(&hVector, MPU6050.KalmanAngleX, x_angle_base, MPU6050.KalmanAngleY, y_angle_base, 3);
 	  vectorToPwm(&hVector, &hInput);
 	  pwmSmooting(&hHover,&hInput, KF);
+	  command(&hHover, tx_buffer);
 
 
+	  HAL_Delay(20);
 
-	  HAL_Delay(500);
-
-	  char bufi[11];
-	  sprintf(bufi,"deneme 123");
-	  HAL_UART_Transmit(&huart1, bufi, sizeof(bufi), 500);
+//	  char bufi[11];
+//	  sprintf(bufi,"deneme 123");
+//	  HAL_UART_Transmit(&huart1, bufi, sizeof(bufi), 500);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -173,8 +173,8 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL12;
-  RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV2;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL6;
+  RCC_OscInitStruct.PLL.PREDIV = RCC_PREDIV_DIV1;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -351,6 +351,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI4_15_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);
 
 }
 

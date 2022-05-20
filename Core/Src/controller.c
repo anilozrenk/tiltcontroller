@@ -7,6 +7,12 @@
 
 #include "controller.h"
 
+/*  Local Functions  */
+void pwmToAscii(typMotorHandler *hmotor,char *buff);
+void deathzonefit(double *delta_x,double pmax,double nmax,double death_zone);
+uint8_t vectorState(typVector *vector);
+/********    ********/
+
 void hoverInit(typHoverHandler *hhov){
 
 	hhov->status=0;
@@ -16,13 +22,6 @@ void hoverInit(typHoverHandler *hhov){
 	hhov->motorD.motorCode = 'D';
 }
 
-
-//void pwmSmooting(typPWMOutputHandler *out,typPWMInputHandler *input,double kf){
-//	out->pwmOutputA = kf * out->pwmOutputA + input->pwmInputA *(1-kf);
-//	out->pwmOutputB = kf * out->pwmOutputB + input->pwmInputB *(1-kf);
-//	out->pwmOutputC = kf * out->pwmOutputC + input->pwmInputC *(1-kf);
-//	out->pwmOutputD = kf * out->pwmOutputD + input->pwmInputD *(1-kf);
-//}
 
 void pwmSmooting(typHoverHandler *hHov,typPWMInputHandler *input,double kf){
 	hHov->motorA.speed = kf * hHov->motorA.speed + input->pwmInputA *(1-kf);
@@ -96,7 +95,7 @@ void vectorToPwm(typVector *hVec, typPWMInputHandler *pwmInput){
 	}
 }
 
-	void deathzonefit(double *delta_x,double pmax,double nmax,double death_zone){
+void deathzonefit(double *delta_x,double pmax,double nmax,double death_zone){
 		if(*delta_x>pmax){
 			 *delta_x=pmax;
 		}
@@ -137,16 +136,53 @@ void angleToVector(typVector *hVec,double curr_angle_x,double start_angle_x,doub
 
 }
 
-
-void pwmToAscii(typPWMOutputHandler *pwmout,typHoverHandler *hHov){
-
-	char highbytes = speed >> 4;
-	char sendfirst = (char)highbytes+97;
-	char lowbytes = speed & 0x0F;
-	char sendlast = (char)lowbytes+97;
-
-
+void command(typHoverHandler *hHov,char *buff){
+	char buffA[3],buffB[3],buffC[3],buffD[3];
+	pwmToAscii(&(hHov->motorA), buffA);
+	pwmToAscii(&(hHov->motorB), buffB);
+	pwmToAscii(&(hHov->motorC), buffC);
+	pwmToAscii(&(hHov->motorD), buffD);
+	uint8_t i=0;
+	uint8_t j=0;
+	while(i<12){
+		while(j<3){
+			buff[i]=buffA[j];
+			i++;
+			j++;
+		}
+		j=0;
+		while(j<3){
+			buff[i]=buffB[j];
+			i++;
+			j++;
+		}
+		j=0;
+		while(j<3){
+			buff[i]=buffC[j];
+			i++;
+			j++;
+		}
+		j=0;
+		while(j<3){
+			buff[i]=buffD[j];
+			i++;
+			j++;
+		}
+	}
+	buff[13]=OK;
 }
+
+void pwmToAscii(typMotorHandler *hmotor,char *buff){
+	char highbytes =(char) hmotor->speed >> 4;
+	char sendfirst = highbytes+97;
+	char lowbytes = (char)hmotor->speed & 0x0F;
+	char sendlast = lowbytes+97;
+	buff[0]=hmotor->motorCode;
+	buff[1]=sendfirst;
+	buff[2]=sendlast;
+}
+
+
 
 
 
