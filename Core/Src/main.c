@@ -141,7 +141,7 @@ int main(void)
 	  vectorToPwm(&hVector, &hInput);
 	  pwmSmooting(&hHover,&hInput, KF);
 	  command(&hHover, tx_buffer);
-
+	  bltSendData((uint8_t *)tx_buffer);
 
 	  HAL_Delay(20);
 
