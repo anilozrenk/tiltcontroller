@@ -9,7 +9,7 @@
 
 #include <stdint.h>
 
-#define OK 'F'
+#define OK "F"
 #define MAX_POWER 255
 
 enum vector_state{

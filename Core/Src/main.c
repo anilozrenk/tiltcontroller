@@ -34,7 +34,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define BUFFER_LEN  13
-#define KF 0.8
+#define KF 0.85
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/

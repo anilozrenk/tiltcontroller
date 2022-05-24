@@ -20,38 +20,42 @@ void hoverInit(typHoverHandler *hhov){
 	hhov->motorB.motorCode = 'B';
 	hhov->motorC.motorCode = 'C';
 	hhov->motorD.motorCode = 'D';
+	hhov->motorA.speed=0;
+	hhov->motorB.speed=0;
+	hhov->motorC.speed=0;
+	hhov->motorD.speed=0;
 }
 
 
 void pwmSmooting(typHoverHandler *hHov,typPWMInputHandler *input,double kf){
-	hHov->motorA.speed = kf * hHov->motorA.speed + input->pwmInputA *(1-kf);
-	hHov->motorB.speed = kf * hHov->motorB.speed + input->pwmInputB *(1-kf);
-	hHov->motorC.speed = kf * hHov->motorC.speed + input->pwmInputC *(1-kf);
-	hHov->motorD.speed = kf * hHov->motorD.speed + input->pwmInputD *(1-kf);
+	hHov->motorA.speed = (1-kf) * hHov->motorA.speed + input->pwmInputA *kf;
+	hHov->motorB.speed = (1-kf) * hHov->motorB.speed + input->pwmInputB *kf;
+	hHov->motorC.speed = (1-kf) * hHov->motorC.speed + input->pwmInputC *kf;
+	hHov->motorD.speed = (1-kf) * hHov->motorD.speed + input->pwmInputD *kf;
 
 }
 
 
 uint8_t vectorState(typVector *vector){
-	if((vector->forward=0)&&(vector->left=0)&&(vector->right=0)&&(vector->backward=0)){
+	if((vector->forward==0)&&(vector->left==0)&&(vector->right==0)&&(vector->backward==0)){
 		return idle;
 	}
 	if(vector->backward>15){
 		return halt;
 	}
-	if((vector->forward>0)&&(vector->left=0)&&(vector->right=0)&&(vector->backward=0)){
+	if((vector->forward>0)&&(vector->left==0)&&(vector->right==0)&&(vector->backward==0)){
 			return forward;
 		}
-	if((vector->left>0)&&(vector->forward=0)&&(vector->right=0)&&(vector->backward=0)){
+	if((vector->left>0)&&(vector->forward==0)&&(vector->right==0)&&(vector->backward==0)){
 		return turn_left;
 	}
-	if((vector->right>0)&&(vector->forward=0)&&(vector->left=0)&&(vector->backward=0)){
+	if((vector->right>0)&&(vector->forward==0)&&(vector->left==0)&&(vector->backward==0)){
 		return turn_right;
 	}
-	if((vector->left>0)&&(vector->forward>0)&&(vector->right=0)&&(vector->backward=0)){
+	if((vector->left>0)&&(vector->forward>0)&&(vector->right==0)&&(vector->backward==0)){
 		return forward_left;
 	}
-	if((vector->right>0)&&(vector->forward>0)&&(vector->left=0)&&(vector->backward=0)){
+	if((vector->right>0)&&(vector->forward>0)&&(vector->left==0)&&(vector->backward==0)){
 		return forward_right;
 	}
 	else return idle;
@@ -122,15 +126,19 @@ void angleToVector(typVector *hVec,double curr_angle_x,double start_angle_x,doub
 			 hVec->left = delta_x*255/nmax;
 			 hVec->right = 0;
 		 }
-		 else{
+		 else if(delta_x>0){
 			 hVec->right = delta_x*255/pmax;
+			 hVec->left = 0;
+		 }
+		 else{
+			 hVec->right = 0;
 			 hVec->left = 0;
 		 }
 		 hVec->forward= delta_y*255/pmax;
 		 hVec->backward= 0;
 	 }
 	 else{
-		 hVec->backward=0;
+		 hVec->backward=50;
 		 hVec->left=0; hVec->right=0; hVec->forward=0;
 	 }
 
@@ -169,7 +177,7 @@ void command(typHoverHandler *hHov,char *buff){
 			j++;
 		}
 	}
-	buff[13]=OK;
+	buff[12]='F';
 }
 
 void pwmToAscii(typMotorHandler *hmotor,char *buff){
