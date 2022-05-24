@@ -141,7 +141,11 @@ int main(void)
 	  vectorToPwm(&hVector, &hInput);
 	  pwmSmooting(&hHover,&hInput, KF);
 	  command(&hHover, tx_buffer);
-	  bltSendData((uint8_t *)tx_buffer);
+	  //bltSendData(tx_buffer);
+	  HAL_UART_Transmit(&huart1, (uint8_t *)tx_buffer, sizeof(tx_buffer), 500);
+	  HAL_UART_Transmit(&huart2, (uint8_t *)tx_buffer, sizeof(tx_buffer), 500);
+	  char uu[]="\n\r";
+	  HAL_UART_Transmit(&huart2, (uint8_t *)uu, sizeof(uu), 500);
 
 	  HAL_Delay(20);
 

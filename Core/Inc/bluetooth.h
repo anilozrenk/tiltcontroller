@@ -11,7 +11,7 @@
 
 
 
-uint8_t bltSendData(uint8_t buff);
+uint8_t bltSendData(char buff);
 
 
 

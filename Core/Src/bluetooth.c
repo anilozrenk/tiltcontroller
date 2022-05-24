@@ -14,9 +14,9 @@
 
 extern UART_HandleTypeDef huart1;
 
-uint8_t bltSendData(uint8_t buff){
+uint8_t bltSendData(char buff){
 
-	if(HAL_UART_Transmit(&huart1, &buff, sizeof(buff), 500)!=0){
+	if(HAL_UART_Transmit(&huart1, buff, sizeof(buff), 500)!=0){
 		return 1;
 	}
 	return 0;
