@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="structtyp_p_w_m_input_handler" kind="struct" language="C++" prot="public">
+    <compoundname>typPWMInputHandler</compoundname>
+    <includes refid="controller_8h" local="no">controller.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtyp_p_w_m_input_handler_1ac0ebf36a48e788656c7fb0dc42afb993" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t typPWMInputHandler::pwmInputA</definition>
+        <argsstring></argsstring>
+        <name>pwmInputA</name>
+        <qualifiedname>typPWMInputHandler::pwmInputA</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="42" column="9" bodyfile="Inc/controller.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtyp_p_w_m_input_handler_1a1a32e2a6c7fe7c65ff25408692685f72" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t typPWMInputHandler::pwmInputB</definition>
+        <argsstring></argsstring>
+        <name>pwmInputB</name>
+        <qualifiedname>typPWMInputHandler::pwmInputB</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="43" column="9" bodyfile="Inc/controller.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtyp_p_w_m_input_handler_1a458f078776b5100bb5a70aa44b10c41b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t typPWMInputHandler::pwmInputC</definition>
+        <argsstring></argsstring>
+        <name>pwmInputC</name>
+        <qualifiedname>typPWMInputHandler::pwmInputC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="44" column="9" bodyfile="Inc/controller.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtyp_p_w_m_input_handler_1accb76cbdcba1f7c89ef092dbc848746f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t typPWMInputHandler::pwmInputD</definition>
+        <argsstring></argsstring>
+        <name>pwmInputD</name>
+        <qualifiedname>typPWMInputHandler::pwmInputD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="45" column="9" bodyfile="Inc/controller.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>unprossessed pwms for motors </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Inc/controller.h" line="41" column="1" bodyfile="Inc/controller.h" bodystart="41" bodyend="46"/>
+    <listofallmembers>
+      <member refid="structtyp_p_w_m_input_handler_1ac0ebf36a48e788656c7fb0dc42afb993" prot="public" virt="non-virtual"><scope>typPWMInputHandler</scope><name>pwmInputA</name></member>
+      <member refid="structtyp_p_w_m_input_handler_1a1a32e2a6c7fe7c65ff25408692685f72" prot="public" virt="non-virtual"><scope>typPWMInputHandler</scope><name>pwmInputB</name></member>
+      <member refid="structtyp_p_w_m_input_handler_1a458f078776b5100bb5a70aa44b10c41b" prot="public" virt="non-virtual"><scope>typPWMInputHandler</scope><name>pwmInputC</name></member>
+      <member refid="structtyp_p_w_m_input_handler_1accb76cbdcba1f7c89ef092dbc848746f" prot="public" virt="non-virtual"><scope>typPWMInputHandler</scope><name>pwmInputD</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

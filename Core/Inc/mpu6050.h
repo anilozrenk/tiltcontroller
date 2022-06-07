@@ -1,8 +1,7 @@
-/*
- * mpu6050.h
- *
- *  Created on: Nov 13, 2019
- *      Author: Bulanov Konstantin
+/**
+ * @file mpu6050.h
+ * @date 11/13/2019
+ * @author Bulanov Konstantin
  */
 
 #ifndef INC_GY521_H_
@@ -13,7 +12,7 @@
 #include <stdint.h>
 #include "main.h"
 
-// MPU6050 structure
+/// MPU6050 structure
 typedef struct
 {
 
@@ -39,7 +38,7 @@ typedef struct
 
 } MPU6050_t;
 
-// Kalman structure
+/// Kalman structure
 typedef struct
 {
     double Q_angle;

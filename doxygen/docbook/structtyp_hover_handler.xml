@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structtyp_hover_handler" xml:lang="en-US">
+<title>typHoverHandler Struct Reference</title>
+<indexterm><primary>typHoverHandler</primary></indexterm>
+<para>
+
+<para>struct for hovercraft </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;controller.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structtyp_hover_handler_1a0be1a1680275142b4b99365c982bed17"/>uint8_t <emphasis role="strong">status</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structtyp_hover_handler_1a09acc8fe77efb02ae6b1a14f05819a2a"/><link linkend="_structtyp_motor_handler">typMotorHandler</link> <emphasis role="strong">motorA</emphasis></para>
+
+<para>motor left </para>
+</listitem>
+            <listitem><para><anchor xml:id="_structtyp_hover_handler_1a0bd5d107132436fb2f732e7540172897"/><link linkend="_structtyp_motor_handler">typMotorHandler</link> <emphasis role="strong">motorB</emphasis></para>
+
+<para>motor right </para>
+</listitem>
+            <listitem><para><anchor xml:id="_structtyp_hover_handler_1a6a1c1f56a0e2ff25ee2dccf464a82d48"/><link linkend="_structtyp_motor_handler">typMotorHandler</link> <emphasis role="strong">motorC</emphasis></para>
+
+<para>motor down </para>
+</listitem>
+            <listitem><para><anchor xml:id="_structtyp_hover_handler_1a27be17122a14b45bf5c07d2116336f8d"/><link linkend="_structtyp_motor_handler">typMotorHandler</link> <emphasis role="strong">motorD</emphasis></para>
+
+<para>motor down </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>struct for hovercraft </para>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Inc/controller.h</section>
+</section>

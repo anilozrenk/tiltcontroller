@@ -1,0 +1,149 @@
+\hypertarget{main_8c}{}\doxysection{Src/main.c File Reference}
+\label{main_8c}\index{Src/main.c@{Src/main.c}}
+
+
+Main program body.  
+
+
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mpu6050.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}controller.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a46130dc86f2322714bba26960b64e7bb}\label{main_8c_a46130dc86f2322714bba26960b64e7bb}} 
+\#define {\bfseries BUFFER\+\_\+\+LEN}~13
+\begin{DoxyCompactList}\small\item\em predefined lenght to main uart buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_a88d70c2c026b9cb514de366a7b20ef8e}\label{main_8c_a88d70c2c026b9cb514de366a7b20ef8e}} 
+\#define {\bfseries KF}~0.\+85
+\begin{DoxyCompactList}\small\item\em exponantial filter coeficient \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}{HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback}} (uint16\+\_\+t GPIO\+\_\+\+Pin)
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7}\label{main_8c_af7b2c26e44dadaaa798a5c3d82914ba7}} 
+I2\+C\+\_\+\+Handle\+Type\+Def {\bfseries hi2c1}
+\item 
+\mbox{\Hypertarget{main_8c_a2cf715bef37f7e8ef385a30974a5f0d5}\label{main_8c_a2cf715bef37f7e8ef385a30974a5f0d5}} 
+UART\+\_\+\+Handle\+Type\+Def {\bfseries huart1}
+\item 
+\mbox{\Hypertarget{main_8c_aa9479c261d65eecedd3d9582f7f0f89c}\label{main_8c_aa9479c261d65eecedd3d9582f7f0f89c}} 
+UART\+\_\+\+Handle\+Type\+Def {\bfseries huart2}
+\item 
+\mbox{\Hypertarget{main_8c_a93357d136721fbae9e3787ddd1a42024}\label{main_8c_a93357d136721fbae9e3787ddd1a42024}} 
+\mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} {\bfseries MPU6050}
+\item 
+\mbox{\Hypertarget{main_8c_a69e0ec05140bebffbd22342b2f616eab}\label{main_8c_a69e0ec05140bebffbd22342b2f616eab}} 
+\mbox{\hyperlink{structtyp_hover_handler}{typ\+Hover\+Handler}} {\bfseries h\+Hover}
+\item 
+\mbox{\Hypertarget{main_8c_aaa24c7e31de9f9b48e1da1b7a5f4125c}\label{main_8c_aaa24c7e31de9f9b48e1da1b7a5f4125c}} 
+\mbox{\hyperlink{structtyp_p_w_m_input_handler}{typ\+PWMInput\+Handler}} {\bfseries h\+Input}
+\item 
+\mbox{\Hypertarget{main_8c_a4aa5ae7da3192a39914575d5b9c75df6}\label{main_8c_a4aa5ae7da3192a39914575d5b9c75df6}} 
+\mbox{\hyperlink{structtyp_p_w_m_output_handler}{typ\+PWMOutput\+Handler}} {\bfseries h\+Output}
+\item 
+\mbox{\Hypertarget{main_8c_ae5167f6e25e0cd98dde6306fd4a50241}\label{main_8c_ae5167f6e25e0cd98dde6306fd4a50241}} 
+\mbox{\hyperlink{structtyp_vector}{typ\+Vector}} {\bfseries h\+Vector}
+\item 
+\mbox{\Hypertarget{main_8c_ae29f244edcef79e061c85dac10bbc513}\label{main_8c_ae29f244edcef79e061c85dac10bbc513}} 
+double {\bfseries x\+\_\+angle\+\_\+base}
+\begin{DoxyCompactList}\small\item\em holds gyro angle \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_a4ed5d81d05128863e501862befa958ed}\label{main_8c_a4ed5d81d05128863e501862befa958ed}} 
+double {\bfseries y\+\_\+angle\+\_\+base}
+\begin{DoxyCompactList}\small\item\em holds gyro angle \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_a98c7167974a92cd100d746166952a191}\label{main_8c_a98c7167974a92cd100d746166952a191}} 
+char {\bfseries rx\+\_\+buffer} \mbox{[}\mbox{\hyperlink{main_8c_a46130dc86f2322714bba26960b64e7bb}{BUFFER\+\_\+\+LEN}}\mbox{]} = \{0\}
+\begin{DoxyCompactList}\small\item\em main rx buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_a80f5e7ce62bd666bf36ca6b80e49b891}\label{main_8c_a80f5e7ce62bd666bf36ca6b80e49b891}} 
+char {\bfseries tx\+\_\+buffer} \mbox{[}\mbox{\hyperlink{main_8c_a46130dc86f2322714bba26960b64e7bb}{BUFFER\+\_\+\+LEN}}\mbox{]} = \{0\}
+\begin{DoxyCompactList}\small\item\em main tx buffer \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main program body. 
+
+\begin{DoxyAuthor}{Author}
+Anil Ozrenk
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2022 Anil Ozrenk. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a1730ffe1e560465665eb47d9264826f9}\label{main_8c_a1730ffe1e560465665eb47d9264826f9}} 
+\index{main.c@{main.c}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}\label{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}} 
+\index{main.c@{main.c}!HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}}
+\index{HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_GPIO\_EXTI\_Callback()}{HAL\_GPIO\_EXTI\_Callback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+external interrupt routine for base angle reset gpio pin 13 \mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The application entry point. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & \\
+\hline
+\end{DoxyRetVals}
+initialize mpu6050 module
+
+initialize hover struct
+
+initial x angle base
+
+initial y angle base
+
+transmit buffer to bluetooth
+
+transmit buffer via usb\mbox{\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\label{main_8c_a70af21c671abfcc773614a9a4f63d920}} 
+\index{main.c@{main.c}!SystemClock\_Config@{SystemClock\_Config}}
+\index{SystemClock\_Config@{SystemClock\_Config}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SystemClock\_Config()}{SystemClock\_Config()}}
+{\footnotesize\ttfamily void System\+Clock\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+System Clock Configuration. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Initializes the RCC Oscillators according to the specified parameters in the RCC\+\_\+\+Osc\+Init\+Type\+Def structure.
+
+Initializes the CPU, AHB and APB buses clocks

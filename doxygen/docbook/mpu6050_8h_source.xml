@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mpu6050_8h_source" xml:lang="en-US">
+<title>mpu6050.h</title>
+<indexterm><primary>Inc/mpu6050.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 
+7 <emphasis role="preprocessor">#ifndef&#32;INC_GY521_H_</emphasis>
+8 <emphasis role="preprocessor">#define&#32;INC_GY521_H_</emphasis>
+9 
+10 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;INC_GY521_H_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+11 
+12 <emphasis role="preprocessor">#include&#32;&lt;stdint.h&gt;</emphasis>
+13 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_main_8h">main.h</link>&quot;</emphasis>
+14 
+16 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>
+17 {
+18 
+19 &#32;&#32;&#32;&#32;int16_t&#32;Accel_X_RAW;
+20 &#32;&#32;&#32;&#32;int16_t&#32;Accel_Y_RAW;
+21 &#32;&#32;&#32;&#32;int16_t&#32;Accel_Z_RAW;
+22 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;Ax;
+23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;Ay;
+24 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;Az;
+25 
+26 &#32;&#32;&#32;&#32;int16_t&#32;Gyro_X_RAW;
+27 &#32;&#32;&#32;&#32;int16_t&#32;Gyro_Y_RAW;
+28 &#32;&#32;&#32;&#32;int16_t&#32;Gyro_Z_RAW;
+29 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;Gx;
+30 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;Gy;
+31 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;Gz;
+32 
+33 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;Temperature;
+34 
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;KalmanAngleX;
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;KalmanAngleY;
+37 
+38 
+39 }&#32;<link linkend="_struct_m_p_u6050__t">MPU6050_t</link>;
+40 
+42 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>
+43 {
+44 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;Q_angle;
+45 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;Q_bias;
+46 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;R_measure;
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;angle;
+48 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;bias;
+49 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;P[2][2];
+50 }&#32;<link linkend="_struct_kalman__t">Kalman_t</link>;
+51 
+52 uint8_t&#32;<link linkend="_mpu6050_8h_1aafa9c78f858c561cc64af97bbb57e393">MPU6050_Init</link>(I2C_HandleTypeDef&#32;*I2Cx);
+53 
+54 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_mpu6050_8h_1a5476709bd12c603fc74bae86f72db0d5">MPU6050_Read_Accel</link>(I2C_HandleTypeDef&#32;*I2Cx,&#32;<link linkend="_struct_m_p_u6050__t">MPU6050_t</link>&#32;*DataStruct);
+55 
+56 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_mpu6050_8h_1a2329322c6cb1c7e939e00bd43db44b4b">MPU6050_Read_Gyro</link>(I2C_HandleTypeDef&#32;*I2Cx,&#32;<link linkend="_struct_m_p_u6050__t">MPU6050_t</link>&#32;*DataStruct);
+57 
+58 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_mpu6050_8h_1a83eafd157dd3df2c9add558904ed62e0">MPU6050_Read_Temp</link>(I2C_HandleTypeDef&#32;*I2Cx,&#32;<link linkend="_struct_m_p_u6050__t">MPU6050_t</link>&#32;*DataStruct);
+59 
+60 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_mpu6050_8h_1aabd50bac1ecae86151549a1a8a678382">MPU6050_Read_All</link>(I2C_HandleTypeDef&#32;*I2Cx,&#32;<link linkend="_struct_m_p_u6050__t">MPU6050_t</link>&#32;*DataStruct);
+61 
+62 <emphasis role="keywordtype">double</emphasis>&#32;Kalman_getAngle(<link linkend="_struct_kalman__t">Kalman_t</link>&#32;*Kalman,&#32;<emphasis role="keywordtype">double</emphasis>&#32;newAngle,&#32;<emphasis role="keywordtype">double</emphasis>&#32;newRate,&#32;<emphasis role="keywordtype">double</emphasis>&#32;dt);
+</programlisting></section>

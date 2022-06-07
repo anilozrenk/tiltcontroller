@@ -1,0 +1,527 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="controller_8h" kind="file" language="C++">
+    <compoundname>controller.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="controller_8c" local="yes">Src/controller.c</includedby>
+    <includedby refid="main_8c" local="yes">Src/main.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>Inc/controller.h</label>
+        <link refid="controller_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>Inc/controller.h</label>
+        <link refid="controller_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Src/controller.c</label>
+        <link refid="controller_8c"/>
+      </node>
+      <node id="3">
+        <label>Src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structtyp_motor_handler" prot="public">typMotorHandler</innerclass>
+    <innerclass refid="structtyp_hover_handler" prot="public">typHoverHandler</innerclass>
+    <innerclass refid="structtyp_p_w_m_input_handler" prot="public">typPWMInputHandler</innerclass>
+    <innerclass refid="structtyp_p_w_m_output_handler" prot="public">typPWMOutputHandler</innerclass>
+    <innerclass refid="structtyp_vector" prot="public">typVector</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="controller_8h_1aba51915c87d64af47fb1cc59348961c9" prot="public" static="no">
+        <name>OK</name>
+        <initializer>&apos;F&apos;</initializer>
+        <briefdescription>
+<para>ascii character for OK </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="12" column="9" bodyfile="Inc/controller.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="controller_8h_1a6e5f254e637637d3a3256dfd7a1399c7" prot="public" static="no">
+        <name>MAX_POWER</name>
+        <initializer>255</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="14" column="9" bodyfile="Inc/controller.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="controller_8h_1a022901765151337b629547c17612ff2f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>vector_state</name>
+        <enumvalue id="controller_8h_1a022901765151337b629547c17612ff2fa726a0af5164861adac8c015a742dcf21" prot="public">
+          <name>forward</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="controller_8h_1a022901765151337b629547c17612ff2fa6372e68ef27a9b35a9f80efc95371d19" prot="public">
+          <name>turn_left</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="controller_8h_1a022901765151337b629547c17612ff2fae7cc19b5797f9247d5ffa847b8e763b4" prot="public">
+          <name>turn_right</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="controller_8h_1a022901765151337b629547c17612ff2faf6c4359376dd6bd802ff48d0fcbbcfea" prot="public">
+          <name>forward_left</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="controller_8h_1a022901765151337b629547c17612ff2fa0e522d93c9794aa9d90421a204509282" prot="public">
+          <name>forward_right</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="controller_8h_1a022901765151337b629547c17612ff2fa0e9a37114c0e458d28d52f06ec0f2242" prot="public">
+          <name>idle</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="controller_8h_1a022901765151337b629547c17612ff2fabc30d923cf34d24d10953285548f949d" prot="public">
+          <name>halt</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>enum for states of moving states </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="16" column="1" bodyfile="Inc/controller.h" bodystart="16" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="controller_8h_1a725b010a425c9a3c2bda47ae81732b8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vectorToPwm</definition>
+        <argsstring>(typVector *hVec, typPWMInputHandler *pwmInput)</argsstring>
+        <name>vectorToPwm</name>
+        <param>
+          <type><ref refid="structtyp_vector" kindref="compound">typVector</ref> *</type>
+          <declname>hVec</declname>
+        </param>
+        <param>
+          <type><ref refid="structtyp_p_w_m_input_handler" kindref="compound">typPWMInputHandler</ref> *</type>
+          <declname>pwmInput</declname>
+        </param>
+        <briefdescription>
+<para>generate pwm value corrosponding to vector states </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="structtyp_p_w_m_input_handler" kindref="compound">typPWMInputHandler</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="structtyp_vector" kindref="compound">typVector</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="66" column="6" bodyfile="Src/controller.c" bodystart="81" bodyend="116" declfile="Inc/controller.h" declline="66" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="controller_8h_1a06645bfc45724a560b1ea2dde074525d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void angleToVector</definition>
+        <argsstring>(typVector *hVec, double curr_angle_x, double start_angle_x, double curr_angle_y, double start_angle_y, double death_zone)</argsstring>
+        <name>angleToVector</name>
+        <param>
+          <type><ref refid="structtyp_vector" kindref="compound">typVector</ref> *</type>
+          <declname>hVec</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>curr_angle_x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>start_angle_x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>curr_angle_y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>start_angle_y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>death_zone</declname>
+        </param>
+        <briefdescription>
+<para>angle values to vector calues </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="structtyp_vector" kindref="compound">typVector</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>angle_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>base_angle_x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>angle_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>base_angle_y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>deathzone</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="67" column="6" bodyfile="Src/controller.c" bodystart="147" bodyend="179" declfile="Inc/controller.h" declline="67" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="controller_8h_1aa2e7b2642f2a219c01ce563d5b4e85bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void deathzone</definition>
+        <argsstring>(double *delta_x, double pmax, double nmax, double death_zone)</argsstring>
+        <name>deathzone</name>
+        <param>
+          <type>double *</type>
+          <declname>delta_x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>pmax</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>nmax</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>death_zone</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="68" column="6" declfile="Inc/controller.h" declline="68" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="controller_8h_1a50d0e2e6139d69c55c535c74d4c7077e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hoverInit</definition>
+        <argsstring>(typHoverHandler *hhov)</argsstring>
+        <name>hoverInit</name>
+        <param>
+          <type><ref refid="structtyp_hover_handler" kindref="compound">typHoverHandler</ref> *</type>
+          <declname>hhov</declname>
+        </param>
+        <briefdescription>
+<para>intiate hovercraft give motors ascii characters set all motors speeds to 0 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="structtyp_hover_handler" kindref="compound">typHoverHandler</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="69" column="6" bodyfile="Src/controller.c" bodystart="21" bodyend="32" declfile="Inc/controller.h" declline="69" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="controller_8h_1a70f9428f5c81614c11fb0ba084b70929" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pwmSmooting</definition>
+        <argsstring>(typHoverHandler *hHov, typPWMInputHandler *input, double kf)</argsstring>
+        <name>pwmSmooting</name>
+        <param>
+          <type><ref refid="structtyp_hover_handler" kindref="compound">typHoverHandler</ref> *</type>
+          <declname>hHov</declname>
+        </param>
+        <param>
+          <type><ref refid="structtyp_p_w_m_input_handler" kindref="compound">typPWMInputHandler</ref> *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>kf</declname>
+        </param>
+        <briefdescription>
+<para>exponantiel filter for smoothing motor pwm </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="structtyp_hover_handler" kindref="compound">typHoverHandler</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="structtyp_p_w_m_input_handler" kindref="compound">typPWMInputHandler</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="70" column="6" bodyfile="Src/controller.c" bodystart="39" bodyend="45" declfile="Inc/controller.h" declline="70" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="controller_8h_1aafa92e2d6ed9e557757389f828261abc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void deathzonefit</definition>
+        <argsstring>(double *delta_x, double pmax, double nmax, double death_zone)</argsstring>
+        <name>deathzonefit</name>
+        <param>
+          <type>double *</type>
+          <declname>delta_x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>pmax</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>nmax</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>death_zone</declname>
+        </param>
+        <briefdescription>
+<para>limit the angle and add deathzone </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delta_angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>positive</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>max </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>negative</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>max </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>deathzone</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="71" column="6" bodyfile="Src/controller.c" bodystart="124" bodyend="137" declfile="Inc/controller.h" declline="71" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="controller_8h_1a325f4f19b8eb9a5326bbf307f1a9dc3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void command</definition>
+        <argsstring>(typHoverHandler *hHov, char *buff)</argsstring>
+        <name>command</name>
+        <param>
+          <type><ref refid="structtyp_hover_handler" kindref="compound">typHoverHandler</ref> *</type>
+          <declname>hHov</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>buff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="72" column="6" bodyfile="Src/controller.c" bodystart="185" bodyend="219" declfile="Inc/controller.h" declline="72" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/>@file<sp/>controller.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/>@author:<sp/>Anil<sp/>Ozrenk</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>@date<sp/>05/13/2022</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_CONTROL_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_CONTROL_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>OK<sp/>&apos;F&apos;<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_POWER<sp/>255</highlight></codeline>
+<codeline lineno="16"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>vector_state{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>forward,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>turn_left,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>turn_right,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>forward_left,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>forward_right,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>idle,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>halt,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="27" refid="structtyp_motor_handler" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28" refid="structtyp_motor_handler_1a10079f56950ea7b09285bc6e25becfd3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="structtyp_motor_handler_1a10079f56950ea7b09285bc6e25becfd3" kindref="member">motorCode</ref>;<sp/></highlight></codeline>
+<codeline lineno="29" refid="structtyp_motor_handler_1a4967f1adf97c765e3df9a8652fe772a1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structtyp_motor_handler_1a4967f1adf97c765e3df9a8652fe772a1" kindref="member">speed</ref>;<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}<ref refid="structtyp_motor_handler" kindref="compound">typMotorHandler</ref>;</highlight></codeline>
+<codeline lineno="33" refid="structtyp_hover_handler" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>status;</highlight></codeline>
+<codeline lineno="35" refid="structtyp_hover_handler_1a09acc8fe77efb02ae6b1a14f05819a2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structtyp_motor_handler" kindref="compound">typMotorHandler</ref><sp/><ref refid="structtyp_hover_handler_1a09acc8fe77efb02ae6b1a14f05819a2a" kindref="member">motorA</ref>;<sp/></highlight></codeline>
+<codeline lineno="36" refid="structtyp_hover_handler_1a0bd5d107132436fb2f732e7540172897" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structtyp_motor_handler" kindref="compound">typMotorHandler</ref><sp/><ref refid="structtyp_hover_handler_1a0bd5d107132436fb2f732e7540172897" kindref="member">motorB</ref>;<sp/></highlight></codeline>
+<codeline lineno="37" refid="structtyp_hover_handler_1a6a1c1f56a0e2ff25ee2dccf464a82d48" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structtyp_motor_handler" kindref="compound">typMotorHandler</ref><sp/><ref refid="structtyp_hover_handler_1a6a1c1f56a0e2ff25ee2dccf464a82d48" kindref="member">motorC</ref>;<sp/></highlight></codeline>
+<codeline lineno="38" refid="structtyp_hover_handler_1a27be17122a14b45bf5c07d2116336f8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structtyp_motor_handler" kindref="compound">typMotorHandler</ref><sp/><ref refid="structtyp_hover_handler_1a27be17122a14b45bf5c07d2116336f8d" kindref="member">motorD</ref>;<sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}<ref refid="structtyp_hover_handler" kindref="compound">typHoverHandler</ref>;</highlight></codeline>
+<codeline lineno="41" refid="structtyp_p_w_m_input_handler" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>pwmInputA;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>pwmInputB;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>pwmInputC;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>pwmInputD;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}<ref refid="structtyp_p_w_m_input_handler" kindref="compound">typPWMInputHandler</ref>;</highlight></codeline>
+<codeline lineno="52" refid="structtyp_p_w_m_output_handler" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal">{<sp/><sp/><sp/></highlight><highlight class="comment">//0-255</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>pwmOutputA;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>pwmOutputB;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>pwmOutputC;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>pwmOutputD;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}<ref refid="structtyp_p_w_m_output_handler" kindref="compound">typPWMOutputHandler</ref>;</highlight></codeline>
+<codeline lineno="59" refid="structtyp_vector" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>forward;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>left;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>right;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>backward;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}<ref refid="structtyp_vector" kindref="compound">typVector</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8c_1a725b010a425c9a3c2bda47ae81732b8c" kindref="member">vectorToPwm</ref>(<ref refid="structtyp_vector" kindref="compound">typVector</ref><sp/>*hVec,<sp/><ref refid="structtyp_p_w_m_input_handler" kindref="compound">typPWMInputHandler</ref><sp/>*pwmInput);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8c_1a06645bfc45724a560b1ea2dde074525d" kindref="member">angleToVector</ref>(<ref refid="structtyp_vector" kindref="compound">typVector</ref><sp/>*hVec,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>curr_angle_x,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>start_angle_x,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>curr_angle_y,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>start_angle_y<sp/>,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>death_zone);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>deathzone(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*delta_x,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pmax,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nmax,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>death_zone);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8c_1a50d0e2e6139d69c55c535c74d4c7077e" kindref="member">hoverInit</ref>(<ref refid="structtyp_hover_handler" kindref="compound">typHoverHandler</ref><sp/>*hhov);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8c_1a70f9428f5c81614c11fb0ba084b70929" kindref="member">pwmSmooting</ref>(<ref refid="structtyp_hover_handler" kindref="compound">typHoverHandler</ref><sp/>*hHov,<ref refid="structtyp_p_w_m_input_handler" kindref="compound">typPWMInputHandler</ref><sp/>*input,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>kf);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="controller_8c_1aafa92e2d6ed9e557757389f828261abc" kindref="member">deathzonefit</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*delta_x,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>pmax,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nmax,</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>death_zone);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>command(<ref refid="structtyp_hover_handler" kindref="compound">typHoverHandler</ref><sp/>*hHov,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buff);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Inc/controller.h"/>
+  </compounddef>
+</doxygen>

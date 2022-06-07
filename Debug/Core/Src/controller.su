@@ -1,8 +1,8 @@
-../Core/Src/controller.c:16:6:hoverInit	16	static
-../Core/Src/controller.c:30:6:pwmSmooting	32	static
-../Core/Src/controller.c:39:9:vectorState	16	static
-../Core/Src/controller.c:65:6:vectorToPwm	32	static
-../Core/Src/controller.c:102:6:deathzonefit	32	static
-../Core/Src/controller.c:117:6:angleToVector	80	static
-../Core/Src/controller.c:147:6:command	48	static
-../Core/Src/controller.c:183:6:pwmToAscii	32	static
+../Core/Src/controller.c:20:6:hoverInit	16	static
+../Core/Src/controller.c:38:6:pwmSmooting	32	static
+../Core/Src/controller.c:47:9:vectorState	16	static
+../Core/Src/controller.c:73:6:vectorToPwm	32	static
+../Core/Src/controller.c:110:6:deathzonefit	32	static
+../Core/Src/controller.c:125:6:angleToVector	80	static
+../Core/Src/controller.c:159:6:command	48	static
+../Core/Src/controller.c:195:6:pwmToAscii	32	static

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="dir_413f4e031a85da0d68269c6fd2f76e1c" kind="dir">
+    <compoundname>Src</compoundname>
+    <innerfile refid="controller_8c">controller.c</innerfile>
+    <innerfile refid="main_8c">main.c</innerfile>
+    <innerfile refid="mpu6050_8c">mpu6050.c</innerfile>
+    <innerfile refid="stm32f0xx__hal__msp_8c">stm32f0xx_hal_msp.c</innerfile>
+    <innerfile refid="stm32f0xx__it_8c">stm32f0xx_it.c</innerfile>
+    <innerfile refid="syscalls_8c">syscalls.c</innerfile>
+    <innerfile refid="sysmem_8c">sysmem.c</innerfile>
+    <innerfile refid="system__stm32f0xx_8c">system_stm32f0xx.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Src/"/>
+  </compounddef>
+</doxygen>

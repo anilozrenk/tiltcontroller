@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.4" xml:lang="en-US">
+  <compound refid="struct_kalman__t" kind="struct"><name>Kalman_t</name>
+    <member refid="struct_kalman__t_1a456b708ce4887c12e148625aa1ab9d81" kind="variable"><name>Q_angle</name></member>
+    <member refid="struct_kalman__t_1a5636bb03467a6e767f56641fc92bb5c8" kind="variable"><name>Q_bias</name></member>
+    <member refid="struct_kalman__t_1a5a74f05122cd5b26b275d3d1ac5abf84" kind="variable"><name>R_measure</name></member>
+    <member refid="struct_kalman__t_1a55efa5004d8646a101769e7e527eeb29" kind="variable"><name>angle</name></member>
+    <member refid="struct_kalman__t_1aa23e0bbaa78eb85b8568abdb54a60574" kind="variable"><name>bias</name></member>
+    <member refid="struct_kalman__t_1aaa1e49a0733867e7749ff00033ccfc44" kind="variable"><name>P</name></member>
+  </compound>
+  <compound refid="struct_m_p_u6050__t" kind="struct"><name>MPU6050_t</name>
+    <member refid="struct_m_p_u6050__t_1a5f3265d5d2c2ae48dcee4b05d720ebfe" kind="variable"><name>Accel_X_RAW</name></member>
+    <member refid="struct_m_p_u6050__t_1ad29751cb81a8a02d201cd978976b45b8" kind="variable"><name>Accel_Y_RAW</name></member>
+    <member refid="struct_m_p_u6050__t_1a28f4c1ddb785ef651468de1a279a4015" kind="variable"><name>Accel_Z_RAW</name></member>
+    <member refid="struct_m_p_u6050__t_1ae5ec57cf702887ec4d30e33e9ff0f8fb" kind="variable"><name>Ax</name></member>
+    <member refid="struct_m_p_u6050__t_1a8c566d7c2b697d0ef67ad6d4dc902f55" kind="variable"><name>Ay</name></member>
+    <member refid="struct_m_p_u6050__t_1adc707670d491467f36637265c2255abe" kind="variable"><name>Az</name></member>
+    <member refid="struct_m_p_u6050__t_1a9f4be11c3bd4417624d4e51bad5726c5" kind="variable"><name>Gyro_X_RAW</name></member>
+    <member refid="struct_m_p_u6050__t_1a08ee6883e1cdffb40d4ac90b51f23b2b" kind="variable"><name>Gyro_Y_RAW</name></member>
+    <member refid="struct_m_p_u6050__t_1ace2b5b27fdc12ad5a41c7a5fa720ee5f" kind="variable"><name>Gyro_Z_RAW</name></member>
+    <member refid="struct_m_p_u6050__t_1a0e94f3447cefa614cc25c27f4ba83783" kind="variable"><name>Gx</name></member>
+    <member refid="struct_m_p_u6050__t_1ad5b5de7635d0a6cca78f5464db16bef7" kind="variable"><name>Gy</name></member>
+    <member refid="struct_m_p_u6050__t_1acf84ca38896c38296bc369e286627366" kind="variable"><name>Gz</name></member>
+    <member refid="struct_m_p_u6050__t_1a16b76504a9d3f2a2f88f0a765ff04ebb" kind="variable"><name>Temperature</name></member>
+    <member refid="struct_m_p_u6050__t_1a814132d972a9fdb9a5038dccfe872e3b" kind="variable"><name>KalmanAngleX</name></member>
+    <member refid="struct_m_p_u6050__t_1af29ed74f1b17a968d6b2a852e8084b18" kind="variable"><name>KalmanAngleY</name></member>
+  </compound>
+  <compound refid="structtyp_hover_handler" kind="struct"><name>typHoverHandler</name>
+    <member refid="structtyp_hover_handler_1a0be1a1680275142b4b99365c982bed17" kind="variable"><name>status</name></member>
+    <member refid="structtyp_hover_handler_1a09acc8fe77efb02ae6b1a14f05819a2a" kind="variable"><name>motorA</name></member>
+    <member refid="structtyp_hover_handler_1a0bd5d107132436fb2f732e7540172897" kind="variable"><name>motorB</name></member>
+    <member refid="structtyp_hover_handler_1a6a1c1f56a0e2ff25ee2dccf464a82d48" kind="variable"><name>motorC</name></member>
+    <member refid="structtyp_hover_handler_1a27be17122a14b45bf5c07d2116336f8d" kind="variable"><name>motorD</name></member>
+  </compound>
+  <compound refid="structtyp_motor_handler" kind="struct"><name>typMotorHandler</name>
+    <member refid="structtyp_motor_handler_1a10079f56950ea7b09285bc6e25becfd3" kind="variable"><name>motorCode</name></member>
+    <member refid="structtyp_motor_handler_1a4967f1adf97c765e3df9a8652fe772a1" kind="variable"><name>speed</name></member>
+  </compound>
+  <compound refid="structtyp_p_w_m_input_handler" kind="struct"><name>typPWMInputHandler</name>
+    <member refid="structtyp_p_w_m_input_handler_1ac0ebf36a48e788656c7fb0dc42afb993" kind="variable"><name>pwmInputA</name></member>
+    <member refid="structtyp_p_w_m_input_handler_1a1a32e2a6c7fe7c65ff25408692685f72" kind="variable"><name>pwmInputB</name></member>
+    <member refid="structtyp_p_w_m_input_handler_1a458f078776b5100bb5a70aa44b10c41b" kind="variable"><name>pwmInputC</name></member>
+    <member refid="structtyp_p_w_m_input_handler_1accb76cbdcba1f7c89ef092dbc848746f" kind="variable"><name>pwmInputD</name></member>
+  </compound>
+  <compound refid="structtyp_p_w_m_output_handler" kind="struct"><name>typPWMOutputHandler</name>
+    <member refid="structtyp_p_w_m_output_handler_1acf5fb2ccadc63ed3509ba63ba5354bc9" kind="variable"><name>pwmOutputA</name></member>
+    <member refid="structtyp_p_w_m_output_handler_1ad4922b318ef0c65a349563f34969b657" kind="variable"><name>pwmOutputB</name></member>
+    <member refid="structtyp_p_w_m_output_handler_1ad35d8143ca8abaf5e626028cc4261c32" kind="variable"><name>pwmOutputC</name></member>
+    <member refid="structtyp_p_w_m_output_handler_1ad1bcd8bf7b9363cdd882985c2257b743" kind="variable"><name>pwmOutputD</name></member>
+  </compound>
+  <compound refid="structtyp_vector" kind="struct"><name>typVector</name>
+    <member refid="structtyp_vector_1a3ae8e6b532f2f66832dc9ebe71f5b5de" kind="variable"><name>forward</name></member>
+    <member refid="structtyp_vector_1a9e94c7c802bd99faa5711d197d82ae77" kind="variable"><name>left</name></member>
+    <member refid="structtyp_vector_1af23d7662031ce7caada5479ec8273fac" kind="variable"><name>right</name></member>
+    <member refid="structtyp_vector_1a2ec109296d1e043bd47c81037844d36e" kind="variable"><name>backward</name></member>
+  </compound>
+  <compound refid="controller_8h" kind="file"><name>controller.h</name>
+    <member refid="controller_8h_1aba51915c87d64af47fb1cc59348961c9" kind="define"><name>OK</name></member>
+    <member refid="controller_8h_1a6e5f254e637637d3a3256dfd7a1399c7" kind="define"><name>MAX_POWER</name></member>
+    <member refid="controller_8h_1a022901765151337b629547c17612ff2f" kind="enum"><name>vector_state</name></member>
+    <member refid="controller_8h_1a022901765151337b629547c17612ff2fa726a0af5164861adac8c015a742dcf21" kind="enumvalue"><name>forward</name></member>
+    <member refid="controller_8h_1a022901765151337b629547c17612ff2fa6372e68ef27a9b35a9f80efc95371d19" kind="enumvalue"><name>turn_left</name></member>
+    <member refid="controller_8h_1a022901765151337b629547c17612ff2fae7cc19b5797f9247d5ffa847b8e763b4" kind="enumvalue"><name>turn_right</name></member>
+    <member refid="controller_8h_1a022901765151337b629547c17612ff2faf6c4359376dd6bd802ff48d0fcbbcfea" kind="enumvalue"><name>forward_left</name></member>
+    <member refid="controller_8h_1a022901765151337b629547c17612ff2fa0e522d93c9794aa9d90421a204509282" kind="enumvalue"><name>forward_right</name></member>
+    <member refid="controller_8h_1a022901765151337b629547c17612ff2fa0e9a37114c0e458d28d52f06ec0f2242" kind="enumvalue"><name>idle</name></member>
+    <member refid="controller_8h_1a022901765151337b629547c17612ff2fabc30d923cf34d24d10953285548f949d" kind="enumvalue"><name>halt</name></member>
+    <member refid="controller_8h_1a725b010a425c9a3c2bda47ae81732b8c" kind="function"><name>vectorToPwm</name></member>
+    <member refid="controller_8h_1a06645bfc45724a560b1ea2dde074525d" kind="function"><name>angleToVector</name></member>
+    <member refid="controller_8h_1aa2e7b2642f2a219c01ce563d5b4e85bb" kind="function"><name>deathzone</name></member>
+    <member refid="controller_8h_1a50d0e2e6139d69c55c535c74d4c7077e" kind="function"><name>hoverInit</name></member>
+    <member refid="controller_8h_1a70f9428f5c81614c11fb0ba084b70929" kind="function"><name>pwmSmooting</name></member>
+    <member refid="controller_8h_1aafa92e2d6ed9e557757389f828261abc" kind="function"><name>deathzonefit</name></member>
+    <member refid="controller_8h_1a325f4f19b8eb9a5326bbf307f1a9dc3b" kind="function"><name>command</name></member>
+  </compound>
+  <compound refid="main_8h" kind="file"><name>main.h</name>
+    <member refid="main_8h_1a31ac298fbbc8a1d6de1dc4577a108232" kind="define"><name>B1_Pin</name></member>
+    <member refid="main_8h_1a4926b92dcb220e465850d9616c27e171" kind="define"><name>B1_GPIO_Port</name></member>
+    <member refid="main_8h_1a1c6fc611ed1c235b33d00152ceb5ece8" kind="define"><name>B1_EXTI_IRQn</name></member>
+    <member refid="main_8h_1a5644600bf1ed996688dd87dc3f88526c" kind="define"><name>USART_TX_Pin</name></member>
+    <member refid="main_8h_1a79a3e098f5d738c55a12e4272b7b2f84" kind="define"><name>USART_TX_GPIO_Port</name></member>
+    <member refid="main_8h_1ac93b92f1334823df872908c845c71afc" kind="define"><name>USART_RX_Pin</name></member>
+    <member refid="main_8h_1aae451289f2eda1c04e3bf6d6120b6c0b" kind="define"><name>USART_RX_GPIO_Port</name></member>
+    <member refid="main_8h_1af17a94dd613cff35c699b06c7c6a2820" kind="define"><name>LD2_Pin</name></member>
+    <member refid="main_8h_1a5aff6ddf7fe557e53b048115ad322aa0" kind="define"><name>LD2_GPIO_Port</name></member>
+    <member refid="main_8h_1af2c8a7a0746106e52f6f415b8921c21b" kind="define"><name>TMS_Pin</name></member>
+    <member refid="main_8h_1affce477a22cc940d3962932cb33ec422" kind="define"><name>TMS_GPIO_Port</name></member>
+    <member refid="main_8h_1a9e21d9bed16b0275ff16a864ffb2ab6e" kind="define"><name>TCK_Pin</name></member>
+    <member refid="main_8h_1a1541f23b870848a43f0274857badd175" kind="define"><name>TCK_GPIO_Port</name></member>
+    <member refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kind="function"><name>Error_Handler</name></member>
+  </compound>
+  <compound refid="mpu6050_8h" kind="file"><name>mpu6050.h</name>
+    <member refid="mpu6050_8h_1aafa9c78f858c561cc64af97bbb57e393" kind="function"><name>MPU6050_Init</name></member>
+    <member refid="mpu6050_8h_1a5476709bd12c603fc74bae86f72db0d5" kind="function"><name>MPU6050_Read_Accel</name></member>
+    <member refid="mpu6050_8h_1a2329322c6cb1c7e939e00bd43db44b4b" kind="function"><name>MPU6050_Read_Gyro</name></member>
+    <member refid="mpu6050_8h_1a83eafd157dd3df2c9add558904ed62e0" kind="function"><name>MPU6050_Read_Temp</name></member>
+    <member refid="mpu6050_8h_1aabd50bac1ecae86151549a1a8a678382" kind="function"><name>MPU6050_Read_All</name></member>
+    <member refid="mpu6050_8h_1ae076945741048d0c5e3dbfeabc27f5e2" kind="function"><name>Kalman_getAngle</name></member>
+  </compound>
+  <compound refid="stm32f0xx__hal__conf_8h" kind="file"><name>stm32f0xx_hal_conf.h</name>
+    <member refid="stm32f0xx__hal__conf_8h_1a877ae99e8c47a609ea97c888912bf75f" kind="define"><name>HAL_MODULE_ENABLED</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a167269406e73327b95c3bb7b9cfe6d89" kind="define"><name>HAL_UART_MODULE_ENABLED</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1aa9b5a3a425901e097de70092dbe31e0f" kind="define"><name>HAL_CORTEX_MODULE_ENABLED</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a6552186102a1131b2849ac55a582945d" kind="define"><name>HAL_DMA_MODULE_ENABLED</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a7112575efe3740911f19a13e6b170fee" kind="define"><name>HAL_FLASH_MODULE_ENABLED</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a86165f80d6078719ee0715afe13febf5" kind="define"><name>HAL_GPIO_MODULE_ENABLED</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1aeb359e861d8a92c233c3229657dbcd74" kind="define"><name>HAL_EXTI_MODULE_ENABLED</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1ab51923c3716977d7923f49cc9d081aa8" kind="define"><name>HAL_PWR_MODULE_ENABLED</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1ac3dd74314ed62ac8575e2f9f48b3ac48" kind="define"><name>HAL_RCC_MODULE_ENABLED</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a19999766418b0224871f732d800841c6" kind="define"><name>HAL_I2C_MODULE_ENABLED</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1aeafcff4f57440c60e64812dddd13e7cb" kind="define"><name>HSE_VALUE</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a68ecbc9b0a1a40a1ec9d18d5e9747c4f" kind="define"><name>HSE_STARTUP_TIMEOUT</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1aaa8c76e274d0f6dd2cefb5d0b17fbc37" kind="define"><name>HSI_VALUE</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a83f109da654b670743786c6a45284b96" kind="define"><name>HSI_STARTUP_TIMEOUT</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a1d7e57535cc8aaa1c366229556ac4c43" kind="define"><name>HSI14_VALUE</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a47f01e5e3f2edfa94bf74c08835f3875" kind="define"><name>HSI48_VALUE</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a4872023e65449c0506aac3ea6bec99e9" kind="define"><name>LSI_VALUE</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a7bbb9d19e5189a6ccd0fb6fa6177d20d" kind="define"><name>LSE_VALUE</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a85e6fc812dc26f7161a04be2568a5462" kind="define"><name>LSE_STARTUP_TIMEOUT</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1aae550dad9f96d52cfce5e539adadbbb4" kind="define"><name>VDD_VALUE</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1ae27809d4959b9fd5b5d974e3e1c77d2e" kind="define"><name>TICK_INT_PRIORITY</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1ad048ac737242c2c2cb9f4a72953d10ce" kind="define"><name>USE_RTOS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a13fc0d5e7bb925385c0cc0772ba6a391" kind="define"><name>PREFETCH_ENABLE</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a3379989d46599c7e19a43f42e9145a4a" kind="define"><name>INSTRUCTION_CACHE_ENABLE</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a5b4c32a40cf49b06c0d761e385949a6b" kind="define"><name>DATA_CACHE_ENABLE</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a4c6fab687afc7ba4469b1b2d34472358" kind="define"><name>USE_SPI_CRC</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1acc33abd5393affd16cc4a1397839dfe4" kind="define"><name>USE_HAL_ADC_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a7f6bf06dfbf91fd866a9d62ab54d0e81" kind="define"><name>USE_HAL_CAN_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a94f0f5f870b8e45eab42cfe77e4210ed" kind="define"><name>USE_HAL_COMP_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a4b1a233981ef5d96551ea1f08d1a7ea8" kind="define"><name>USE_HAL_CEC_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1af9580ae862dcc02cee7822030c48d6b8" kind="define"><name>USE_HAL_DAC_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a99be773f7f62b6277d1c87658e085725" kind="define"><name>USE_HAL_I2C_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a74cae3ff25398b4a06a579a7164a8518" kind="define"><name>USE_HAL_SMBUS_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a68c6c7c633e6cb378824020ef00a5701" kind="define"><name>USE_HAL_UART_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1ac79983d623c7f760c5077618a453561b" kind="define"><name>USE_HAL_USART_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a4a459bcaa046998e6939fc66b0831e96" kind="define"><name>USE_HAL_IRDA_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a43bb2335641440326db0f05526c1bff9" kind="define"><name>USE_HAL_SMARTCARD_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a6879802837c27d8761d8a8fdab626891" kind="define"><name>USE_HAL_WWDG_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a54badbcdb096ce802d2eed981cbbc31a" kind="define"><name>USE_HAL_RTC_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a8d8be2d7e4ed5bfc7b64f60ba604c749" kind="define"><name>USE_HAL_SPI_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a1bdc791c35b20c7188b3d74fd6c30ebf" kind="define"><name>USE_HAL_I2S_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a5ef4d67cd7630f6e2e67d17370fbffdb" kind="define"><name>USE_HAL_TIM_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a350c00459720e655e87ca789795fee23" kind="define"><name>USE_HAL_TSC_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1afd18c04aa4a4a54446df8083be875a00" kind="define"><name>USE_HAL_PCD_REGISTER_CALLBACKS</name></member>
+    <member refid="stm32f0xx__hal__conf_8h_1a631dea7b230e600555f979c62af1de21" kind="define"><name>assert_param</name></member>
+  </compound>
+  <compound refid="stm32f0xx__it_8h" kind="file"><name>stm32f0xx_it.h</name>
+    <member refid="stm32f0xx__it_8h_1a6ad7a5e3ee69cb6db6a6b9111ba898bc" kind="function"><name>NMI_Handler</name></member>
+    <member refid="stm32f0xx__it_8h_1a2bffc10d5bd4106753b7c30e86903bea" kind="function"><name>HardFault_Handler</name></member>
+    <member refid="stm32f0xx__it_8h_1a3e5ddb3df0d62f2dc357e64a3f04a6ce" kind="function"><name>SVC_Handler</name></member>
+    <member refid="stm32f0xx__it_8h_1a6303e1f258cbdc1f970ce579cc015623" kind="function"><name>PendSV_Handler</name></member>
+    <member refid="stm32f0xx__it_8h_1ab5e09814056d617c521549e542639b7e" kind="function"><name>SysTick_Handler</name></member>
+    <member refid="stm32f0xx__it_8h_1a3595b205bdfadf55a525f2d4f438d122" kind="function"><name>EXTI4_15_IRQHandler</name></member>
+    <member refid="stm32f0xx__it_8h_1a7139cd4baabbbcbab0c1fe6d7d4ae1cc" kind="function"><name>USART1_IRQHandler</name></member>
+    <member refid="stm32f0xx__it_8h_1a0ca6fd0e6f77921dd1123539857ba0a8" kind="function"><name>USART2_IRQHandler</name></member>
+  </compound>
+  <compound refid="controller_8c" kind="file"><name>controller.c</name>
+    <member refid="controller_8c_1a0715621232418c080f58db36d0d5e983" kind="function"><name>pwmToAscii</name></member>
+    <member refid="controller_8c_1aafa92e2d6ed9e557757389f828261abc" kind="function"><name>deathzonefit</name></member>
+    <member refid="controller_8c_1af66b652f6a00278d8c3762fc3e0da890" kind="function"><name>vectorState</name></member>
+    <member refid="controller_8c_1a50d0e2e6139d69c55c535c74d4c7077e" kind="function"><name>hoverInit</name></member>
+    <member refid="controller_8c_1a70f9428f5c81614c11fb0ba084b70929" kind="function"><name>pwmSmooting</name></member>
+    <member refid="controller_8c_1a725b010a425c9a3c2bda47ae81732b8c" kind="function"><name>vectorToPwm</name></member>
+    <member refid="controller_8c_1a06645bfc45724a560b1ea2dde074525d" kind="function"><name>angleToVector</name></member>
+    <member refid="controller_8c_1a325f4f19b8eb9a5326bbf307f1a9dc3b" kind="function"><name>command</name></member>
+  </compound>
+  <compound refid="main_8c" kind="file"><name>main.c</name>
+    <member refid="main_8c_1a46130dc86f2322714bba26960b64e7bb" kind="define"><name>BUFFER_LEN</name></member>
+    <member refid="main_8c_1a88d70c2c026b9cb514de366a7b20ef8e" kind="define"><name>KF</name></member>
+    <member refid="main_8c_1af7b2c26e44dadaaa798a5c3d82914ba7" kind="variable"><name>hi2c1</name></member>
+    <member refid="main_8c_1a2cf715bef37f7e8ef385a30974a5f0d5" kind="variable"><name>huart1</name></member>
+    <member refid="main_8c_1aa9479c261d65eecedd3d9582f7f0f89c" kind="variable"><name>huart2</name></member>
+    <member refid="main_8c_1a93357d136721fbae9e3787ddd1a42024" kind="variable"><name>MPU6050</name></member>
+    <member refid="main_8c_1a69e0ec05140bebffbd22342b2f616eab" kind="variable"><name>hHover</name></member>
+    <member refid="main_8c_1aaa24c7e31de9f9b48e1da1b7a5f4125c" kind="variable"><name>hInput</name></member>
+    <member refid="main_8c_1a4aa5ae7da3192a39914575d5b9c75df6" kind="variable"><name>hOutput</name></member>
+    <member refid="main_8c_1ae5167f6e25e0cd98dde6306fd4a50241" kind="variable"><name>hVector</name></member>
+    <member refid="main_8c_1ae29f244edcef79e061c85dac10bbc513" kind="variable"><name>x_angle_base</name></member>
+    <member refid="main_8c_1a4ed5d81d05128863e501862befa958ed" kind="variable"><name>y_angle_base</name></member>
+    <member refid="main_8c_1a98c7167974a92cd100d746166952a191" kind="variable"><name>rx_buffer</name></member>
+    <member refid="main_8c_1a80f5e7ce62bd666bf36ca6b80e49b891" kind="variable"><name>tx_buffer</name></member>
+    <member refid="main_8c_1a70af21c671abfcc773614a9a4f63d920" kind="function"><name>SystemClock_Config</name></member>
+    <member refid="main_8c_1ae89fdd15729ad41a66911190fcbab23a" kind="function"><name>MX_GPIO_Init</name></member>
+    <member refid="main_8c_1a6db1014d713f6f5c0f52a13299ee0733" kind="function"><name>MX_USART2_UART_Init</name></member>
+    <member refid="main_8c_1a4230d11f81d0b16e112f1cc3f40cb42f" kind="function"><name>MX_I2C1_Init</name></member>
+    <member refid="main_8c_1a62f4b77e20bccafe98a183771749c20c" kind="function"><name>MX_USART1_UART_Init</name></member>
+    <member refid="main_8c_1a0cd91fd3a9608559c2a87a8ba6cba55f" kind="function"><name>HAL_GPIO_EXTI_Callback</name></member>
+    <member refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" kind="function"><name>main</name></member>
+    <member refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" kind="function"><name>Error_Handler</name></member>
+  </compound>
+  <compound refid="mpu6050_8c" kind="file"><name>mpu6050.c</name>
+    <member refid="mpu6050_8c_1a89e47af0449640d4f15191aba5ca24c6" kind="define"><name>RAD_TO_DEG</name></member>
+    <member refid="mpu6050_8c_1a7e23ffa5bb718d06bcee89bbdf844ed8" kind="define"><name>WHO_AM_I_REG</name></member>
+    <member refid="mpu6050_8c_1af9bd016ab99b299a4816433252e31c3d" kind="define"><name>PWR_MGMT_1_REG</name></member>
+    <member refid="mpu6050_8c_1aa2208da6faf439107b23dee629bb8398" kind="define"><name>SMPLRT_DIV_REG</name></member>
+    <member refid="mpu6050_8c_1ad1d05dc09d0025498687ab7e30ffd4e4" kind="define"><name>ACCEL_CONFIG_REG</name></member>
+    <member refid="mpu6050_8c_1a12d3f98f5ae302f7aab5895be9388d69" kind="define"><name>ACCEL_XOUT_H_REG</name></member>
+    <member refid="mpu6050_8c_1aff3d1ca89fdcdfd99fe28f579b79a041" kind="define"><name>TEMP_OUT_H_REG</name></member>
+    <member refid="mpu6050_8c_1a5b1b1a1ea1298b67cdab17a7213c6356" kind="define"><name>GYRO_CONFIG_REG</name></member>
+    <member refid="mpu6050_8c_1ae2681bec6196f74ae52136e8af1a4dcf" kind="define"><name>GYRO_XOUT_H_REG</name></member>
+    <member refid="mpu6050_8c_1ad4d6255d8f7e5dc770e773b787977508" kind="define"><name>MPU6050_ADDR</name></member>
+    <member refid="mpu6050_8c_1ac339720e63c0ffe1ddaa3ab29e207949" kind="variable"><name>i2c_timeout</name></member>
+    <member refid="mpu6050_8c_1a4b2a23e087dac68793981b718a4f5ff4" kind="variable"><name>Accel_Z_corrector</name></member>
+    <member refid="mpu6050_8c_1a0d88807102c8d96e37cb4751f0d5a7d3" kind="variable"><name>timer</name></member>
+    <member refid="mpu6050_8c_1af95f7c46fb9b43bb2444904c00426545" kind="variable"><name>KalmanX</name></member>
+    <member refid="mpu6050_8c_1ab827d411b48396d9a23088aa1adcc919" kind="variable"><name>KalmanY</name></member>
+    <member refid="mpu6050_8c_1aafa9c78f858c561cc64af97bbb57e393" kind="function"><name>MPU6050_Init</name></member>
+    <member refid="mpu6050_8c_1a5476709bd12c603fc74bae86f72db0d5" kind="function"><name>MPU6050_Read_Accel</name></member>
+    <member refid="mpu6050_8c_1a2329322c6cb1c7e939e00bd43db44b4b" kind="function"><name>MPU6050_Read_Gyro</name></member>
+    <member refid="mpu6050_8c_1a83eafd157dd3df2c9add558904ed62e0" kind="function"><name>MPU6050_Read_Temp</name></member>
+    <member refid="mpu6050_8c_1aabd50bac1ecae86151549a1a8a678382" kind="function"><name>MPU6050_Read_All</name></member>
+    <member refid="mpu6050_8c_1ae076945741048d0c5e3dbfeabc27f5e2" kind="function"><name>Kalman_getAngle</name></member>
+  </compound>
+  <compound refid="stm32f0xx__hal__msp_8c" kind="file"><name>stm32f0xx_hal_msp.c</name>
+    <member refid="stm32f0xx__hal__msp_8c_1ae4fb8e66865c87d0ebab74a726a6891f" kind="function"><name>HAL_MspInit</name></member>
+    <member refid="stm32f0xx__hal__msp_8c_1abe01a202c27b23fc150aa66af3130073" kind="function"><name>HAL_I2C_MspInit</name></member>
+    <member refid="stm32f0xx__hal__msp_8c_1a2ec8d9b09854c732e2feed549278f048" kind="function"><name>HAL_I2C_MspDeInit</name></member>
+    <member refid="stm32f0xx__hal__msp_8c_1a0e553b32211877322f949b14801bbfa7" kind="function"><name>HAL_UART_MspInit</name></member>
+    <member refid="stm32f0xx__hal__msp_8c_1a718f39804e3b910d738a0e1e46151188" kind="function"><name>HAL_UART_MspDeInit</name></member>
+  </compound>
+  <compound refid="stm32f0xx__it_8c" kind="file"><name>stm32f0xx_it.c</name>
+    <member refid="stm32f0xx__it_8c_1a2cf715bef37f7e8ef385a30974a5f0d5" kind="variable"><name>huart1</name></member>
+    <member refid="stm32f0xx__it_8c_1aa9479c261d65eecedd3d9582f7f0f89c" kind="variable"><name>huart2</name></member>
+    <member refid="stm32f0xx__it_8c_1a6ad7a5e3ee69cb6db6a6b9111ba898bc" kind="function"><name>NMI_Handler</name></member>
+    <member refid="stm32f0xx__it_8c_1a2bffc10d5bd4106753b7c30e86903bea" kind="function"><name>HardFault_Handler</name></member>
+    <member refid="stm32f0xx__it_8c_1a3e5ddb3df0d62f2dc357e64a3f04a6ce" kind="function"><name>SVC_Handler</name></member>
+    <member refid="stm32f0xx__it_8c_1a6303e1f258cbdc1f970ce579cc015623" kind="function"><name>PendSV_Handler</name></member>
+    <member refid="stm32f0xx__it_8c_1ab5e09814056d617c521549e542639b7e" kind="function"><name>SysTick_Handler</name></member>
+    <member refid="stm32f0xx__it_8c_1a3595b205bdfadf55a525f2d4f438d122" kind="function"><name>EXTI4_15_IRQHandler</name></member>
+    <member refid="stm32f0xx__it_8c_1a7139cd4baabbbcbab0c1fe6d7d4ae1cc" kind="function"><name>USART1_IRQHandler</name></member>
+    <member refid="stm32f0xx__it_8c_1a0ca6fd0e6f77921dd1123539857ba0a8" kind="function"><name>USART2_IRQHandler</name></member>
+  </compound>
+  <compound refid="syscalls_8c" kind="file"><name>syscalls.c</name>
+    <member refid="syscalls_8c_1aa006daaf11f1e2e45a6ababaf463212b" kind="variable"><name>environ</name></member>
+    <member refid="syscalls_8c_1aa53ed4b191897a1bfc205aa1da005d24" kind="function"><name>__io_putchar</name></member>
+    <member refid="syscalls_8c_1ad0122671640a3af49792ddaa59e8294e" kind="function"><name>__io_getchar</name></member>
+    <member refid="syscalls_8c_1a25c7f100d498300fff65568c2fcfe639" kind="function"><name>initialise_monitor_handles</name></member>
+    <member refid="syscalls_8c_1a945e539df8e0f66d3c73c533fe1968ee" kind="function"><name>_getpid</name></member>
+    <member refid="syscalls_8c_1a062a5101199c3128edd5170f2575bb10" kind="function"><name>_kill</name></member>
+    <member refid="syscalls_8c_1abc96bd69b58b2deaddb484478d911c1b" kind="function"><name>_exit</name></member>
+    <member refid="syscalls_8c_1af9aace1b44b73111e15aa39f06f43456" kind="function"><name>__attribute__</name></member>
+    <member refid="syscalls_8c_1a5aab5e2acfd600e3667dc915a2bbc7cb" kind="function"><name>_close</name></member>
+    <member refid="syscalls_8c_1a41eef54307912a82d20e71c3d47315aa" kind="function"><name>_fstat</name></member>
+    <member refid="syscalls_8c_1ad3134a3dc296622b8d1c5456e481505b" kind="function"><name>_isatty</name></member>
+    <member refid="syscalls_8c_1a7a61311bdf1cb025fc07dc2bdae22ce4" kind="function"><name>_lseek</name></member>
+    <member refid="syscalls_8c_1a270c9113047edd8d64186710ad76062b" kind="function"><name>_open</name></member>
+    <member refid="syscalls_8c_1aeef0c3372d04caa1bcc99fed2ab6ec72" kind="function"><name>_wait</name></member>
+    <member refid="syscalls_8c_1a70b2f211d665cded5637065aa2bb89dc" kind="function"><name>_unlink</name></member>
+    <member refid="syscalls_8c_1aaf727ebf57cd64d6c58b23e6ee4a4a69" kind="function"><name>_times</name></member>
+    <member refid="syscalls_8c_1a4711e961db985ed2c850a8be6597af50" kind="function"><name>_stat</name></member>
+    <member refid="syscalls_8c_1a31da4cd5328defa76a9e2246992aba12" kind="function"><name>_link</name></member>
+    <member refid="syscalls_8c_1a6cb6331c9d166180903d5fb78b9c9dd7" kind="function"><name>_fork</name></member>
+    <member refid="syscalls_8c_1ad2a07db8fdf26151eb98ba5711fad8c5" kind="function"><name>_execve</name></member>
+  </compound>
+  <compound refid="sysmem_8c" kind="file"><name>sysmem.c</name>
+    <member refid="sysmem_8c_1a2cf862d604e9c7cfcf0528a0f539a6a5" kind="variable"><name>__sbrk_heap_end</name></member>
+    <member refid="sysmem_8c_1a68125648bcce70b6bb3aa0be50e99700" kind="function"><name>_sbrk</name></member>
+  </compound>
+  <compound refid="system__stm32f0xx_8c" kind="file"><name>system_stm32f0xx.c</name>
+    <member refid="group___s_t_m32_f0xx___system___private___defines_1gaeafcff4f57440c60e64812dddd13e7cb" kind="define"><name>HSE_VALUE</name></member>
+    <member refid="group___s_t_m32_f0xx___system___private___defines_1gaaa8c76e274d0f6dd2cefb5d0b17fbc37" kind="define"><name>HSI_VALUE</name></member>
+    <member refid="group___s_t_m32_f0xx___system___private___defines_1ga47f01e5e3f2edfa94bf74c08835f3875" kind="define"><name>HSI48_VALUE</name></member>
+    <member refid="group___s_t_m32_f0xx___system___private___variables_1gaa3cd3e43291e81e795d642b79b6088e6" kind="variable"><name>SystemCoreClock</name></member>
+    <member refid="group___s_t_m32_f0xx___system___private___variables_1ga6e1d9cd666f0eacbfde31e9932a93466" kind="variable"><name>AHBPrescTable</name></member>
+    <member refid="group___s_t_m32_f0xx___system___private___variables_1ga5b4f8b768465842cf854a8f993b375e9" kind="variable"><name>APBPrescTable</name></member>
+    <member refid="group___s_t_m32_f0xx___system___private___functions_1ga93f514700ccf00d08dbdcff7f1224eb2" kind="function"><name>SystemInit</name></member>
+    <member refid="group___s_t_m32_f0xx___system___private___functions_1gae0c36a9591fe6e9c45ecb21a794f0f0f" kind="function"><name>SystemCoreClockUpdate</name></member>
+  </compound>
+  <compound refid="group___c_m_s_i_s" kind="group"><name>CMSIS</name>
+  </compound>
+  <compound refid="group__stm32f0xx__system" kind="group"><name>stm32f0xx_system</name>
+  </compound>
+  <compound refid="group___s_t_m32_f0xx___system___private___includes" kind="group"><name>STM32F0xx_System_Private_Includes</name>
+  </compound>
+  <compound refid="group___s_t_m32_f0xx___system___private___types_definitions" kind="group"><name>STM32F0xx_System_Private_TypesDefinitions</name>
+  </compound>
+  <compound refid="group___s_t_m32_f0xx___system___private___defines" kind="group"><name>STM32F0xx_System_Private_Defines</name>
+    <member refid="group___s_t_m32_f0xx___system___private___defines_1gaeafcff4f57440c60e64812dddd13e7cb" kind="define"><name>HSE_VALUE</name></member>
+    <member refid="group___s_t_m32_f0xx___system___private___defines_1gaaa8c76e274d0f6dd2cefb5d0b17fbc37" kind="define"><name>HSI_VALUE</name></member>
+    <member refid="group___s_t_m32_f0xx___system___private___defines_1ga47f01e5e3f2edfa94bf74c08835f3875" kind="define"><name>HSI48_VALUE</name></member>
+  </compound>
+  <compound refid="group___s_t_m32_f0xx___system___private___macros" kind="group"><name>STM32F0xx_System_Private_Macros</name>
+  </compound>
+  <compound refid="group___s_t_m32_f0xx___system___private___variables" kind="group"><name>STM32F0xx_System_Private_Variables</name>
+    <member refid="group___s_t_m32_f0xx___system___private___variables_1gaa3cd3e43291e81e795d642b79b6088e6" kind="variable"><name>SystemCoreClock</name></member>
+    <member refid="group___s_t_m32_f0xx___system___private___variables_1ga6e1d9cd666f0eacbfde31e9932a93466" kind="variable"><name>AHBPrescTable</name></member>
+    <member refid="group___s_t_m32_f0xx___system___private___variables_1ga5b4f8b768465842cf854a8f993b375e9" kind="variable"><name>APBPrescTable</name></member>
+  </compound>
+  <compound refid="group___s_t_m32_f0xx___system___private___function_prototypes" kind="group"><name>STM32F0xx_System_Private_FunctionPrototypes</name>
+  </compound>
+  <compound refid="group___s_t_m32_f0xx___system___private___functions" kind="group"><name>STM32F0xx_System_Private_Functions</name>
+    <member refid="group___s_t_m32_f0xx___system___private___functions_1ga93f514700ccf00d08dbdcff7f1224eb2" kind="function"><name>SystemInit</name></member>
+    <member refid="group___s_t_m32_f0xx___system___private___functions_1gae0c36a9591fe6e9c45ecb21a794f0f0f" kind="function"><name>SystemCoreClockUpdate</name></member>
+  </compound>
+  <compound refid="dir_f93dfce691d792349f1c14ede440e2e6" kind="dir"><name>Inc</name>
+  </compound>
+  <compound refid="dir_413f4e031a85da0d68269c6fd2f76e1c" kind="dir"><name>Src</name>
+  </compound>
+</doxygenindex>

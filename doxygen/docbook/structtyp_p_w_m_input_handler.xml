@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structtyp_p_w_m_input_handler" xml:lang="en-US">
+<title>typPWMInputHandler Struct Reference</title>
+<indexterm><primary>typPWMInputHandler</primary></indexterm>
+<para>
+
+<para>unprossessed pwms for motors </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;controller.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structtyp_p_w_m_input_handler_1ac0ebf36a48e788656c7fb0dc42afb993"/>uint8_t <emphasis role="strong">pwmInputA</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structtyp_p_w_m_input_handler_1a1a32e2a6c7fe7c65ff25408692685f72"/>uint8_t <emphasis role="strong">pwmInputB</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structtyp_p_w_m_input_handler_1a458f078776b5100bb5a70aa44b10c41b"/>uint8_t <emphasis role="strong">pwmInputC</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structtyp_p_w_m_input_handler_1accb76cbdcba1f7c89ef092dbc848746f"/>uint8_t <emphasis role="strong">pwmInputD</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>unprossessed pwms for motors </para>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Inc/controller.h</section>
+</section>

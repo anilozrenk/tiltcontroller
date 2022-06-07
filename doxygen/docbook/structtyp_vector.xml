@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structtyp_vector" xml:lang="en-US">
+<title>typVector Struct Reference</title>
+<indexterm><primary>typVector</primary></indexterm>
+<para>
+
+<para>vector indentifier </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;controller.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structtyp_vector_1a3ae8e6b532f2f66832dc9ebe71f5b5de"/>uint8_t <emphasis role="strong">forward</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structtyp_vector_1a9e94c7c802bd99faa5711d197d82ae77"/>uint8_t <emphasis role="strong">left</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structtyp_vector_1af23d7662031ce7caada5479ec8273fac"/>uint8_t <emphasis role="strong">right</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structtyp_vector_1a2ec109296d1e043bd47c81037844d36e"/>uint8_t <emphasis role="strong">backward</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>vector indentifier </para>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Inc/controller.h</section>
+</section>

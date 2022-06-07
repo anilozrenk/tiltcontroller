@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="structtyp_p_w_m_output_handler" kind="struct" language="C++" prot="public">
+    <compoundname>typPWMOutputHandler</compoundname>
+    <includes refid="controller_8h" local="no">controller.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtyp_p_w_m_output_handler_1acf5fb2ccadc63ed3509ba63ba5354bc9" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t typPWMOutputHandler::pwmOutputA</definition>
+        <argsstring></argsstring>
+        <name>pwmOutputA</name>
+        <qualifiedname>typPWMOutputHandler::pwmOutputA</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="53" column="9" bodyfile="Inc/controller.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtyp_p_w_m_output_handler_1ad4922b318ef0c65a349563f34969b657" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t typPWMOutputHandler::pwmOutputB</definition>
+        <argsstring></argsstring>
+        <name>pwmOutputB</name>
+        <qualifiedname>typPWMOutputHandler::pwmOutputB</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="54" column="9" bodyfile="Inc/controller.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtyp_p_w_m_output_handler_1ad35d8143ca8abaf5e626028cc4261c32" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t typPWMOutputHandler::pwmOutputC</definition>
+        <argsstring></argsstring>
+        <name>pwmOutputC</name>
+        <qualifiedname>typPWMOutputHandler::pwmOutputC</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="55" column="9" bodyfile="Inc/controller.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtyp_p_w_m_output_handler_1ad1bcd8bf7b9363cdd882985c2257b743" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t typPWMOutputHandler::pwmOutputD</definition>
+        <argsstring></argsstring>
+        <name>pwmOutputD</name>
+        <qualifiedname>typPWMOutputHandler::pwmOutputD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="56" column="9" bodyfile="Inc/controller.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>obselete </para>
+    </briefdescription>
+    <detaileddescription>
+<para>OBSOLETE output pwm for motors </para>
+    </detaileddescription>
+    <location file="Inc/controller.h" line="52" column="1" bodyfile="Inc/controller.h" bodystart="52" bodyend="57"/>
+    <listofallmembers>
+      <member refid="structtyp_p_w_m_output_handler_1acf5fb2ccadc63ed3509ba63ba5354bc9" prot="public" virt="non-virtual"><scope>typPWMOutputHandler</scope><name>pwmOutputA</name></member>
+      <member refid="structtyp_p_w_m_output_handler_1ad4922b318ef0c65a349563f34969b657" prot="public" virt="non-virtual"><scope>typPWMOutputHandler</scope><name>pwmOutputB</name></member>
+      <member refid="structtyp_p_w_m_output_handler_1ad35d8143ca8abaf5e626028cc4261c32" prot="public" virt="non-virtual"><scope>typPWMOutputHandler</scope><name>pwmOutputC</name></member>
+      <member refid="structtyp_p_w_m_output_handler_1ad1bcd8bf7b9363cdd882985c2257b743" prot="public" virt="non-virtual"><scope>typPWMOutputHandler</scope><name>pwmOutputD</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

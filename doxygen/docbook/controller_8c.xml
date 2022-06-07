@@ -1,0 +1,336 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_controller_8c" xml:lang="en-US">
+<title>Src/controller.c File Reference</title>
+<indexterm><primary>Src/controller.c</primary></indexterm>
+<para>
+
+<para>all process angle data to sendable buffer </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;controller.h&quot;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_controller_8c_1a0715621232418c080f58db36d0d5e983">pwmToAscii</link> (<link linkend="_structtyp_motor_handler">typMotorHandler</link> *hmotor, char *buff)</para>
+
+<para>8 bit unsigned integer value to string </para>
+</listitem>
+            <listitem><para>void <link linkend="_controller_8c_1aafa92e2d6ed9e557757389f828261abc">deathzonefit</link> (double *delta_x, double pmax, double nmax, double death_zone)</para>
+
+<para>limit the angle and add deathzone </para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_controller_8c_1af66b652f6a00278d8c3762fc3e0da890">vectorState</link> (<link linkend="_structtyp_vector">typVector</link> *vector)</para>
+
+<para>decide the state of vectors </para>
+</listitem>
+            <listitem><para>void <link linkend="_controller_8c_1a50d0e2e6139d69c55c535c74d4c7077e">hoverInit</link> (<link linkend="_structtyp_hover_handler">typHoverHandler</link> *hhov)</para>
+
+<para>intiate hovercraft give motors ascii characters set all motors speeds to 0 </para>
+</listitem>
+            <listitem><para>void <link linkend="_controller_8c_1a70f9428f5c81614c11fb0ba084b70929">pwmSmooting</link> (<link linkend="_structtyp_hover_handler">typHoverHandler</link> *hHov, <link linkend="_structtyp_p_w_m_input_handler">typPWMInputHandler</link> *input, double kf)</para>
+
+<para>exponantiel filter for smoothing motor pwm </para>
+</listitem>
+            <listitem><para>void <link linkend="_controller_8c_1a725b010a425c9a3c2bda47ae81732b8c">vectorToPwm</link> (<link linkend="_structtyp_vector">typVector</link> *hVec, <link linkend="_structtyp_p_w_m_input_handler">typPWMInputHandler</link> *pwmInput)</para>
+
+<para>generate pwm value corrosponding to vector states </para>
+</listitem>
+            <listitem><para>void <link linkend="_controller_8c_1a06645bfc45724a560b1ea2dde074525d">angleToVector</link> (<link linkend="_structtyp_vector">typVector</link> *hVec, double curr_angle_x, double start_angle_x, double curr_angle_y, double start_angle_y, double death_zone)</para>
+
+<para>angle values to vector calues </para>
+</listitem>
+            <listitem><para><anchor xml:id="_controller_8c_1a325f4f19b8eb9a5326bbf307f1a9dc3b"/>void <emphasis role="strong">command</emphasis> (<link linkend="_structtyp_hover_handler">typHoverHandler</link> *hHov, char *buff)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>all process angle data to sendable buffer </para>
+
+<para><formalpara><title>Date</title>
+
+<para>05/13/2022 </para>
+</formalpara>
+<formalpara><title>Author</title>
+
+<para>Anil </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_controller_8c_1a06645bfc45724a560b1ea2dde074525d"/><section>
+    <title>angleToVector()</title>
+<indexterm><primary>angleToVector</primary><secondary>controller.c</secondary></indexterm>
+<indexterm><primary>controller.c</primary><secondary>angleToVector</secondary></indexterm>
+<para><computeroutput>void angleToVector (<link linkend="_structtyp_vector">typVector</link> * hVec, double curr_angle_x, double start_angle_x, double curr_angle_y, double start_angle_y, double death_zone)</computeroutput></para><para>
+
+<para>angle values to vector calues </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry><link linkend="_structtyp_vector">typVector</link></entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>angle_x</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>base_angle_x</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>angle_y</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>base_angle_y</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>deathzone</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_controller_8c_1aafa92e2d6ed9e557757389f828261abc"/><section>
+    <title>deathzonefit()</title>
+<indexterm><primary>deathzonefit</primary><secondary>controller.c</secondary></indexterm>
+<indexterm><primary>controller.c</primary><secondary>deathzonefit</secondary></indexterm>
+<para><computeroutput>void deathzonefit (double * delta_x, double pmax, double nmax, double death_zone)</computeroutput></para><para>
+
+<para>limit the angle and add deathzone </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>delta_angle</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>positive</entry><entry>
+<para>max </para>
+</entry>
+                            </row>
+                            <row>
+<entry>negative</entry><entry>
+<para>max </para>
+</entry>
+                            </row>
+                            <row>
+<entry>deathzone</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_controller_8c_1a50d0e2e6139d69c55c535c74d4c7077e"/><section>
+    <title>hoverInit()</title>
+<indexterm><primary>hoverInit</primary><secondary>controller.c</secondary></indexterm>
+<indexterm><primary>controller.c</primary><secondary>hoverInit</secondary></indexterm>
+<para><computeroutput>void hoverInit (<link linkend="_structtyp_hover_handler">typHoverHandler</link> * hhov)</computeroutput></para><para>
+
+<para>intiate hovercraft give motors ascii characters set all motors speeds to 0 </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry><link linkend="_structtyp_hover_handler">typHoverHandler</link></entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_controller_8c_1a70f9428f5c81614c11fb0ba084b70929"/><section>
+    <title>pwmSmooting()</title>
+<indexterm><primary>pwmSmooting</primary><secondary>controller.c</secondary></indexterm>
+<indexterm><primary>controller.c</primary><secondary>pwmSmooting</secondary></indexterm>
+<para><computeroutput>void pwmSmooting (<link linkend="_structtyp_hover_handler">typHoverHandler</link> * hHov, <link linkend="_structtyp_p_w_m_input_handler">typPWMInputHandler</link> * input, double kf)</computeroutput></para><para>
+
+<para>exponantiel filter for smoothing motor pwm </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry><link linkend="_structtyp_hover_handler">typHoverHandler</link></entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry><link linkend="_structtyp_p_w_m_input_handler">typPWMInputHandler</link></entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_controller_8c_1a0715621232418c080f58db36d0d5e983"/><section>
+    <title>pwmToAscii()</title>
+<indexterm><primary>pwmToAscii</primary><secondary>controller.c</secondary></indexterm>
+<indexterm><primary>controller.c</primary><secondary>pwmToAscii</secondary></indexterm>
+<para><computeroutput>void pwmToAscii (<link linkend="_structtyp_motor_handler">typMotorHandler</link> * hmotor, char * buff)</computeroutput></para><para>
+
+<para>8 bit unsigned integer value to string </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry><link linkend="_structtyp_motor_handler">typMotorHandler</link></entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>char</entry><entry>
+<para>*buffer </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_controller_8c_1af66b652f6a00278d8c3762fc3e0da890"/><section>
+    <title>vectorState()</title>
+<indexterm><primary>vectorState</primary><secondary>controller.c</secondary></indexterm>
+<indexterm><primary>controller.c</primary><secondary>vectorState</secondary></indexterm>
+<para><computeroutput>uint8_t vectorState (<link linkend="_structtyp_vector">typVector</link> * vector)</computeroutput></para><para>
+
+<para>decide the state of vectors </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry><link linkend="_structtyp_vector">typVector</link></entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_controller_8c_1a725b010a425c9a3c2bda47ae81732b8c"/><section>
+    <title>vectorToPwm()</title>
+<indexterm><primary>vectorToPwm</primary><secondary>controller.c</secondary></indexterm>
+<indexterm><primary>controller.c</primary><secondary>vectorToPwm</secondary></indexterm>
+<para><computeroutput>void vectorToPwm (<link linkend="_structtyp_vector">typVector</link> * hVec, <link linkend="_structtyp_p_w_m_input_handler">typPWMInputHandler</link> * pwmInput)</computeroutput></para><para>
+
+<para>generate pwm value corrosponding to vector states </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry><link linkend="_structtyp_p_w_m_input_handler">typPWMInputHandler</link></entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry><link linkend="_structtyp_vector">typVector</link></entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+</section>

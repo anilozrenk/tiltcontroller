@@ -1,0 +1,79 @@
+\hypertarget{controller_8h_source}{}\doxysection{controller.\+h}
+\label{controller_8h_source}\index{Inc/controller.h@{Inc/controller.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ *  @file controller.h}}
+\DoxyCodeLine{3 \textcolor{comment}{ *  @author: Anil Ozrenk}}
+\DoxyCodeLine{4 \textcolor{comment}{ *  @date 05/13/2022}}
+\DoxyCodeLine{5 \textcolor{comment}{ *}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef \_CONTROL\_H\_}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define \_CONTROL\_H\_}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define OK 'F' }}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define MAX\_POWER 255}}
+\DoxyCodeLine{16 \textcolor{keyword}{enum} vector\_state\{}
+\DoxyCodeLine{17     forward,}
+\DoxyCodeLine{18     turn\_left,}
+\DoxyCodeLine{19     turn\_right,}
+\DoxyCodeLine{20     forward\_left,}
+\DoxyCodeLine{21     forward\_right,}
+\DoxyCodeLine{22     idle,}
+\DoxyCodeLine{23     halt,}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{27 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{28     \textcolor{keywordtype}{char} \mbox{\hyperlink{structtyp_motor_handler_a10079f56950ea7b09285bc6e25becfd3}{motorCode}}; }
+\DoxyCodeLine{29     uint8\_t \mbox{\hyperlink{structtyp_motor_handler_a4967f1adf97c765e3df9a8652fe772a1}{speed}}; }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \}\mbox{\hyperlink{structtyp_motor_handler}{typMotorHandler}};}
+\DoxyCodeLine{33 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{34     uint8\_t status;}
+\DoxyCodeLine{35     \mbox{\hyperlink{structtyp_motor_handler}{typMotorHandler}} \mbox{\hyperlink{structtyp_hover_handler_a09acc8fe77efb02ae6b1a14f05819a2a}{motorA}}; }
+\DoxyCodeLine{36     \mbox{\hyperlink{structtyp_motor_handler}{typMotorHandler}} \mbox{\hyperlink{structtyp_hover_handler_a0bd5d107132436fb2f732e7540172897}{motorB}}; }
+\DoxyCodeLine{37     \mbox{\hyperlink{structtyp_motor_handler}{typMotorHandler}} \mbox{\hyperlink{structtyp_hover_handler_a6a1c1f56a0e2ff25ee2dccf464a82d48}{motorC}}; }
+\DoxyCodeLine{38     \mbox{\hyperlink{structtyp_motor_handler}{typMotorHandler}} \mbox{\hyperlink{structtyp_hover_handler_a27be17122a14b45bf5c07d2116336f8d}{motorD}}; }
+\DoxyCodeLine{39 \}\mbox{\hyperlink{structtyp_hover_handler}{typHoverHandler}};}
+\DoxyCodeLine{41 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{42     uint8\_t pwmInputA;}
+\DoxyCodeLine{43     uint8\_t pwmInputB;}
+\DoxyCodeLine{44     uint8\_t pwmInputC;}
+\DoxyCodeLine{45     uint8\_t pwmInputD;}
+\DoxyCodeLine{46 \}\mbox{\hyperlink{structtyp_p_w_m_input_handler}{typPWMInputHandler}};}
+\DoxyCodeLine{52 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}\{   \textcolor{comment}{//0-\/255}}
+\DoxyCodeLine{53     uint8\_t pwmOutputA;}
+\DoxyCodeLine{54     uint8\_t pwmOutputB;}
+\DoxyCodeLine{55     uint8\_t pwmOutputC;}
+\DoxyCodeLine{56     uint8\_t pwmOutputD;}
+\DoxyCodeLine{57 \}\mbox{\hyperlink{structtyp_p_w_m_output_handler}{typPWMOutputHandler}};}
+\DoxyCodeLine{59 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{60     uint8\_t forward;}
+\DoxyCodeLine{61     uint8\_t left;}
+\DoxyCodeLine{62     uint8\_t right;}
+\DoxyCodeLine{63     uint8\_t backward;}
+\DoxyCodeLine{64 \}\mbox{\hyperlink{structtyp_vector}{typVector}};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8c_a725b010a425c9a3c2bda47ae81732b8c}{vectorToPwm}}(\mbox{\hyperlink{structtyp_vector}{typVector}} *hVec, \mbox{\hyperlink{structtyp_p_w_m_input_handler}{typPWMInputHandler}} *pwmInput);}
+\DoxyCodeLine{67 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8c_a06645bfc45724a560b1ea2dde074525d}{angleToVector}}(\mbox{\hyperlink{structtyp_vector}{typVector}} *hVec,\textcolor{keywordtype}{double} curr\_angle\_x,\textcolor{keywordtype}{double} start\_angle\_x,\textcolor{keywordtype}{double} curr\_angle\_y,\textcolor{keywordtype}{double} start\_angle\_y ,\textcolor{keywordtype}{double} death\_zone);}
+\DoxyCodeLine{68 \textcolor{keywordtype}{void} deathzone(\textcolor{keywordtype}{double} *delta\_x,\textcolor{keywordtype}{double} pmax,\textcolor{keywordtype}{double} nmax,\textcolor{keywordtype}{double} death\_zone);}
+\DoxyCodeLine{69 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8c_a50d0e2e6139d69c55c535c74d4c7077e}{hoverInit}}(\mbox{\hyperlink{structtyp_hover_handler}{typHoverHandler}} *hhov);}
+\DoxyCodeLine{70 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8c_a70f9428f5c81614c11fb0ba084b70929}{pwmSmooting}}(\mbox{\hyperlink{structtyp_hover_handler}{typHoverHandler}} *hHov,\mbox{\hyperlink{structtyp_p_w_m_input_handler}{typPWMInputHandler}} *input,\textcolor{keywordtype}{double} kf);}
+\DoxyCodeLine{71 \textcolor{keywordtype}{void} \mbox{\hyperlink{controller_8c_aafa92e2d6ed9e557757389f828261abc}{deathzonefit}}(\textcolor{keywordtype}{double} *delta\_x,\textcolor{keywordtype}{double} pmax,\textcolor{keywordtype}{double} nmax,\textcolor{keywordtype}{double} death\_zone);}
+\DoxyCodeLine{72 \textcolor{keywordtype}{void} command(\mbox{\hyperlink{structtyp_hover_handler}{typHoverHandler}} *hHov,\textcolor{keywordtype}{char} *buff);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+
+\end{DoxyCode}

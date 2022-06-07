@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="structtyp_hover_handler" kind="struct" language="C++" prot="public">
+    <compoundname>typHoverHandler</compoundname>
+    <includes refid="controller_8h" local="no">controller.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtyp_hover_handler_1a0be1a1680275142b4b99365c982bed17" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t typHoverHandler::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <qualifiedname>typHoverHandler::status</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="34" column="9" bodyfile="Inc/controller.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtyp_hover_handler_1a09acc8fe77efb02ae6b1a14f05819a2a" prot="public" static="no" mutable="no">
+        <type><ref refid="structtyp_motor_handler" kindref="compound">typMotorHandler</ref></type>
+        <definition>typMotorHandler typHoverHandler::motorA</definition>
+        <argsstring></argsstring>
+        <name>motorA</name>
+        <qualifiedname>typHoverHandler::motorA</qualifiedname>
+        <briefdescription>
+<para>motor left </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="35" column="17" bodyfile="Inc/controller.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtyp_hover_handler_1a0bd5d107132436fb2f732e7540172897" prot="public" static="no" mutable="no">
+        <type><ref refid="structtyp_motor_handler" kindref="compound">typMotorHandler</ref></type>
+        <definition>typMotorHandler typHoverHandler::motorB</definition>
+        <argsstring></argsstring>
+        <name>motorB</name>
+        <qualifiedname>typHoverHandler::motorB</qualifiedname>
+        <briefdescription>
+<para>motor right </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="36" column="17" bodyfile="Inc/controller.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtyp_hover_handler_1a6a1c1f56a0e2ff25ee2dccf464a82d48" prot="public" static="no" mutable="no">
+        <type><ref refid="structtyp_motor_handler" kindref="compound">typMotorHandler</ref></type>
+        <definition>typMotorHandler typHoverHandler::motorC</definition>
+        <argsstring></argsstring>
+        <name>motorC</name>
+        <qualifiedname>typHoverHandler::motorC</qualifiedname>
+        <briefdescription>
+<para>motor down </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="37" column="17" bodyfile="Inc/controller.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtyp_hover_handler_1a27be17122a14b45bf5c07d2116336f8d" prot="public" static="no" mutable="no">
+        <type><ref refid="structtyp_motor_handler" kindref="compound">typMotorHandler</ref></type>
+        <definition>typMotorHandler typHoverHandler::motorD</definition>
+        <argsstring></argsstring>
+        <name>motorD</name>
+        <qualifiedname>typHoverHandler::motorD</qualifiedname>
+        <briefdescription>
+<para>motor down </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="38" column="17" bodyfile="Inc/controller.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>struct for hovercraft </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>typHoverHandler</label>
+        <link refid="structtyp_hover_handler"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>motorA</edgelabel>
+          <edgelabel>motorB</edgelabel>
+          <edgelabel>motorC</edgelabel>
+          <edgelabel>motorD</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>typMotorHandler</label>
+        <link refid="structtyp_motor_handler"/>
+      </node>
+    </collaborationgraph>
+    <location file="Inc/controller.h" line="33" column="1" bodyfile="Inc/controller.h" bodystart="33" bodyend="39"/>
+    <listofallmembers>
+      <member refid="structtyp_hover_handler_1a09acc8fe77efb02ae6b1a14f05819a2a" prot="public" virt="non-virtual"><scope>typHoverHandler</scope><name>motorA</name></member>
+      <member refid="structtyp_hover_handler_1a0bd5d107132436fb2f732e7540172897" prot="public" virt="non-virtual"><scope>typHoverHandler</scope><name>motorB</name></member>
+      <member refid="structtyp_hover_handler_1a6a1c1f56a0e2ff25ee2dccf464a82d48" prot="public" virt="non-virtual"><scope>typHoverHandler</scope><name>motorC</name></member>
+      <member refid="structtyp_hover_handler_1a27be17122a14b45bf5c07d2116336f8d" prot="public" virt="non-virtual"><scope>typHoverHandler</scope><name>motorD</name></member>
+      <member refid="structtyp_hover_handler_1a0be1a1680275142b4b99365c982bed17" prot="public" virt="non-virtual"><scope>typHoverHandler</scope><name>status</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

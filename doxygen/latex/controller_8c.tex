@@ -1,0 +1,169 @@
+\hypertarget{controller_8c}{}\doxysection{Src/controller.c File Reference}
+\label{controller_8c}\index{Src/controller.c@{Src/controller.c}}
+
+
+all process angle data to sendable buffer  
+
+
+{\ttfamily \#include \char`\"{}controller.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{controller_8c_a0715621232418c080f58db36d0d5e983}{pwm\+To\+Ascii}} (\mbox{\hyperlink{structtyp_motor_handler}{typ\+Motor\+Handler}} $\ast$hmotor, char $\ast$buff)
+\begin{DoxyCompactList}\small\item\em 8 bit unsigned integer value to string \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8c_aafa92e2d6ed9e557757389f828261abc}{deathzonefit}} (double $\ast$delta\+\_\+x, double pmax, double nmax, double death\+\_\+zone)
+\begin{DoxyCompactList}\small\item\em limit the angle and add deathzone \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{controller_8c_af66b652f6a00278d8c3762fc3e0da890}{vector\+State}} (\mbox{\hyperlink{structtyp_vector}{typ\+Vector}} $\ast$vector)
+\begin{DoxyCompactList}\small\item\em decide the state of vectors \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8c_a50d0e2e6139d69c55c535c74d4c7077e}{hover\+Init}} (\mbox{\hyperlink{structtyp_hover_handler}{typ\+Hover\+Handler}} $\ast$hhov)
+\begin{DoxyCompactList}\small\item\em intiate hovercraft give motors ascii characters set all motors speeds to 0 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8c_a70f9428f5c81614c11fb0ba084b70929}{pwm\+Smooting}} (\mbox{\hyperlink{structtyp_hover_handler}{typ\+Hover\+Handler}} $\ast$h\+Hov, \mbox{\hyperlink{structtyp_p_w_m_input_handler}{typ\+PWMInput\+Handler}} $\ast$input, double kf)
+\begin{DoxyCompactList}\small\item\em exponantiel filter for smoothing motor pwm \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8c_a725b010a425c9a3c2bda47ae81732b8c}{vector\+To\+Pwm}} (\mbox{\hyperlink{structtyp_vector}{typ\+Vector}} $\ast$h\+Vec, \mbox{\hyperlink{structtyp_p_w_m_input_handler}{typ\+PWMInput\+Handler}} $\ast$pwm\+Input)
+\begin{DoxyCompactList}\small\item\em generate pwm value corrosponding to vector states \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{controller_8c_a06645bfc45724a560b1ea2dde074525d}{angle\+To\+Vector}} (\mbox{\hyperlink{structtyp_vector}{typ\+Vector}} $\ast$h\+Vec, double curr\+\_\+angle\+\_\+x, double start\+\_\+angle\+\_\+x, double curr\+\_\+angle\+\_\+y, double start\+\_\+angle\+\_\+y, double death\+\_\+zone)
+\begin{DoxyCompactList}\small\item\em angle values to vector calues \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{controller_8c_a325f4f19b8eb9a5326bbf307f1a9dc3b}\label{controller_8c_a325f4f19b8eb9a5326bbf307f1a9dc3b}} 
+void {\bfseries command} (\mbox{\hyperlink{structtyp_hover_handler}{typ\+Hover\+Handler}} $\ast$h\+Hov, char $\ast$buff)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+all process angle data to sendable buffer 
+
+\begin{DoxyDate}{Date}
+05/13/2022 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Anil 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{controller_8c_a06645bfc45724a560b1ea2dde074525d}\label{controller_8c_a06645bfc45724a560b1ea2dde074525d}} 
+\index{controller.c@{controller.c}!angleToVector@{angleToVector}}
+\index{angleToVector@{angleToVector}!controller.c@{controller.c}}
+\doxysubsubsection{\texorpdfstring{angleToVector()}{angleToVector()}}
+{\footnotesize\ttfamily void angle\+To\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtyp_vector}{typ\+Vector}} $\ast$}]{h\+Vec,  }\item[{double}]{curr\+\_\+angle\+\_\+x,  }\item[{double}]{start\+\_\+angle\+\_\+x,  }\item[{double}]{curr\+\_\+angle\+\_\+y,  }\item[{double}]{start\+\_\+angle\+\_\+y,  }\item[{double}]{death\+\_\+zone }\end{DoxyParamCaption})}
+
+
+
+angle values to vector calues 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structtyp_vector}{typ\+Vector}}} & \\
+\hline
+{\em angle\+\_\+x} & \\
+\hline
+{\em base\+\_\+angle\+\_\+x} & \\
+\hline
+{\em angle\+\_\+y} & \\
+\hline
+{\em base\+\_\+angle\+\_\+y} & \\
+\hline
+{\em deathzone} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{controller_8c_aafa92e2d6ed9e557757389f828261abc}\label{controller_8c_aafa92e2d6ed9e557757389f828261abc}} 
+\index{controller.c@{controller.c}!deathzonefit@{deathzonefit}}
+\index{deathzonefit@{deathzonefit}!controller.c@{controller.c}}
+\doxysubsubsection{\texorpdfstring{deathzonefit()}{deathzonefit()}}
+{\footnotesize\ttfamily void deathzonefit (\begin{DoxyParamCaption}\item[{double $\ast$}]{delta\+\_\+x,  }\item[{double}]{pmax,  }\item[{double}]{nmax,  }\item[{double}]{death\+\_\+zone }\end{DoxyParamCaption})}
+
+
+
+limit the angle and add deathzone 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+\_\+angle} & \\
+\hline
+{\em positive} & max \\
+\hline
+{\em negative} & max \\
+\hline
+{\em deathzone} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{controller_8c_a50d0e2e6139d69c55c535c74d4c7077e}\label{controller_8c_a50d0e2e6139d69c55c535c74d4c7077e}} 
+\index{controller.c@{controller.c}!hoverInit@{hoverInit}}
+\index{hoverInit@{hoverInit}!controller.c@{controller.c}}
+\doxysubsubsection{\texorpdfstring{hoverInit()}{hoverInit()}}
+{\footnotesize\ttfamily void hover\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtyp_hover_handler}{typ\+Hover\+Handler}} $\ast$}]{hhov }\end{DoxyParamCaption})}
+
+
+
+intiate hovercraft give motors ascii characters set all motors speeds to 0 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structtyp_hover_handler}{typ\+Hover\+Handler}}} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{controller_8c_a70f9428f5c81614c11fb0ba084b70929}\label{controller_8c_a70f9428f5c81614c11fb0ba084b70929}} 
+\index{controller.c@{controller.c}!pwmSmooting@{pwmSmooting}}
+\index{pwmSmooting@{pwmSmooting}!controller.c@{controller.c}}
+\doxysubsubsection{\texorpdfstring{pwmSmooting()}{pwmSmooting()}}
+{\footnotesize\ttfamily void pwm\+Smooting (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtyp_hover_handler}{typ\+Hover\+Handler}} $\ast$}]{h\+Hov,  }\item[{\mbox{\hyperlink{structtyp_p_w_m_input_handler}{typ\+PWMInput\+Handler}} $\ast$}]{input,  }\item[{double}]{kf }\end{DoxyParamCaption})}
+
+
+
+exponantiel filter for smoothing motor pwm 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structtyp_hover_handler}{typ\+Hover\+Handler}}} & \\
+\hline
+{\em \mbox{\hyperlink{structtyp_p_w_m_input_handler}{typ\+PWMInput\+Handler}}} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{controller_8c_a0715621232418c080f58db36d0d5e983}\label{controller_8c_a0715621232418c080f58db36d0d5e983}} 
+\index{controller.c@{controller.c}!pwmToAscii@{pwmToAscii}}
+\index{pwmToAscii@{pwmToAscii}!controller.c@{controller.c}}
+\doxysubsubsection{\texorpdfstring{pwmToAscii()}{pwmToAscii()}}
+{\footnotesize\ttfamily void pwm\+To\+Ascii (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtyp_motor_handler}{typ\+Motor\+Handler}} $\ast$}]{hmotor,  }\item[{char $\ast$}]{buff }\end{DoxyParamCaption})}
+
+
+
+8 bit unsigned integer value to string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structtyp_motor_handler}{typ\+Motor\+Handler}}} & \\
+\hline
+{\em char} & $\ast$buffer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{controller_8c_af66b652f6a00278d8c3762fc3e0da890}\label{controller_8c_af66b652f6a00278d8c3762fc3e0da890}} 
+\index{controller.c@{controller.c}!vectorState@{vectorState}}
+\index{vectorState@{vectorState}!controller.c@{controller.c}}
+\doxysubsubsection{\texorpdfstring{vectorState()}{vectorState()}}
+{\footnotesize\ttfamily uint8\+\_\+t vector\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtyp_vector}{typ\+Vector}} $\ast$}]{vector }\end{DoxyParamCaption})}
+
+
+
+decide the state of vectors 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structtyp_vector}{typ\+Vector}}} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{controller_8c_a725b010a425c9a3c2bda47ae81732b8c}\label{controller_8c_a725b010a425c9a3c2bda47ae81732b8c}} 
+\index{controller.c@{controller.c}!vectorToPwm@{vectorToPwm}}
+\index{vectorToPwm@{vectorToPwm}!controller.c@{controller.c}}
+\doxysubsubsection{\texorpdfstring{vectorToPwm()}{vectorToPwm()}}
+{\footnotesize\ttfamily void vector\+To\+Pwm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtyp_vector}{typ\+Vector}} $\ast$}]{h\+Vec,  }\item[{\mbox{\hyperlink{structtyp_p_w_m_input_handler}{typ\+PWMInput\+Handler}} $\ast$}]{pwm\+Input }\end{DoxyParamCaption})}
+
+
+
+generate pwm value corrosponding to vector states 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{structtyp_p_w_m_input_handler}{typ\+PWMInput\+Handler}}} & \\
+\hline
+{\em \mbox{\hyperlink{structtyp_vector}{typ\+Vector}}} & \\
+\hline
+\end{DoxyParams}

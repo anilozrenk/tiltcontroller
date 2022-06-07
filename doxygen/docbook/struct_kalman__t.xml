@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_kalman__t" xml:lang="en-US">
+<title>Kalman_t Struct Reference</title>
+<indexterm><primary>Kalman_t</primary></indexterm>
+<para>
+
+<para>Kalman structure. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;mpu6050.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_kalman__t_1a456b708ce4887c12e148625aa1ab9d81"/>double <emphasis role="strong">Q_angle</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_kalman__t_1a5636bb03467a6e767f56641fc92bb5c8"/>double <emphasis role="strong">Q_bias</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_kalman__t_1a5a74f05122cd5b26b275d3d1ac5abf84"/>double <emphasis role="strong">R_measure</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_kalman__t_1a55efa5004d8646a101769e7e527eeb29"/>double <emphasis role="strong">angle</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_kalman__t_1aa23e0bbaa78eb85b8568abdb54a60574"/>double <emphasis role="strong">bias</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_kalman__t_1aaa1e49a0733867e7749ff00033ccfc44"/>double <emphasis role="strong">P</emphasis> [2][2]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Kalman structure. </para>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Inc/<link linkend="_mpu6050_8h">mpu6050.h</link></section>
+</section>

@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8c" xml:lang="en-US">
+<title>Src/main.c File Reference</title>
+<indexterm><primary>Src/main.c</primary></indexterm>
+<para>
+
+<para>Main program body. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;main.h&quot;
+#include &quot;mpu6050.h&quot;
+#include &quot;controller.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_main_8c_1a46130dc86f2322714bba26960b64e7bb"/>#define <emphasis role="strong">BUFFER_LEN</emphasis>   13</para>
+
+<para>predefined lenght to main uart buffer </para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8c_1a88d70c2c026b9cb514de366a7b20ef8e"/>#define <emphasis role="strong">KF</emphasis>   0.85</para>
+
+<para>exponantial filter coeficient </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_main_8c_1a70af21c671abfcc773614a9a4f63d920">SystemClock_Config</link> (void)</para>
+
+<para>System Clock Configuration. </para>
+</listitem>
+            <listitem><para>void <link linkend="_main_8c_1a0cd91fd3a9608559c2a87a8ba6cba55f">HAL_GPIO_EXTI_Callback</link> (uint16_t GPIO_Pin)</para>
+</listitem>
+            <listitem><para>int <link linkend="_main_8c_1a840291bc02cba5474a4cb46a9b9566fe">main</link> (void)</para>
+
+<para>The application entry point. </para>
+</listitem>
+            <listitem><para>void <link linkend="_main_8c_1a1730ffe1e560465665eb47d9264826f9">Error_Handler</link> (void)</para>
+
+<para>This function is executed in case of error occurrence. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_main_8c_1af7b2c26e44dadaaa798a5c3d82914ba7"/>I2C_HandleTypeDef <emphasis role="strong">hi2c1</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8c_1a2cf715bef37f7e8ef385a30974a5f0d5"/>UART_HandleTypeDef <emphasis role="strong">huart1</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8c_1aa9479c261d65eecedd3d9582f7f0f89c"/>UART_HandleTypeDef <emphasis role="strong">huart2</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8c_1a93357d136721fbae9e3787ddd1a42024"/><link linkend="_struct_m_p_u6050__t">MPU6050_t</link> <emphasis role="strong">MPU6050</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8c_1a69e0ec05140bebffbd22342b2f616eab"/><link linkend="_structtyp_hover_handler">typHoverHandler</link> <emphasis role="strong">hHover</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8c_1aaa24c7e31de9f9b48e1da1b7a5f4125c"/><link linkend="_structtyp_p_w_m_input_handler">typPWMInputHandler</link> <emphasis role="strong">hInput</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8c_1a4aa5ae7da3192a39914575d5b9c75df6"/><link linkend="_structtyp_p_w_m_output_handler">typPWMOutputHandler</link> <emphasis role="strong">hOutput</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8c_1ae5167f6e25e0cd98dde6306fd4a50241"/><link linkend="_structtyp_vector">typVector</link> <emphasis role="strong">hVector</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8c_1ae29f244edcef79e061c85dac10bbc513"/>double <emphasis role="strong">x_angle_base</emphasis></para>
+
+<para>holds gyro angle </para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8c_1a4ed5d81d05128863e501862befa958ed"/>double <emphasis role="strong">y_angle_base</emphasis></para>
+
+<para>holds gyro angle </para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8c_1a98c7167974a92cd100d746166952a191"/>char <emphasis role="strong">rx_buffer</emphasis> [<link linkend="_main_8c_1a46130dc86f2322714bba26960b64e7bb">BUFFER_LEN</link>] = {0}</para>
+
+<para>main rx buffer </para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8c_1a80f5e7ce62bd666bf36ca6b80e49b891"/>char <emphasis role="strong">tx_buffer</emphasis> [<link linkend="_main_8c_1a46130dc86f2322714bba26960b64e7bb">BUFFER_LEN</link>] = {0}</para>
+
+<para>main tx buffer </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Main program body. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Anil Ozrenk</para>
+</formalpara>
+<caution><title>Attention</title>
+
+<para></para>
+</caution>
+Copyright (c) 2022 Anil Ozrenk. All rights reserved.</para>
+
+<para>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_main_8c_1a1730ffe1e560465665eb47d9264826f9"/><section>
+    <title>Error_Handler()</title>
+<indexterm><primary>Error_Handler</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>Error_Handler</secondary></indexterm>
+<para><computeroutput>void Error_Handler (void )</computeroutput></para><para>
+
+<para>This function is executed in case of error occurrence. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Return values</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_main_8c_1a0cd91fd3a9608559c2a87a8ba6cba55f"/><section>
+    <title>HAL_GPIO_EXTI_Callback()</title>
+<indexterm><primary>HAL_GPIO_EXTI_Callback</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>HAL_GPIO_EXTI_Callback</secondary></indexterm>
+<para><computeroutput>void HAL_GPIO_EXTI_Callback (uint16_t GPIO_Pin)</computeroutput></para>
+<para>external interrupt routine for base angle reset gpio pin 13 </para>
+</section>
+<anchor xml:id="_main_8c_1a840291bc02cba5474a4cb46a9b9566fe"/><section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main (void )</computeroutput></para><para>
+
+<para>The application entry point. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Return values</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>int</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>initialize mpu6050 module</para>
+
+<para>initialize hover struct</para>
+
+<para>initial x angle base</para>
+
+<para>initial y angle base</para>
+
+<para>transmit buffer to bluetooth</para>
+
+<para>transmit buffer via usb</para>
+</section>
+<anchor xml:id="_main_8c_1a70af21c671abfcc773614a9a4f63d920"/><section>
+    <title>SystemClock_Config()</title>
+<indexterm><primary>SystemClock_Config</primary><secondary>main.c</secondary></indexterm>
+<indexterm><primary>main.c</primary><secondary>SystemClock_Config</secondary></indexterm>
+<para><computeroutput>void SystemClock_Config (void )</computeroutput></para><para>
+
+<para>System Clock Configuration. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Return values</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>Initializes the RCC Oscillators according to the specified parameters in the RCC_OscInitTypeDef structure.</para>
+
+<para>Initializes the CPU, AHB and APB buses clocks</para>
+</section>
+</section>
+</section>

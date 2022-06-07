@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structtyp_motor_handler" xml:lang="en-US">
+<title>typMotorHandler Struct Reference</title>
+<indexterm><primary>typMotorHandler</primary></indexterm>
+<para>
+
+<para>individual motor </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;controller.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structtyp_motor_handler_1a10079f56950ea7b09285bc6e25becfd3"/>char <emphasis role="strong">motorCode</emphasis></para>
+
+<para>ascii code for a motor </para>
+</listitem>
+            <listitem><para><anchor xml:id="_structtyp_motor_handler_1a4967f1adf97c765e3df9a8652fe772a1"/>uint8_t <emphasis role="strong">speed</emphasis></para>
+
+<para>0-255 </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>individual motor </para>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Inc/controller.h</section>
+</section>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_m_p_u6050__t" xml:lang="en-US">
+<title>MPU6050_t Struct Reference</title>
+<indexterm><primary>MPU6050_t</primary></indexterm>
+<para>
+
+<para>MPU6050 structure. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;mpu6050.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1a5f3265d5d2c2ae48dcee4b05d720ebfe"/>int16_t <emphasis role="strong">Accel_X_RAW</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1ad29751cb81a8a02d201cd978976b45b8"/>int16_t <emphasis role="strong">Accel_Y_RAW</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1a28f4c1ddb785ef651468de1a279a4015"/>int16_t <emphasis role="strong">Accel_Z_RAW</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1ae5ec57cf702887ec4d30e33e9ff0f8fb"/>double <emphasis role="strong">Ax</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1a8c566d7c2b697d0ef67ad6d4dc902f55"/>double <emphasis role="strong">Ay</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1adc707670d491467f36637265c2255abe"/>double <emphasis role="strong">Az</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1a9f4be11c3bd4417624d4e51bad5726c5"/>int16_t <emphasis role="strong">Gyro_X_RAW</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1a08ee6883e1cdffb40d4ac90b51f23b2b"/>int16_t <emphasis role="strong">Gyro_Y_RAW</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1ace2b5b27fdc12ad5a41c7a5fa720ee5f"/>int16_t <emphasis role="strong">Gyro_Z_RAW</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1a0e94f3447cefa614cc25c27f4ba83783"/>double <emphasis role="strong">Gx</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1ad5b5de7635d0a6cca78f5464db16bef7"/>double <emphasis role="strong">Gy</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1acf84ca38896c38296bc369e286627366"/>double <emphasis role="strong">Gz</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1a16b76504a9d3f2a2f88f0a765ff04ebb"/>float <emphasis role="strong">Temperature</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1a814132d972a9fdb9a5038dccfe872e3b"/>double <emphasis role="strong">KalmanAngleX</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_m_p_u6050__t_1af29ed74f1b17a968d6b2a852e8084b18"/>double <emphasis role="strong">KalmanAngleY</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>MPU6050 structure. </para>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Inc/<link linkend="_mpu6050_8h">mpu6050.h</link></section>
+</section>

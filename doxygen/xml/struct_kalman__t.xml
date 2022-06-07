@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="struct_kalman__t" kind="struct" language="C++" prot="public">
+    <compoundname>Kalman_t</compoundname>
+    <includes refid="mpu6050_8h" local="no">mpu6050.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_kalman__t_1a456b708ce4887c12e148625aa1ab9d81" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Kalman_t::Q_angle</definition>
+        <argsstring></argsstring>
+        <name>Q_angle</name>
+        <qualifiedname>Kalman_t::Q_angle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/mpu6050.h" line="44" column="12" bodyfile="Inc/mpu6050.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_kalman__t_1a5636bb03467a6e767f56641fc92bb5c8" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Kalman_t::Q_bias</definition>
+        <argsstring></argsstring>
+        <name>Q_bias</name>
+        <qualifiedname>Kalman_t::Q_bias</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/mpu6050.h" line="45" column="12" bodyfile="Inc/mpu6050.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_kalman__t_1a5a74f05122cd5b26b275d3d1ac5abf84" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Kalman_t::R_measure</definition>
+        <argsstring></argsstring>
+        <name>R_measure</name>
+        <qualifiedname>Kalman_t::R_measure</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/mpu6050.h" line="46" column="12" bodyfile="Inc/mpu6050.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_kalman__t_1a55efa5004d8646a101769e7e527eeb29" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Kalman_t::angle</definition>
+        <argsstring></argsstring>
+        <name>angle</name>
+        <qualifiedname>Kalman_t::angle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/mpu6050.h" line="47" column="12" bodyfile="Inc/mpu6050.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_kalman__t_1aa23e0bbaa78eb85b8568abdb54a60574" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Kalman_t::bias</definition>
+        <argsstring></argsstring>
+        <name>bias</name>
+        <qualifiedname>Kalman_t::bias</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/mpu6050.h" line="48" column="12" bodyfile="Inc/mpu6050.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_kalman__t_1aaa1e49a0733867e7749ff00033ccfc44" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Kalman_t::P[2][2]</definition>
+        <argsstring>[2][2]</argsstring>
+        <name>P</name>
+        <qualifiedname>Kalman_t::P</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/mpu6050.h" line="49" column="12" bodyfile="Inc/mpu6050.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Kalman structure. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Inc/mpu6050.h" line="42" column="1" bodyfile="Inc/mpu6050.h" bodystart="43" bodyend="50"/>
+    <listofallmembers>
+      <member refid="struct_kalman__t_1a55efa5004d8646a101769e7e527eeb29" prot="public" virt="non-virtual"><scope>Kalman_t</scope><name>angle</name></member>
+      <member refid="struct_kalman__t_1aa23e0bbaa78eb85b8568abdb54a60574" prot="public" virt="non-virtual"><scope>Kalman_t</scope><name>bias</name></member>
+      <member refid="struct_kalman__t_1aaa1e49a0733867e7749ff00033ccfc44" prot="public" virt="non-virtual"><scope>Kalman_t</scope><name>P</name></member>
+      <member refid="struct_kalman__t_1a456b708ce4887c12e148625aa1ab9d81" prot="public" virt="non-virtual"><scope>Kalman_t</scope><name>Q_angle</name></member>
+      <member refid="struct_kalman__t_1a5636bb03467a6e767f56641fc92bb5c8" prot="public" virt="non-virtual"><scope>Kalman_t</scope><name>Q_bias</name></member>
+      <member refid="struct_kalman__t_1a5a74f05122cd5b26b275d3d1ac5abf84" prot="public" virt="non-virtual"><scope>Kalman_t</scope><name>R_measure</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

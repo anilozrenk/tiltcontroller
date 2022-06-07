@@ -1,12 +1,13 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
+  * @file   main.c
+  * @brief  Main program body
+  * @author Anil Ozrenk
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2022 STMicroelectronics.
+  * Copyright (c) 2022 Anil Ozrenk.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -22,7 +23,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "mpu6050.h"
-#include "bluetooth.h"
 #include "controller.h"
 /* USER CODE END Includes */
 
@@ -33,8 +33,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define BUFFER_LEN  13
-#define KF 0.85
+#define BUFFER_LEN  13 ///< predefined lenght to main uart buffer
+#define KF 0.85  	   ///< exponantial filter coeficient
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -45,21 +45,24 @@
 /* Private variables ---------------------------------------------------------*/
 
 I2C_HandleTypeDef hi2c1;
-
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+
 MPU6050_t MPU6050;
 typHoverHandler hHover;
 typPWMInputHandler hInput;
 typPWMOutputHandler hOutput;
 typVector hVector;
 
+/// holds gyro angle
 double x_angle_base;
+/// holds gyro angle
 double y_angle_base;
-
+/// main rx buffer
 char rx_buffer[BUFFER_LEN] = {0};
+/// main tx buffer
 char tx_buffer[BUFFER_LEN] = {0};
 /* USER CODE END PV */
 
@@ -75,6 +78,10 @@ static void MX_USART1_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+/**
+ * external interrupt routine for base angle reset
+ * gpio pin 13
+ */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	if( GPIO_PIN_13 == GPIO_Pin){
 		x_angle_base=MPU6050.KalmanAngleX;
@@ -119,16 +126,16 @@ int main(void)
   MX_I2C1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  /// initialize mpu6050 module
   MPU6050_Init(&hi2c1);
-
+  /// initialize hover struct
   hoverInit(&hHover);
 
   HAL_Delay(500);
   MPU6050_Read_All(&hi2c1, &MPU6050);
-//  T+ADDR?
-//
-//  +ADDR:0021:11:01C461
+  /// initial x angle base
   x_angle_base=MPU6050.KalmanAngleX;
+  /// initial y angle base
   y_angle_base=MPU6050.KalmanAngleY;
   /* USER CODE END 2 */
 
@@ -141,17 +148,16 @@ int main(void)
 	  vectorToPwm(&hVector, &hInput);
 	  pwmSmooting(&hHover,&hInput, KF);
 	  command(&hHover, tx_buffer);
-	  //bltSendData(tx_buffer);
+	  /// transmit buffer to bluetooth
 	  HAL_UART_Transmit(&huart1, (uint8_t *)tx_buffer, sizeof(tx_buffer), 500);
+	  /// transmit buffer via usb
 	  HAL_UART_Transmit(&huart2, (uint8_t *)tx_buffer, sizeof(tx_buffer), 500);
 	  char uu[]="\n\r";
 	  HAL_UART_Transmit(&huart2, (uint8_t *)uu, sizeof(uu), 500);
 
 	  HAL_Delay(20);
 
-//	  char bufi[11];
-//	  sprintf(bufi,"deneme 123");
-//	  HAL_UART_Transmit(&huart1, bufi, sizeof(bufi), 500);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

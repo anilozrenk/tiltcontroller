@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structtyp_p_w_m_output_handler" xml:lang="en-US">
+<title>typPWMOutputHandler Struct Reference</title>
+<indexterm><primary>typPWMOutputHandler</primary></indexterm>
+<para>
+
+<para>obselete </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;controller.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structtyp_p_w_m_output_handler_1acf5fb2ccadc63ed3509ba63ba5354bc9"/>uint8_t <emphasis role="strong">pwmOutputA</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structtyp_p_w_m_output_handler_1ad4922b318ef0c65a349563f34969b657"/>uint8_t <emphasis role="strong">pwmOutputB</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structtyp_p_w_m_output_handler_1ad35d8143ca8abaf5e626028cc4261c32"/>uint8_t <emphasis role="strong">pwmOutputC</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structtyp_p_w_m_output_handler_1ad1bcd8bf7b9363cdd882985c2257b743"/>uint8_t <emphasis role="strong">pwmOutputD</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>obselete </para>
+
+
+
+<para>OBSOLETE output pwm for motors </para>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Inc/controller.h</section>
+</section>

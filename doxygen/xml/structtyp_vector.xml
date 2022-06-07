@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="structtyp_vector" kind="struct" language="C++" prot="public">
+    <compoundname>typVector</compoundname>
+    <includes refid="controller_8h" local="no">controller.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtyp_vector_1a3ae8e6b532f2f66832dc9ebe71f5b5de" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t typVector::forward</definition>
+        <argsstring></argsstring>
+        <name>forward</name>
+        <qualifiedname>typVector::forward</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="60" column="9" bodyfile="Inc/controller.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtyp_vector_1a9e94c7c802bd99faa5711d197d82ae77" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t typVector::left</definition>
+        <argsstring></argsstring>
+        <name>left</name>
+        <qualifiedname>typVector::left</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="61" column="9" bodyfile="Inc/controller.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtyp_vector_1af23d7662031ce7caada5479ec8273fac" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t typVector::right</definition>
+        <argsstring></argsstring>
+        <name>right</name>
+        <qualifiedname>typVector::right</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="62" column="9" bodyfile="Inc/controller.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtyp_vector_1a2ec109296d1e043bd47c81037844d36e" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t typVector::backward</definition>
+        <argsstring></argsstring>
+        <name>backward</name>
+        <qualifiedname>typVector::backward</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/controller.h" line="63" column="9" bodyfile="Inc/controller.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>vector indentifier </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Inc/controller.h" line="59" column="1" bodyfile="Inc/controller.h" bodystart="59" bodyend="64"/>
+    <listofallmembers>
+      <member refid="structtyp_vector_1a2ec109296d1e043bd47c81037844d36e" prot="public" virt="non-virtual"><scope>typVector</scope><name>backward</name></member>
+      <member refid="structtyp_vector_1a3ae8e6b532f2f66832dc9ebe71f5b5de" prot="public" virt="non-virtual"><scope>typVector</scope><name>forward</name></member>
+      <member refid="structtyp_vector_1a9e94c7c802bd99faa5711d197d82ae77" prot="public" virt="non-virtual"><scope>typVector</scope><name>left</name></member>
+      <member refid="structtyp_vector_1af23d7662031ce7caada5479ec8273fac" prot="public" virt="non-virtual"><scope>typVector</scope><name>right</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

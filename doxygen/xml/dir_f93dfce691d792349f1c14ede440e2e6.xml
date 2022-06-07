@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="dir_f93dfce691d792349f1c14ede440e2e6" kind="dir">
+    <compoundname>Inc</compoundname>
+    <innerfile refid="controller_8h">controller.h</innerfile>
+    <innerfile refid="main_8h">main.h</innerfile>
+    <innerfile refid="mpu6050_8h">mpu6050.h</innerfile>
+    <innerfile refid="stm32f0xx__hal__conf_8h">stm32f0xx_hal_conf.h</innerfile>
+    <innerfile refid="stm32f0xx__it_8h">stm32f0xx_it.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Inc/"/>
+  </compounddef>
+</doxygen>

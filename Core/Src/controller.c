@@ -1,8 +1,8 @@
-/*
- * controller.c
- *
- *  Created on: May 13, 2022
- *      Author: Anil
+/**
+ * @file controller.c
+ * @brief all process angle data to sendable buffer
+ * @date 05/13/2022
+ * @author Anil
  */
 
 #include "controller.h"
@@ -12,7 +12,12 @@ void pwmToAscii(typMotorHandler *hmotor,char *buff);
 void deathzonefit(double *delta_x,double pmax,double nmax,double death_zone);
 uint8_t vectorState(typVector *vector);
 /********    ********/
-
+/**
+ * @brief intiate hovercraft
+ * give motors ascii characters
+ * set all motors speeds to 0
+ * @param typHoverHandler
+ */
 void hoverInit(typHoverHandler *hhov){
 
 	hhov->status=0;
@@ -26,7 +31,11 @@ void hoverInit(typHoverHandler *hhov){
 	hhov->motorD.speed=0;
 }
 
-
+/**
+ * @brief exponantiel filter for smoothing motor pwm
+ * @param typHoverHandler
+ * @param typPWMInputHandler
+ */
 void pwmSmooting(typHoverHandler *hHov,typPWMInputHandler *input,double kf){
 	hHov->motorA.speed = (1-kf) * hHov->motorA.speed + input->pwmInputA *kf;
 	hHov->motorB.speed = (1-kf) * hHov->motorB.speed + input->pwmInputB *kf;
@@ -35,7 +44,10 @@ void pwmSmooting(typHoverHandler *hHov,typPWMInputHandler *input,double kf){
 
 }
 
-
+/**
+ * @brief decide the state of vectors
+ * @param typVector
+ */
 uint8_t vectorState(typVector *vector){
 	if((vector->forward==0)&&(vector->left==0)&&(vector->right==0)&&(vector->backward==0)){
 		return idle;
@@ -61,7 +73,11 @@ uint8_t vectorState(typVector *vector){
 	else return idle;
 
 }
-
+/**
+ * @brief generate pwm value corrosponding to vector states
+ * @param typPWMInputHandler
+ * @param typVector
+ */
 void vectorToPwm(typVector *hVec, typPWMInputHandler *pwmInput){
 	uint8_t state;
 	state = vectorState(hVec);
@@ -98,7 +114,13 @@ void vectorToPwm(typVector *hVec, typPWMInputHandler *pwmInput){
 			break;
 	}
 }
-
+/**
+ * @brief limit the angle and add deathzone
+ * @param delta_angle
+ * @param positive max
+ * @param negative max
+ * @param deathzone
+ */
 void deathzonefit(double *delta_x,double pmax,double nmax,double death_zone){
 		if(*delta_x>pmax){
 			 *delta_x=pmax;
@@ -113,7 +135,15 @@ void deathzonefit(double *delta_x,double pmax,double nmax,double death_zone){
 			*delta_x=0;
 		}
 	}
-
+/**
+ * @brief angle values to vector calues
+ * @param typVector
+ * @param angle_x
+ * @param base_angle_x
+ * @param angle_y
+ * @param base_angle_y
+ * @param deathzone
+ */
 void angleToVector(typVector *hVec,double curr_angle_x,double start_angle_x,double curr_angle_y,double start_angle_y ,double death_zone){
 	 double pmax = 45;
 	 double nmax = -45;
@@ -137,13 +167,21 @@ void angleToVector(typVector *hVec,double curr_angle_x,double start_angle_x,doub
 		 hVec->forward= delta_y*255/pmax;
 		 hVec->backward= 0;
 	 }
+	 else if(-30<delta_y&&delta_y<0){
+		 hVec->backward=0;
+		 hVec->left=0; hVec->right=0; hVec->forward=0;
+	 }
 	 else{
 		 hVec->backward=50;
-		 hVec->left=0; hVec->right=0; hVec->forward=0;
+				 hVec->left=0; hVec->right=0; hVec->forward=0;
 	 }
 
 }
-
+/*
+ * @brief generate sendable buffer for hovercraft
+ * @param typHoverHandler
+ * @param char *buffer
+ */
 void command(typHoverHandler *hHov,char *buff){
 	char buffA[3],buffB[3],buffC[3],buffD[3];
 	pwmToAscii(&(hHov->motorA), buffA);
@@ -179,7 +217,11 @@ void command(typHoverHandler *hHov,char *buff){
 	}
 	buff[12]='F';
 }
-
+/**
+ * @brief 8 bit unsigned integer value to string
+ * @param typMotorHandler
+ * @param char *buffer
+ */
 void pwmToAscii(typMotorHandler *hmotor,char *buff){
 	char highbytes =(char) hmotor->speed >> 4;
 	char sendfirst = highbytes+97;

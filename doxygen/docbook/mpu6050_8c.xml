@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mpu6050_8c" xml:lang="en-US">
+<title>Src/mpu6050.c File Reference</title>
+<indexterm><primary>Src/mpu6050.c</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;math.h&gt;
+#include &quot;mpu6050.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_mpu6050_8c_1a89e47af0449640d4f15191aba5ca24c6">RAD_TO_DEG</link>   57.295779513082320876798154814105</para>
+</listitem>
+            <listitem><para><anchor xml:id="_mpu6050_8c_1a7e23ffa5bb718d06bcee89bbdf844ed8"/>#define <emphasis role="strong">WHO_AM_I_REG</emphasis>   0x75</para>
+</listitem>
+            <listitem><para><anchor xml:id="_mpu6050_8c_1af9bd016ab99b299a4816433252e31c3d"/>#define <emphasis role="strong">PWR_MGMT_1_REG</emphasis>   0x6B</para>
+</listitem>
+            <listitem><para><anchor xml:id="_mpu6050_8c_1aa2208da6faf439107b23dee629bb8398"/>#define <emphasis role="strong">SMPLRT_DIV_REG</emphasis>   0x19</para>
+</listitem>
+            <listitem><para><anchor xml:id="_mpu6050_8c_1ad1d05dc09d0025498687ab7e30ffd4e4"/>#define <emphasis role="strong">ACCEL_CONFIG_REG</emphasis>   0x1C</para>
+</listitem>
+            <listitem><para><anchor xml:id="_mpu6050_8c_1a12d3f98f5ae302f7aab5895be9388d69"/>#define <emphasis role="strong">ACCEL_XOUT_H_REG</emphasis>   0x3B</para>
+</listitem>
+            <listitem><para><anchor xml:id="_mpu6050_8c_1aff3d1ca89fdcdfd99fe28f579b79a041"/>#define <emphasis role="strong">TEMP_OUT_H_REG</emphasis>   0x41</para>
+</listitem>
+            <listitem><para><anchor xml:id="_mpu6050_8c_1a5b1b1a1ea1298b67cdab17a7213c6356"/>#define <emphasis role="strong">GYRO_CONFIG_REG</emphasis>   0x1B</para>
+</listitem>
+            <listitem><para><anchor xml:id="_mpu6050_8c_1ae2681bec6196f74ae52136e8af1a4dcf"/>#define <emphasis role="strong">GYRO_XOUT_H_REG</emphasis>   0x43</para>
+</listitem>
+            <listitem><para><anchor xml:id="_mpu6050_8c_1ad4d6255d8f7e5dc770e773b787977508"/>#define <emphasis role="strong">MPU6050_ADDR</emphasis>   (0x68&lt;&lt;1)</para>
+
+<para>Setup MPU6050. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="_mpu6050_8c_1aafa9c78f858c561cc64af97bbb57e393">MPU6050_Init</link> (I2C_HandleTypeDef *I2Cx)</para>
+</listitem>
+            <listitem><para>void <link linkend="_mpu6050_8c_1a5476709bd12c603fc74bae86f72db0d5">MPU6050_Read_Accel</link> (I2C_HandleTypeDef *I2Cx, <link linkend="_struct_m_p_u6050__t">MPU6050_t</link> *DataStruct)</para>
+</listitem>
+            <listitem><para>void <link linkend="_mpu6050_8c_1a2329322c6cb1c7e939e00bd43db44b4b">MPU6050_Read_Gyro</link> (I2C_HandleTypeDef *I2Cx, <link linkend="_struct_m_p_u6050__t">MPU6050_t</link> *DataStruct)</para>
+</listitem>
+            <listitem><para>void <link linkend="_mpu6050_8c_1a83eafd157dd3df2c9add558904ed62e0">MPU6050_Read_Temp</link> (I2C_HandleTypeDef *I2Cx, <link linkend="_struct_m_p_u6050__t">MPU6050_t</link> *DataStruct)</para>
+</listitem>
+            <listitem><para>void <link linkend="_mpu6050_8c_1aabd50bac1ecae86151549a1a8a678382">MPU6050_Read_All</link> (I2C_HandleTypeDef *I2Cx, <link linkend="_struct_m_p_u6050__t">MPU6050_t</link> *DataStruct)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_mpu6050_8c_1ae076945741048d0c5e3dbfeabc27f5e2"/>double <emphasis role="strong">Kalman_getAngle</emphasis> (<link linkend="_struct_kalman__t">Kalman_t</link> *Kalman, double newAngle, double newRate, double dt)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_mpu6050_8c_1ac339720e63c0ffe1ddaa3ab29e207949"/>const uint16_t <emphasis role="strong">i2c_timeout</emphasis> = 500</para>
+</listitem>
+            <listitem><para><anchor xml:id="_mpu6050_8c_1a4b2a23e087dac68793981b718a4f5ff4"/>const double <emphasis role="strong">Accel_Z_corrector</emphasis> = 14418.0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_mpu6050_8c_1a0d88807102c8d96e37cb4751f0d5a7d3"/>uint32_t <emphasis role="strong">timer</emphasis></para>
+</listitem>
+            <listitem><para><link linkend="_struct_kalman__t">Kalman_t</link> <link linkend="_mpu6050_8c_1af95f7c46fb9b43bb2444904c00426545">KalmanX</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_kalman__t">Kalman_t</link> <link linkend="_mpu6050_8c_1ab827d411b48396d9a23088aa1adcc919">KalmanY</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><formalpara><title>Date</title>
+
+<para>11/13/2019 </para>
+</formalpara>
+<formalpara><title>Author</title>
+
+<para>Bulanov Konstantin</para>
+</formalpara>
+</para>
+<section xml:id="_mpu6050_8c_1autotoc_md0">
+<title>Contact information</title>
+
+<para>e-mail : <link xlink:href="mailto:leech001@gmail.com">leech001@gmail.com</link> </para>
+</section>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_mpu6050_8c_1a89e47af0449640d4f15191aba5ca24c6"/><section>
+    <title>RAD_TO_DEG</title>
+<indexterm><primary>RAD_TO_DEG</primary><secondary>mpu6050.c</secondary></indexterm>
+<indexterm><primary>mpu6050.c</primary><secondary>RAD_TO_DEG</secondary></indexterm>
+<para><computeroutput>#define RAD_TO_DEG   57.295779513082320876798154814105</computeroutput></para>
+<para>|------------------------------------------------------------------------------&#8212; | Copyright (C) Bulanov Konstantin,2021 | | This program is free software: you can redistribute it and/or modify | it under the terms of the GNU General Public License as published by | the Free Software Foundation, either version 3 of the License, or | any later version. | | This program is distributed in the hope that it will be useful, | but WITHOUT ANY WARRANTY; without even the implied warranty of | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the | GNU General Public License for more details. | | You should have received a copy of the GNU General Public License | along with this program. If not, see <link xlink:href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</link>. | | Kalman filter algorithm used from <link xlink:href="https://github.com/TKJElectronics/KalmanFilter">https://github.com/TKJElectronics/KalmanFilter</link> |------------------------------------------------------------------------------&#8212; </para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_mpu6050_8c_1aafa9c78f858c561cc64af97bbb57e393"/><section>
+    <title>MPU6050_Init()</title>
+<indexterm><primary>MPU6050_Init</primary><secondary>mpu6050.c</secondary></indexterm>
+<indexterm><primary>mpu6050.c</primary><secondary>MPU6050_Init</secondary></indexterm>
+<para><computeroutput>uint8_t MPU6050_Init (I2C_HandleTypeDef * I2Cx)</computeroutput></para>
+<para>check device ID WHO_AM_I</para>
+
+<para>power management register 0X6B we should write all 0&apos;s to wake the sensor up</para>
+
+<para>Set DATA RATE of 1KHz by writing SMPLRT_DIV register</para>
+</section>
+<anchor xml:id="_mpu6050_8c_1a5476709bd12c603fc74bae86f72db0d5"/><section>
+    <title>MPU6050_Read_Accel()</title>
+<indexterm><primary>MPU6050_Read_Accel</primary><secondary>mpu6050.c</secondary></indexterm>
+<indexterm><primary>mpu6050.c</primary><secondary>MPU6050_Read_Accel</secondary></indexterm>
+<para><computeroutput>void MPU6050_Read_Accel (I2C_HandleTypeDef * I2Cx, <link linkend="_struct_m_p_u6050__t">MPU6050_t</link> * DataStruct)</computeroutput></para>
+<para>Read 6 BYTES of data starting from ACCEL_XOUT_H register</para>
+
+<para>convert the RAW values into acceleration in &apos;g&apos; we have to divide according to the Full scale value set in FS_SEL have configured FS_SEL = 0. So I am dividing by 16384.0 for more details check ACCEL_CONFIG Register</para>
+</section>
+<anchor xml:id="_mpu6050_8c_1aabd50bac1ecae86151549a1a8a678382"/><section>
+    <title>MPU6050_Read_All()</title>
+<indexterm><primary>MPU6050_Read_All</primary><secondary>mpu6050.c</secondary></indexterm>
+<indexterm><primary>mpu6050.c</primary><secondary>MPU6050_Read_All</secondary></indexterm>
+<para><computeroutput>void MPU6050_Read_All (I2C_HandleTypeDef * I2Cx, <link linkend="_struct_m_p_u6050__t">MPU6050_t</link> * DataStruct)</computeroutput></para>
+<para>Read 14 BYTES of data starting from ACCEL_XOUT_H register</para>
+
+<para>Kalman angle solve</para>
+</section>
+<anchor xml:id="_mpu6050_8c_1a2329322c6cb1c7e939e00bd43db44b4b"/><section>
+    <title>MPU6050_Read_Gyro()</title>
+<indexterm><primary>MPU6050_Read_Gyro</primary><secondary>mpu6050.c</secondary></indexterm>
+<indexterm><primary>mpu6050.c</primary><secondary>MPU6050_Read_Gyro</secondary></indexterm>
+<para><computeroutput>void MPU6050_Read_Gyro (I2C_HandleTypeDef * I2Cx, <link linkend="_struct_m_p_u6050__t">MPU6050_t</link> * DataStruct)</computeroutput></para>
+<para>Read 6 BYTES of data starting from GYRO_XOUT_H register</para>
+
+<para>convert the RAW values into dps (�/s) we have to divide according to the Full scale value set in FS_SEL I have configured FS_SEL = 0. So I am dividing by 131.0 for more details check GYRO_CONFIG Register</para>
+</section>
+<anchor xml:id="_mpu6050_8c_1a83eafd157dd3df2c9add558904ed62e0"/><section>
+    <title>MPU6050_Read_Temp()</title>
+<indexterm><primary>MPU6050_Read_Temp</primary><secondary>mpu6050.c</secondary></indexterm>
+<indexterm><primary>mpu6050.c</primary><secondary>MPU6050_Read_Temp</secondary></indexterm>
+<para><computeroutput>void MPU6050_Read_Temp (I2C_HandleTypeDef * I2Cx, <link linkend="_struct_m_p_u6050__t">MPU6050_t</link> * DataStruct)</computeroutput></para>
+<para>Read 2 BYTES of data starting from TEMP_OUT_H_REG register</para>
+</section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_mpu6050_8c_1af95f7c46fb9b43bb2444904c00426545"/><section>
+    <title>KalmanX</title>
+<indexterm><primary>KalmanX</primary><secondary>mpu6050.c</secondary></indexterm>
+<indexterm><primary>mpu6050.c</primary><secondary>KalmanX</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_kalman__t">Kalman_t</link> KalmanX</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">=&#32;{
+&#32;&#32;&#32;&#32;.Q_angle&#32;=&#32;0.001f,
+&#32;&#32;&#32;&#32;.Q_bias&#32;=&#32;0.003f,
+&#32;&#32;&#32;&#32;.R_measure&#32;=&#32;0.03f}
+</programlisting></section>
+<anchor xml:id="_mpu6050_8c_1ab827d411b48396d9a23088aa1adcc919"/><section>
+    <title>KalmanY</title>
+<indexterm><primary>KalmanY</primary><secondary>mpu6050.c</secondary></indexterm>
+<indexterm><primary>mpu6050.c</primary><secondary>KalmanY</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_kalman__t">Kalman_t</link> KalmanY</computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">=&#32;{
+&#32;&#32;&#32;&#32;.Q_angle&#32;=&#32;0.001f,
+&#32;&#32;&#32;&#32;.Q_bias&#32;=&#32;0.003f,
+&#32;&#32;&#32;&#32;.R_measure&#32;=&#32;0.03f,
+}
+</programlisting></section>
+</section>
+</section>

@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="mpu6050_8h" kind="file" language="C++">
+    <compoundname>mpu6050.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includedby refid="main_8c" local="yes">Src/main.c</includedby>
+    <includedby refid="mpu6050_8c" local="yes">Src/mpu6050.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Inc/mpu6050.h</label>
+        <link refid="mpu6050_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>stm32f0xx_hal.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>Inc/mpu6050.h</label>
+        <link refid="mpu6050_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="3">
+        <label>Src/mpu6050.c</label>
+        <link refid="mpu6050_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_m_p_u6050__t" prot="public">MPU6050_t</innerclass>
+    <innerclass refid="struct_kalman__t" prot="public">Kalman_t</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="mpu6050_8h_1aafa9c78f858c561cc64af97bbb57e393" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t MPU6050_Init</definition>
+        <argsstring>(I2C_HandleTypeDef *I2Cx)</argsstring>
+        <name>MPU6050_Init</name>
+        <param>
+          <type>I2C_HandleTypeDef *</type>
+          <declname>I2Cx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>check device ID WHO_AM_I</para>
+<para>power management register 0X6B we should write all 0&apos;s to wake the sensor up</para>
+<para>Set DATA RATE of 1KHz by writing SMPLRT_DIV register</para>
+        </inbodydescription>
+        <location file="Inc/mpu6050.h" line="52" column="9" bodyfile="Src/mpu6050.c" bodystart="66" bodyend="100" declfile="Inc/mpu6050.h" declline="52" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="mpu6050_8h_1a5476709bd12c603fc74bae86f72db0d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MPU6050_Read_Accel</definition>
+        <argsstring>(I2C_HandleTypeDef *I2Cx, MPU6050_t *DataStruct)</argsstring>
+        <name>MPU6050_Read_Accel</name>
+        <param>
+          <type>I2C_HandleTypeDef *</type>
+          <declname>I2Cx</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_m_p_u6050__t" kindref="compound">MPU6050_t</ref> *</type>
+          <declname>DataStruct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Read 6 BYTES of data starting from ACCEL_XOUT_H register</para>
+<para>convert the RAW values into acceleration in &apos;g&apos; we have to divide according to the Full scale value set in FS_SEL have configured FS_SEL = 0. So I am dividing by 16384.0 for more details check ACCEL_CONFIG Register</para>
+        </inbodydescription>
+        <location file="Inc/mpu6050.h" line="54" column="6" bodyfile="Src/mpu6050.c" bodystart="102" bodyend="124" declfile="Inc/mpu6050.h" declline="54" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="mpu6050_8h_1a2329322c6cb1c7e939e00bd43db44b4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MPU6050_Read_Gyro</definition>
+        <argsstring>(I2C_HandleTypeDef *I2Cx, MPU6050_t *DataStruct)</argsstring>
+        <name>MPU6050_Read_Gyro</name>
+        <param>
+          <type>I2C_HandleTypeDef *</type>
+          <declname>I2Cx</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_m_p_u6050__t" kindref="compound">MPU6050_t</ref> *</type>
+          <declname>DataStruct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Read 6 BYTES of data starting from GYRO_XOUT_H register</para>
+<para>convert the RAW values into dps (�/s) we have to divide according to the Full scale value set in FS_SEL I have configured FS_SEL = 0. So I am dividing by 131.0 for more details check GYRO_CONFIG Register</para>
+        </inbodydescription>
+        <location file="Inc/mpu6050.h" line="56" column="6" bodyfile="Src/mpu6050.c" bodystart="126" bodyend="148" declfile="Inc/mpu6050.h" declline="56" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="mpu6050_8h_1a83eafd157dd3df2c9add558904ed62e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MPU6050_Read_Temp</definition>
+        <argsstring>(I2C_HandleTypeDef *I2Cx, MPU6050_t *DataStruct)</argsstring>
+        <name>MPU6050_Read_Temp</name>
+        <param>
+          <type>I2C_HandleTypeDef *</type>
+          <declname>I2Cx</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_m_p_u6050__t" kindref="compound">MPU6050_t</ref> *</type>
+          <declname>DataStruct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Read 2 BYTES of data starting from TEMP_OUT_H_REG register</para>
+        </inbodydescription>
+        <location file="Inc/mpu6050.h" line="58" column="6" bodyfile="Src/mpu6050.c" bodystart="150" bodyend="161" declfile="Inc/mpu6050.h" declline="58" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="mpu6050_8h_1aabd50bac1ecae86151549a1a8a678382" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MPU6050_Read_All</definition>
+        <argsstring>(I2C_HandleTypeDef *I2Cx, MPU6050_t *DataStruct)</argsstring>
+        <name>MPU6050_Read_All</name>
+        <param>
+          <type>I2C_HandleTypeDef *</type>
+          <declname>I2Cx</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_m_p_u6050__t" kindref="compound">MPU6050_t</ref> *</type>
+          <declname>DataStruct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Read 14 BYTES of data starting from ACCEL_XOUT_H register</para>
+<para>Kalman angle solve</para>
+        </inbodydescription>
+        <location file="Inc/mpu6050.h" line="60" column="6" bodyfile="Src/mpu6050.c" bodystart="163" bodyend="217" declfile="Inc/mpu6050.h" declline="60" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="mpu6050_8h_1ae076945741048d0c5e3dbfeabc27f5e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Kalman_getAngle</definition>
+        <argsstring>(Kalman_t *Kalman, double newAngle, double newRate, double dt)</argsstring>
+        <name>Kalman_getAngle</name>
+        <param>
+          <type><ref refid="struct_kalman__t" kindref="compound">Kalman_t</ref> *</type>
+          <declname>Kalman</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>newAngle</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>newRate</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Inc/mpu6050.h" line="62" column="8" bodyfile="Src/mpu6050.c" bodystart="219" bodyend="247" declfile="Inc/mpu6050.h" declline="62" declcolumn="8"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="date"><para>11/13/2019 </para>
+</simplesect>
+<simplesect kind="author"><para>Bulanov Konstantin </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>INC_GY521_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INC_GY521_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>INC_GY521_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="struct_m_p_u6050__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/>Accel_X_RAW;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/>Accel_Y_RAW;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/>Accel_Z_RAW;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Ax;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Ay;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Az;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/>Gyro_X_RAW;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/>Gyro_Y_RAW;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>int16_t<sp/>Gyro_Z_RAW;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Gx;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Gy;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Gz;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Temperature;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>KalmanAngleX;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>KalmanAngleY;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}<sp/><ref refid="struct_m_p_u6050__t" kindref="compound">MPU6050_t</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="struct_kalman__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Q_angle;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Q_bias;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>R_measure;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>angle;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>bias;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>P[2][2];</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}<sp/><ref refid="struct_kalman__t" kindref="compound">Kalman_t</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">uint8_t<sp/><ref refid="mpu6050_8h_1aafa9c78f858c561cc64af97bbb57e393" kindref="member">MPU6050_Init</ref>(I2C_HandleTypeDef<sp/>*I2Cx);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mpu6050_8h_1a5476709bd12c603fc74bae86f72db0d5" kindref="member">MPU6050_Read_Accel</ref>(I2C_HandleTypeDef<sp/>*I2Cx,<sp/><ref refid="struct_m_p_u6050__t" kindref="compound">MPU6050_t</ref><sp/>*DataStruct);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mpu6050_8h_1a2329322c6cb1c7e939e00bd43db44b4b" kindref="member">MPU6050_Read_Gyro</ref>(I2C_HandleTypeDef<sp/>*I2Cx,<sp/><ref refid="struct_m_p_u6050__t" kindref="compound">MPU6050_t</ref><sp/>*DataStruct);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mpu6050_8h_1a83eafd157dd3df2c9add558904ed62e0" kindref="member">MPU6050_Read_Temp</ref>(I2C_HandleTypeDef<sp/>*I2Cx,<sp/><ref refid="struct_m_p_u6050__t" kindref="compound">MPU6050_t</ref><sp/>*DataStruct);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mpu6050_8h_1aabd50bac1ecae86151549a1a8a678382" kindref="member">MPU6050_Read_All</ref>(I2C_HandleTypeDef<sp/>*I2Cx,<sp/><ref refid="struct_m_p_u6050__t" kindref="compound">MPU6050_t</ref><sp/>*DataStruct);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>Kalman_getAngle(<ref refid="struct_kalman__t" kindref="compound">Kalman_t</ref><sp/>*Kalman,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>newAngle,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>newRate,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dt);</highlight></codeline>
+    </programlisting>
+    <location file="Inc/mpu6050.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8h_source" xml:lang="en-US">
+<title>main.h</title>
+<indexterm><primary>Inc/main.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*&#32;USER&#32;CODE&#32;BEGIN&#32;Header&#32;*/</emphasis>
+19 <emphasis role="comment">/*&#32;USER&#32;CODE&#32;END&#32;Header&#32;*/</emphasis>
+20 
+21 <emphasis role="comment">/*&#32;Define&#32;to&#32;prevent&#32;recursive&#32;inclusion&#32;-------------------------------------*/</emphasis>
+22 <emphasis role="preprocessor">#ifndef&#32;__MAIN_H</emphasis>
+23 <emphasis role="preprocessor">#define&#32;__MAIN_H</emphasis>
+24 
+25 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+26 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+27 <emphasis role="preprocessor">#endif</emphasis>
+28 
+29 <emphasis role="comment">/*&#32;Includes&#32;------------------------------------------------------------------*/</emphasis>
+30 <emphasis role="preprocessor">#include&#32;&quot;stm32f0xx_hal.h&quot;</emphasis>
+31 
+32 <emphasis role="comment">/*&#32;Private&#32;includes&#32;----------------------------------------------------------*/</emphasis>
+33 <emphasis role="comment">/*&#32;USER&#32;CODE&#32;BEGIN&#32;Includes&#32;*/</emphasis>
+34 
+35 <emphasis role="comment">/*&#32;USER&#32;CODE&#32;END&#32;Includes&#32;*/</emphasis>
+36 
+37 <emphasis role="comment">/*&#32;Exported&#32;types&#32;------------------------------------------------------------*/</emphasis>
+38 <emphasis role="comment">/*&#32;USER&#32;CODE&#32;BEGIN&#32;ET&#32;*/</emphasis>
+39 
+40 <emphasis role="comment">/*&#32;USER&#32;CODE&#32;END&#32;ET&#32;*/</emphasis>
+41 
+42 <emphasis role="comment">/*&#32;Exported&#32;constants&#32;--------------------------------------------------------*/</emphasis>
+43 <emphasis role="comment">/*&#32;USER&#32;CODE&#32;BEGIN&#32;EC&#32;*/</emphasis>
+44 
+45 <emphasis role="comment">/*&#32;USER&#32;CODE&#32;END&#32;EC&#32;*/</emphasis>
+46 
+47 <emphasis role="comment">/*&#32;Exported&#32;macro&#32;------------------------------------------------------------*/</emphasis>
+48 <emphasis role="comment">/*&#32;USER&#32;CODE&#32;BEGIN&#32;EM&#32;*/</emphasis>
+49 
+50 <emphasis role="comment">/*&#32;USER&#32;CODE&#32;END&#32;EM&#32;*/</emphasis>
+51 
+52 <emphasis role="comment">/*&#32;Exported&#32;functions&#32;prototypes&#32;---------------------------------------------*/</emphasis>
+53 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_main_8h_1a1730ffe1e560465665eb47d9264826f9">Error_Handler</link>(<emphasis role="keywordtype">void</emphasis>);
+54 
+55 <emphasis role="comment">/*&#32;USER&#32;CODE&#32;BEGIN&#32;EFP&#32;*/</emphasis>
+56 
+57 <emphasis role="comment">/*&#32;USER&#32;CODE&#32;END&#32;EFP&#32;*/</emphasis>
+58 
+59 <emphasis role="comment">/*&#32;Private&#32;defines&#32;-----------------------------------------------------------*/</emphasis>
+60 <emphasis role="preprocessor">#define&#32;B1_Pin&#32;GPIO_PIN_13</emphasis>
+61 <emphasis role="preprocessor">#define&#32;B1_GPIO_Port&#32;GPIOC</emphasis>
+62 <emphasis role="preprocessor">#define&#32;B1_EXTI_IRQn&#32;EXTI4_15_IRQn</emphasis>
+63 <emphasis role="preprocessor">#define&#32;USART_TX_Pin&#32;GPIO_PIN_2</emphasis>
+64 <emphasis role="preprocessor">#define&#32;USART_TX_GPIO_Port&#32;GPIOA</emphasis>
+65 <emphasis role="preprocessor">#define&#32;USART_RX_Pin&#32;GPIO_PIN_3</emphasis>
+66 <emphasis role="preprocessor">#define&#32;USART_RX_GPIO_Port&#32;GPIOA</emphasis>
+67 <emphasis role="preprocessor">#define&#32;LD2_Pin&#32;GPIO_PIN_5</emphasis>
+68 <emphasis role="preprocessor">#define&#32;LD2_GPIO_Port&#32;GPIOA</emphasis>
+69 <emphasis role="preprocessor">#define&#32;TMS_Pin&#32;GPIO_PIN_13</emphasis>
+70 <emphasis role="preprocessor">#define&#32;TMS_GPIO_Port&#32;GPIOA</emphasis>
+71 <emphasis role="preprocessor">#define&#32;TCK_Pin&#32;GPIO_PIN_14</emphasis>
+72 <emphasis role="preprocessor">#define&#32;TCK_GPIO_Port&#32;GPIOA</emphasis>
+73 <emphasis role="comment">/*&#32;USER&#32;CODE&#32;BEGIN&#32;Private&#32;defines&#32;*/</emphasis>
+74 
+75 <emphasis role="comment">/*&#32;USER&#32;CODE&#32;END&#32;Private&#32;defines&#32;*/</emphasis>
+76 
+77 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+78 }
+79 <emphasis role="preprocessor">#endif</emphasis>
+80 
+81 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__MAIN_H&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

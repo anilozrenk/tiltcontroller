@@ -1,0 +1,80 @@
+\hypertarget{mpu6050_8h}{}\doxysection{Inc/mpu6050.h File Reference}
+\label{mpu6050_8h}\index{Inc/mpu6050.h@{Inc/mpu6050.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em MPU6050 structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_kalman__t}{Kalman\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Kalman structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mpu6050_8h_aafa9c78f858c561cc64af97bbb57e393}{MPU6050\+\_\+\+Init}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$I2\+Cx)
+\item 
+void \mbox{\hyperlink{mpu6050_8h_a5476709bd12c603fc74bae86f72db0d5}{MPU6050\+\_\+\+Read\+\_\+\+Accel}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$I2\+Cx, \mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$Data\+Struct)
+\item 
+void \mbox{\hyperlink{mpu6050_8h_a2329322c6cb1c7e939e00bd43db44b4b}{MPU6050\+\_\+\+Read\+\_\+\+Gyro}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$I2\+Cx, \mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$Data\+Struct)
+\item 
+void \mbox{\hyperlink{mpu6050_8h_a83eafd157dd3df2c9add558904ed62e0}{MPU6050\+\_\+\+Read\+\_\+\+Temp}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$I2\+Cx, \mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$Data\+Struct)
+\item 
+void \mbox{\hyperlink{mpu6050_8h_aabd50bac1ecae86151549a1a8a678382}{MPU6050\+\_\+\+Read\+\_\+\+All}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$I2\+Cx, \mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$Data\+Struct)
+\item 
+\mbox{\Hypertarget{mpu6050_8h_ae076945741048d0c5e3dbfeabc27f5e2}\label{mpu6050_8h_ae076945741048d0c5e3dbfeabc27f5e2}} 
+double {\bfseries Kalman\+\_\+get\+Angle} (\mbox{\hyperlink{struct_kalman__t}{Kalman\+\_\+t}} $\ast$Kalman, double new\+Angle, double new\+Rate, double dt)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyDate}{Date}
+11/13/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Bulanov Konstantin 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mpu6050_8h_aafa9c78f858c561cc64af97bbb57e393}\label{mpu6050_8h_aafa9c78f858c561cc64af97bbb57e393}} 
+\index{mpu6050.h@{mpu6050.h}!MPU6050\_Init@{MPU6050\_Init}}
+\index{MPU6050\_Init@{MPU6050\_Init}!mpu6050.h@{mpu6050.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Init()}{MPU6050\_Init()}}
+{\footnotesize\ttfamily uint8\+\_\+t MPU6050\+\_\+\+Init (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{I2\+Cx }\end{DoxyParamCaption})}
+
+check device ID WHO\+\_\+\+AM\+\_\+I
+
+power management register 0X6B we should write all 0\textquotesingle{}s to wake the sensor up
+
+Set DATA RATE of 1KHz by writing SMPLRT\+\_\+\+DIV register\mbox{\Hypertarget{mpu6050_8h_a5476709bd12c603fc74bae86f72db0d5}\label{mpu6050_8h_a5476709bd12c603fc74bae86f72db0d5}} 
+\index{mpu6050.h@{mpu6050.h}!MPU6050\_Read\_Accel@{MPU6050\_Read\_Accel}}
+\index{MPU6050\_Read\_Accel@{MPU6050\_Read\_Accel}!mpu6050.h@{mpu6050.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_Accel()}{MPU6050\_Read\_Accel()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+Accel (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{\mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Read 6 BYTES of data starting from ACCEL\+\_\+\+XOUT\+\_\+H register
+
+convert the RAW values into acceleration in \textquotesingle{}g\textquotesingle{} we have to divide according to the Full scale value set in FS\+\_\+\+SEL have configured FS\+\_\+\+SEL = 0. So I am dividing by 16384.\+0 for more details check ACCEL\+\_\+\+CONFIG Register\mbox{\Hypertarget{mpu6050_8h_aabd50bac1ecae86151549a1a8a678382}\label{mpu6050_8h_aabd50bac1ecae86151549a1a8a678382}} 
+\index{mpu6050.h@{mpu6050.h}!MPU6050\_Read\_All@{MPU6050\_Read\_All}}
+\index{MPU6050\_Read\_All@{MPU6050\_Read\_All}!mpu6050.h@{mpu6050.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_All()}{MPU6050\_Read\_All()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+All (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{\mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Read 14 BYTES of data starting from ACCEL\+\_\+\+XOUT\+\_\+H register
+
+Kalman angle solve\mbox{\Hypertarget{mpu6050_8h_a2329322c6cb1c7e939e00bd43db44b4b}\label{mpu6050_8h_a2329322c6cb1c7e939e00bd43db44b4b}} 
+\index{mpu6050.h@{mpu6050.h}!MPU6050\_Read\_Gyro@{MPU6050\_Read\_Gyro}}
+\index{MPU6050\_Read\_Gyro@{MPU6050\_Read\_Gyro}!mpu6050.h@{mpu6050.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_Gyro()}{MPU6050\_Read\_Gyro()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+Gyro (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{\mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Read 6 BYTES of data starting from GYRO\+\_\+\+XOUT\+\_\+H register
+
+convert the RAW values into dps ({\ucr}/s) we have to divide according to the Full scale value set in FS\+\_\+\+SEL I have configured FS\+\_\+\+SEL = 0. So I am dividing by 131.\+0 for more details check GYRO\+\_\+\+CONFIG Register\mbox{\Hypertarget{mpu6050_8h_a83eafd157dd3df2c9add558904ed62e0}\label{mpu6050_8h_a83eafd157dd3df2c9add558904ed62e0}} 
+\index{mpu6050.h@{mpu6050.h}!MPU6050\_Read\_Temp@{MPU6050\_Read\_Temp}}
+\index{MPU6050\_Read\_Temp@{MPU6050\_Read\_Temp}!mpu6050.h@{mpu6050.h}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_Temp()}{MPU6050\_Read\_Temp()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+Temp (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{\mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Read 2 BYTES of data starting from TEMP\+\_\+\+OUT\+\_\+\+H\+\_\+\+REG register

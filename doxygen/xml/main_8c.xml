@@ -1,0 +1,832 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.4" xml:lang="en-US">
+  <compounddef id="main_8c" kind="file" language="C++">
+    <compoundname>main.c</compoundname>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includes refid="mpu6050_8h" local="yes">mpu6050.h</includes>
+    <includes refid="controller_8h" local="yes">controller.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>controller.h</label>
+        <link refid="controller_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>mpu6050.h</label>
+        <link refid="mpu6050_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Src/main.c</label>
+        <link refid="main_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>stm32f0xx_hal.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="main_8c_1a46130dc86f2322714bba26960b64e7bb" prot="public" static="no">
+        <name>BUFFER_LEN</name>
+        <initializer>13</initializer>
+        <briefdescription>
+<para>predefined lenght to main uart buffer </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="36" column="9" bodyfile="Src/main.c" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8c_1a88d70c2c026b9cb514de366a7b20ef8e" prot="public" static="no">
+        <name>KF</name>
+        <initializer>0.85</initializer>
+        <briefdescription>
+<para>exponantial filter coeficient </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="37" column="9" bodyfile="Src/main.c" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="main_8c_1af7b2c26e44dadaaa798a5c3d82914ba7" prot="public" static="no" mutable="no">
+        <type>I2C_HandleTypeDef</type>
+        <definition>I2C_HandleTypeDef hi2c1</definition>
+        <argsstring></argsstring>
+        <name>hi2c1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="47" column="19" bodyfile="Src/main.c" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a2cf715bef37f7e8ef385a30974a5f0d5" prot="public" static="no" mutable="no">
+        <type>UART_HandleTypeDef</type>
+        <definition>UART_HandleTypeDef huart1</definition>
+        <argsstring></argsstring>
+        <name>huart1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="48" column="20" bodyfile="Src/main.c" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1aa9479c261d65eecedd3d9582f7f0f89c" prot="public" static="no" mutable="no">
+        <type>UART_HandleTypeDef</type>
+        <definition>UART_HandleTypeDef huart2</definition>
+        <argsstring></argsstring>
+        <name>huart2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="49" column="20" bodyfile="Src/main.c" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a93357d136721fbae9e3787ddd1a42024" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_m_p_u6050__t" kindref="compound">MPU6050_t</ref></type>
+        <definition>MPU6050_t MPU6050</definition>
+        <argsstring></argsstring>
+        <name>MPU6050</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="53" column="11" bodyfile="Src/main.c" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a69e0ec05140bebffbd22342b2f616eab" prot="public" static="no" mutable="no">
+        <type><ref refid="structtyp_hover_handler" kindref="compound">typHoverHandler</ref></type>
+        <definition>typHoverHandler hHover</definition>
+        <argsstring></argsstring>
+        <name>hHover</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="54" column="17" bodyfile="Src/main.c" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1aaa24c7e31de9f9b48e1da1b7a5f4125c" prot="public" static="no" mutable="no">
+        <type><ref refid="structtyp_p_w_m_input_handler" kindref="compound">typPWMInputHandler</ref></type>
+        <definition>typPWMInputHandler hInput</definition>
+        <argsstring></argsstring>
+        <name>hInput</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="55" column="20" bodyfile="Src/main.c" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a4aa5ae7da3192a39914575d5b9c75df6" prot="public" static="no" mutable="no">
+        <type><ref refid="structtyp_p_w_m_output_handler" kindref="compound">typPWMOutputHandler</ref></type>
+        <definition>typPWMOutputHandler hOutput</definition>
+        <argsstring></argsstring>
+        <name>hOutput</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="56" column="21" bodyfile="Src/main.c" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1ae5167f6e25e0cd98dde6306fd4a50241" prot="public" static="no" mutable="no">
+        <type><ref refid="structtyp_vector" kindref="compound">typVector</ref></type>
+        <definition>typVector hVector</definition>
+        <argsstring></argsstring>
+        <name>hVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="57" column="11" bodyfile="Src/main.c" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1ae29f244edcef79e061c85dac10bbc513" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double x_angle_base</definition>
+        <argsstring></argsstring>
+        <name>x_angle_base</name>
+        <briefdescription>
+<para>holds gyro angle </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="60" column="8" bodyfile="Src/main.c" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a4ed5d81d05128863e501862befa958ed" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double y_angle_base</definition>
+        <argsstring></argsstring>
+        <name>y_angle_base</name>
+        <briefdescription>
+<para>holds gyro angle </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="62" column="8" bodyfile="Src/main.c" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a98c7167974a92cd100d746166952a191" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char rx_buffer[BUFFER_LEN]</definition>
+        <argsstring>[BUFFER_LEN]</argsstring>
+        <name>rx_buffer</name>
+        <initializer>= {0}</initializer>
+        <briefdescription>
+<para>main rx buffer </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="64" column="6" bodyfile="Src/main.c" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a80f5e7ce62bd666bf36ca6b80e49b891" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char tx_buffer[BUFFER_LEN]</definition>
+        <argsstring>[BUFFER_LEN]</argsstring>
+        <name>tx_buffer</name>
+        <initializer>= {0}</initializer>
+        <briefdescription>
+<para>main tx buffer </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="66" column="6" bodyfile="Src/main.c" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="main_8c_1a70af21c671abfcc773614a9a4f63d920" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemClock_Config</definition>
+        <argsstring>(void)</argsstring>
+        <name>SystemClock_Config</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>System Clock Configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Initializes the RCC Oscillators according to the specified parameters in the RCC_OscInitTypeDef structure.</para>
+<para>Initializes the CPU, AHB and APB buses clocks</para>
+        </inbodydescription>
+        <location file="Src/main.c" line="172" column="6" bodyfile="Src/main.c" bodystart="172" bodyend="214" declfile="Src/main.c" declline="70" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1ae89fdd15729ad41a66911190fcbab23a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void MX_GPIO_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>MX_GPIO_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>GPIO Initialization Function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="339" column="13" bodyfile="Src/main.c" bodystart="339" bodyend="369" declfile="Src/main.c" declline="71" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a6db1014d713f6f5c0f52a13299ee0733" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void MX_USART2_UART_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>MX_USART2_UART_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>USART2 Initialization Function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="304" column="13" bodyfile="Src/main.c" bodystart="304" bodyend="332" declfile="Src/main.c" declline="72" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a4230d11f81d0b16e112f1cc3f40cb42f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void MX_I2C1_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>MX_I2C1_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>I2C1 Initialization Function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Configure Analogue filter</para>
+<para>Configure Digital filter</para>
+        </inbodydescription>
+        <location file="Src/main.c" line="221" column="13" bodyfile="Src/main.c" bodystart="221" bodyend="262" declfile="Src/main.c" declline="73" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a62f4b77e20bccafe98a183771749c20c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void MX_USART1_UART_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>MX_USART1_UART_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>USART1 Initialization Function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="269" column="13" bodyfile="Src/main.c" bodystart="269" bodyend="297" declfile="Src/main.c" declline="74" declcolumn="13"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a0cd91fd3a9608559c2a87a8ba6cba55f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_GPIO_EXTI_Callback</definition>
+        <argsstring>(uint16_t GPIO_Pin)</argsstring>
+        <name>HAL_GPIO_EXTI_Callback</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>GPIO_Pin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>external interrupt routine for base angle reset gpio pin 13 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="85" column="6" bodyfile="Src/main.c" bodystart="85" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(void)</argsstring>
+        <name>main</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>The application entry point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>initialize mpu6050 module</para>
+<para>initialize hover struct</para>
+<para>initial x angle base</para>
+<para>initial y angle base</para>
+<para>transmit buffer to bluetooth</para>
+<para>transmit buffer via usb</para>
+        </inbodydescription>
+        <location file="Src/main.c" line="99" column="5" bodyfile="Src/main.c" bodystart="99" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a1730ffe1e560465665eb47d9264826f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Error_Handler</definition>
+        <argsstring>(void)</argsstring>
+        <name>Error_Handler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function is executed in case of error occurrence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Src/main.c" line="379" column="6" bodyfile="Src/main.c" bodystart="379" bodyend="388"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Main program body. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Anil Ozrenk</para>
+</simplesect>
+<simplesect kind="attention"><para></para>
+</simplesect>
+Copyright (c) 2022 Anil Ozrenk. All rights reserved.</para>
+<para>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>includes<sp/>----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mpu6050_8h" kindref="compound">mpu6050.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;controller.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>typedef<sp/>-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PTD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PTD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>define<sp/>------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BUFFER_LEN<sp/><sp/>13<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>KF<sp/>0.85<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>macro<sp/>-------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PM<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PM<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>variables<sp/>---------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">I2C_HandleTypeDef<sp/>hi2c1;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">UART_HandleTypeDef<sp/>huart1;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">UART_HandleTypeDef<sp/>huart2;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PV<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><ref refid="struct_m_p_u6050__t" kindref="compound">MPU6050_t</ref><sp/>MPU6050;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="structtyp_hover_handler" kindref="compound">typHoverHandler</ref><sp/>hHover;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><ref refid="structtyp_p_w_m_input_handler" kindref="compound">typPWMInputHandler</ref><sp/>hInput;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="structtyp_p_w_m_output_handler" kindref="compound">typPWMOutputHandler</ref><sp/>hOutput;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><ref refid="structtyp_vector" kindref="compound">typVector</ref><sp/>hVector;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="main_8c_1ae29f244edcef79e061c85dac10bbc513" kindref="member">x_angle_base</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a4ed5d81d05128863e501862befa958ed" kindref="member">y_angle_base</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a98c7167974a92cd100d746166952a191" kindref="member">rx_buffer</ref>[<ref refid="main_8c_1a46130dc86f2322714bba26960b64e7bb" kindref="member">BUFFER_LEN</ref>]<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="66"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a80f5e7ce62bd666bf36ca6b80e49b891" kindref="member">tx_buffer</ref>[<ref refid="main_8c_1a46130dc86f2322714bba26960b64e7bb" kindref="member">BUFFER_LEN</ref>]<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PV<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>function<sp/>prototypes<sp/>-----------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a70af21c671abfcc773614a9a4f63d920" kindref="member">SystemClock_Config</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MX_GPIO_Init(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MX_USART2_UART_Init(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MX_I2C1_Init(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MX_USART1_UART_Init(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PFP<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PFP<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>user<sp/>code<sp/>---------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a0cd91fd3a9608559c2a87a8ba6cba55f" kindref="member">HAL_GPIO_EXTI_Callback</ref>(uint16_t<sp/>GPIO_Pin){</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>GPIO_PIN_13<sp/>==<sp/>GPIO_Pin){</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1ae29f244edcef79e061c85dac10bbc513" kindref="member">x_angle_base</ref>=MPU6050.KalmanAngleX;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a4ed5d81d05128863e501862befa958ed" kindref="member">y_angle_base</ref>=MPU6050.KalmanAngleY;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" kindref="member">main</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>MCU<sp/>Configuration--------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Reset<sp/>of<sp/>all<sp/>peripherals,<sp/>Initializes<sp/>the<sp/>Flash<sp/>interface<sp/>and<sp/>the<sp/>Systick.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>HAL_Init();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Init<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Init<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Configure<sp/>the<sp/>system<sp/>clock<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><ref refid="main_8c_1a70af21c671abfcc773614a9a4f63d920" kindref="member">SystemClock_Config</ref>();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>SysInit<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>SysInit<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>all<sp/>configured<sp/>peripherals<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>MX_GPIO_Init();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>MX_USART2_UART_Init();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>MX_I2C1_Init();</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>MX_USART1_UART_Init();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>2<sp/>*/</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><ref refid="mpu6050_8h_1aafa9c78f858c561cc64af97bbb57e393" kindref="member">MPU6050_Init</ref>(&amp;hi2c1);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><ref refid="controller_8c_1a50d0e2e6139d69c55c535c74d4c7077e" kindref="member">hoverInit</ref>(&amp;hHover);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>HAL_Delay(500);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><ref refid="mpu6050_8h_1aabd50bac1ecae86151549a1a8a678382" kindref="member">MPU6050_Read_All</ref>(&amp;hi2c1,<sp/>&amp;MPU6050);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><ref refid="main_8c_1ae29f244edcef79e061c85dac10bbc513" kindref="member">x_angle_base</ref>=MPU6050.KalmanAngleX;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><ref refid="main_8c_1a4ed5d81d05128863e501862befa958ed" kindref="member">y_angle_base</ref>=MPU6050.KalmanAngleY;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Infinite<sp/>loop<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>WHILE<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mpu6050_8h_1aabd50bac1ecae86151549a1a8a678382" kindref="member">MPU6050_Read_All</ref>(&amp;hi2c1,<sp/>&amp;MPU6050);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="controller_8c_1a06645bfc45724a560b1ea2dde074525d" kindref="member">angleToVector</ref>(&amp;hVector,<sp/>MPU6050.KalmanAngleX,<sp/><ref refid="main_8c_1ae29f244edcef79e061c85dac10bbc513" kindref="member">x_angle_base</ref>,<sp/>MPU6050.KalmanAngleY,<sp/><ref refid="main_8c_1a4ed5d81d05128863e501862befa958ed" kindref="member">y_angle_base</ref>,<sp/>3);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="controller_8c_1a725b010a425c9a3c2bda47ae81732b8c" kindref="member">vectorToPwm</ref>(&amp;hVector,<sp/>&amp;hInput);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="controller_8c_1a70f9428f5c81614c11fb0ba084b70929" kindref="member">pwmSmooting</ref>(&amp;hHover,&amp;hInput,<sp/><ref refid="main_8c_1a88d70c2c026b9cb514de366a7b20ef8e" kindref="member">KF</ref>);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>command(&amp;hHover,<sp/><ref refid="main_8c_1a80f5e7ce62bd666bf36ca6b80e49b891" kindref="member">tx_buffer</ref>);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>HAL_UART_Transmit(&amp;huart1,<sp/>(uint8_t<sp/>*)<ref refid="main_8c_1a80f5e7ce62bd666bf36ca6b80e49b891" kindref="member">tx_buffer</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="main_8c_1a80f5e7ce62bd666bf36ca6b80e49b891" kindref="member">tx_buffer</ref>),<sp/>500);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>HAL_UART_Transmit(&amp;huart2,<sp/>(uint8_t<sp/>*)<ref refid="main_8c_1a80f5e7ce62bd666bf36ca6b80e49b891" kindref="member">tx_buffer</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="main_8c_1a80f5e7ce62bd666bf36ca6b80e49b891" kindref="member">tx_buffer</ref>),<sp/>500);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>uu[]=</highlight><highlight class="stringliteral">&quot;\n\r&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>HAL_UART_Transmit(&amp;huart2,<sp/>(uint8_t<sp/>*)uu,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uu),<sp/>500);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>HAL_Delay(20);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>WHILE<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>3<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>3<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a70af21c671abfcc773614a9a4f63d920" kindref="member">SystemClock_Config</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/>RCC_OscInitTypeDef<sp/>RCC_OscInitStruct<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/>RCC_ClkInitTypeDef<sp/>RCC_ClkInitStruct<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>RCC_PeriphCLKInitTypeDef<sp/>PeriphClkInit<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.OscillatorType<sp/>=<sp/>RCC_OSCILLATORTYPE_HSI;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.HSIState<sp/>=<sp/>RCC_HSI_ON;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.HSICalibrationValue<sp/>=<sp/>RCC_HSICALIBRATION_DEFAULT;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.PLL.PLLState<sp/>=<sp/>RCC_PLL_ON;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.PLL.PLLSource<sp/>=<sp/>RCC_PLLSOURCE_HSI;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.PLL.PLLMUL<sp/>=<sp/>RCC_PLL_MUL6;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.PLL.PREDIV<sp/>=<sp/>RCC_PREDIV_DIV1;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_RCC_OscConfig(&amp;RCC_OscInitStruct)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/>RCC_ClkInitStruct.ClockType<sp/>=<sp/>RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|RCC_CLOCKTYPE_PCLK1;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/>RCC_ClkInitStruct.SYSCLKSource<sp/>=<sp/>RCC_SYSCLKSOURCE_PLLCLK;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/>RCC_ClkInitStruct.AHBCLKDivider<sp/>=<sp/>RCC_SYSCLK_DIV1;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/>RCC_ClkInitStruct.APB1CLKDivider<sp/>=<sp/>RCC_HCLK_DIV1;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_RCC_ClockConfig(&amp;RCC_ClkInitStruct,<sp/>FLASH_LATENCY_1)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/>PeriphClkInit.PeriphClockSelection<sp/>=<sp/>RCC_PERIPHCLK_USART1|RCC_PERIPHCLK_USART2</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|RCC_PERIPHCLK_I2C1;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/>PeriphClkInit.Usart1ClockSelection<sp/>=<sp/>RCC_USART1CLKSOURCE_PCLK1;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/>PeriphClkInit.Usart2ClockSelection<sp/>=<sp/>RCC_USART2CLKSOURCE_PCLK1;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/>PeriphClkInit.I2c1ClockSelection<sp/>=<sp/>RCC_I2C1CLKSOURCE_HSI;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_RCCEx_PeriphCLKConfig(&amp;PeriphClkInit)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MX_I2C1_Init(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="222"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>I2C1_Init<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>I2C1_Init<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>I2C1_Init<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>I2C1_Init<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/>hi2c1.Instance<sp/>=<sp/>I2C1;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/>hi2c1.Init.Timing<sp/>=<sp/>0x2000090E;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/>hi2c1.Init.OwnAddress1<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/>hi2c1.Init.AddressingMode<sp/>=<sp/>I2C_ADDRESSINGMODE_7BIT;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/>hi2c1.Init.DualAddressMode<sp/>=<sp/>I2C_DUALADDRESS_DISABLE;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/>hi2c1.Init.OwnAddress2<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/>hi2c1.Init.OwnAddress2Masks<sp/>=<sp/>I2C_OA2_NOMASK;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/>hi2c1.Init.GeneralCallMode<sp/>=<sp/>I2C_GENERALCALL_DISABLE;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/>hi2c1.Init.NoStretchMode<sp/>=<sp/>I2C_NOSTRETCH_DISABLE;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_I2C_Init(&amp;hi2c1)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_I2CEx_ConfigAnalogFilter(&amp;hi2c1,<sp/>I2C_ANALOGFILTER_ENABLE)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_I2CEx_ConfigDigitalFilter(&amp;hi2c1,<sp/>0)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>I2C1_Init<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>I2C1_Init<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MX_USART1_UART_Init(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="270"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>USART1_Init<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>USART1_Init<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>USART1_Init<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>USART1_Init<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/>huart1.Instance<sp/>=<sp/>USART1;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/>huart1.Init.BaudRate<sp/>=<sp/>9600;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/>huart1.Init.WordLength<sp/>=<sp/>UART_WORDLENGTH_8B;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/>huart1.Init.StopBits<sp/>=<sp/>UART_STOPBITS_1;</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/>huart1.Init.Parity<sp/>=<sp/>UART_PARITY_NONE;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/>huart1.Init.Mode<sp/>=<sp/>UART_MODE_TX_RX;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/>huart1.Init.HwFlowCtl<sp/>=<sp/>UART_HWCONTROL_NONE;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/>huart1.Init.OverSampling<sp/>=<sp/>UART_OVERSAMPLING_16;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/>huart1.Init.OneBitSampling<sp/>=<sp/>UART_ONE_BIT_SAMPLE_DISABLE;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/>huart1.AdvancedInit.AdvFeatureInit<sp/>=<sp/>UART_ADVFEATURE_NO_INIT;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_UART_Init(&amp;huart1)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>USART1_Init<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>USART1_Init<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MX_USART2_UART_Init(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="305"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>USART2_Init<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>USART2_Init<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>USART2_Init<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>USART2_Init<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/>huart2.Instance<sp/>=<sp/>USART2;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/>huart2.Init.BaudRate<sp/>=<sp/>9600;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/>huart2.Init.WordLength<sp/>=<sp/>UART_WORDLENGTH_8B;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/>huart2.Init.StopBits<sp/>=<sp/>UART_STOPBITS_1;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/>huart2.Init.Parity<sp/>=<sp/>UART_PARITY_NONE;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/>huart2.Init.Mode<sp/>=<sp/>UART_MODE_TX_RX;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/>huart2.Init.HwFlowCtl<sp/>=<sp/>UART_HWCONTROL_NONE;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/>huart2.Init.OverSampling<sp/>=<sp/>UART_OVERSAMPLING_16;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/>huart2.Init.OneBitSampling<sp/>=<sp/>UART_ONE_BIT_SAMPLE_DISABLE;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/>huart2.AdvancedInit.AdvFeatureInit<sp/>=<sp/>UART_ADVFEATURE_NO_INIT;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_UART_Init(&amp;huart2)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>USART2_Init<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>USART2_Init<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MX_GPIO_Init(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="340"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/>GPIO_InitTypeDef<sp/>GPIO_InitStruct<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>GPIO<sp/>Ports<sp/>Clock<sp/>Enable<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/>__HAL_RCC_GPIOC_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/>__HAL_RCC_GPIOF_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/>__HAL_RCC_GPIOA_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/>__HAL_RCC_GPIOB_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*Configure<sp/>GPIO<sp/>pin<sp/>Output<sp/>Level<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/>HAL_GPIO_WritePin(LD2_GPIO_Port,<sp/>LD2_Pin,<sp/>GPIO_PIN_RESET);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*Configure<sp/>GPIO<sp/>pin<sp/>:<sp/>B1_Pin<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/>GPIO_InitStruct.Pin<sp/>=<sp/>B1_Pin;</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/>GPIO_InitStruct.Mode<sp/>=<sp/>GPIO_MODE_IT_FALLING;</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/>GPIO_InitStruct.Pull<sp/>=<sp/>GPIO_NOPULL;</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/>HAL_GPIO_Init(B1_GPIO_Port,<sp/>&amp;GPIO_InitStruct);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*Configure<sp/>GPIO<sp/>pin<sp/>:<sp/>LD2_Pin<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/>GPIO_InitStruct.Pin<sp/>=<sp/>LD2_Pin;</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/>GPIO_InitStruct.Mode<sp/>=<sp/>GPIO_MODE_OUTPUT_PP;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/>GPIO_InitStruct.Pull<sp/>=<sp/>GPIO_NOPULL;</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/>GPIO_InitStruct.Speed<sp/>=<sp/>GPIO_SPEED_FREQ_LOW;</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/>HAL_GPIO_Init(LD2_GPIO_Port,<sp/>&amp;GPIO_InitStruct);</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>EXTI<sp/>interrupt<sp/>init*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/>HAL_NVIC_SetPriority(EXTI4_15_IRQn,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/>HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>4<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>4<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="380"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Error_Handler_Debug<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>User<sp/>can<sp/>add<sp/>his<sp/>own<sp/>implementation<sp/>to<sp/>report<sp/>the<sp/>HAL<sp/>error<sp/>return<sp/>state<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/>__disable_irq();</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Error_Handler_Debug<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>USE_FULL_ASSERT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>assert_failed(uint8_t<sp/>*file,<sp/>uint32_t<sp/>line)</highlight></codeline>
+<codeline lineno="399"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>6<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>User<sp/>can<sp/>add<sp/>his<sp/>own<sp/>implementation<sp/>to<sp/>report<sp/>the<sp/>file<sp/>name<sp/>and<sp/>line<sp/>number,</highlight></codeline>
+<codeline lineno="402"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>ex:<sp/>printf(&quot;Wrong<sp/>parameters<sp/>value:<sp/>file<sp/>%s<sp/>on<sp/>line<sp/>%d\r\n&quot;,<sp/>file,<sp/>line)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>6<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>USE_FULL_ASSERT<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="Src/main.c"/>
+  </compounddef>
+</doxygen>

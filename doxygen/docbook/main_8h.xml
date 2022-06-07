@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8h" xml:lang="en-US">
+<title>Inc/main.h File Reference</title>
+<indexterm><primary>Inc/main.h</primary></indexterm>
+<para>
+
+<para>: Header for <link linkend="_main_8c">main.c</link> file. This file contains the common defines of the application. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;stm32f0xx_hal.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_main_8h_1a31ac298fbbc8a1d6de1dc4577a108232"/>#define <emphasis role="strong">B1_Pin</emphasis>   GPIO_PIN_13</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a4926b92dcb220e465850d9616c27e171"/>#define <emphasis role="strong">B1_GPIO_Port</emphasis>   GPIOC</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a1c6fc611ed1c235b33d00152ceb5ece8"/>#define <emphasis role="strong">B1_EXTI_IRQn</emphasis>   EXTI4_15_IRQn</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a5644600bf1ed996688dd87dc3f88526c"/>#define <emphasis role="strong">USART_TX_Pin</emphasis>   GPIO_PIN_2</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a79a3e098f5d738c55a12e4272b7b2f84"/>#define <emphasis role="strong">USART_TX_GPIO_Port</emphasis>   GPIOA</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1ac93b92f1334823df872908c845c71afc"/>#define <emphasis role="strong">USART_RX_Pin</emphasis>   GPIO_PIN_3</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1aae451289f2eda1c04e3bf6d6120b6c0b"/>#define <emphasis role="strong">USART_RX_GPIO_Port</emphasis>   GPIOA</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1af17a94dd613cff35c699b06c7c6a2820"/>#define <emphasis role="strong">LD2_Pin</emphasis>   GPIO_PIN_5</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a5aff6ddf7fe557e53b048115ad322aa0"/>#define <emphasis role="strong">LD2_GPIO_Port</emphasis>   GPIOA</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1af2c8a7a0746106e52f6f415b8921c21b"/>#define <emphasis role="strong">TMS_Pin</emphasis>   GPIO_PIN_13</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1affce477a22cc940d3962932cb33ec422"/>#define <emphasis role="strong">TMS_GPIO_Port</emphasis>   GPIOA</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a9e21d9bed16b0275ff16a864ffb2ab6e"/>#define <emphasis role="strong">TCK_Pin</emphasis>   GPIO_PIN_14</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a1541f23b870848a43f0274857badd175"/>#define <emphasis role="strong">TCK_GPIO_Port</emphasis>   GPIOA</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_main_8h_1a1730ffe1e560465665eb47d9264826f9">Error_Handler</link> (void)</para>
+
+<para>This function is executed in case of error occurrence. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>: Header for <link linkend="_main_8c">main.c</link> file. This file contains the common defines of the application. </para>
+
+<para><caution><title>Attention</title>
+
+<para></para>
+</caution>
+Copyright (c) 2022 STMicroelectronics. All rights reserved.</para>
+
+<para>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_main_8h_1a1730ffe1e560465665eb47d9264826f9"/><section>
+    <title>Error_Handler()</title>
+<indexterm><primary>Error_Handler</primary><secondary>main.h</secondary></indexterm>
+<indexterm><primary>main.h</primary><secondary>Error_Handler</secondary></indexterm>
+<para><computeroutput>void Error_Handler (void )</computeroutput></para><para>
+
+<para>This function is executed in case of error occurrence. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Return values</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>None</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+</section>

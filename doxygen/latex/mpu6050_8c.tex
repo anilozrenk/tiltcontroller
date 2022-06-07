@@ -1,0 +1,162 @@
+\hypertarget{mpu6050_8c}{}\doxysection{Src/mpu6050.c File Reference}
+\label{mpu6050_8c}\index{Src/mpu6050.c@{Src/mpu6050.c}}
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}mpu6050.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mpu6050_8c_a89e47af0449640d4f15191aba5ca24c6}{RAD\+\_\+\+TO\+\_\+\+DEG}}~57.\+295779513082320876798154814105
+\item 
+\mbox{\Hypertarget{mpu6050_8c_a7e23ffa5bb718d06bcee89bbdf844ed8}\label{mpu6050_8c_a7e23ffa5bb718d06bcee89bbdf844ed8}} 
+\#define {\bfseries WHO\+\_\+\+AM\+\_\+\+I\+\_\+\+REG}~0x75
+\item 
+\mbox{\Hypertarget{mpu6050_8c_af9bd016ab99b299a4816433252e31c3d}\label{mpu6050_8c_af9bd016ab99b299a4816433252e31c3d}} 
+\#define {\bfseries PWR\+\_\+\+MGMT\+\_\+1\+\_\+\+REG}~0x6B
+\item 
+\mbox{\Hypertarget{mpu6050_8c_aa2208da6faf439107b23dee629bb8398}\label{mpu6050_8c_aa2208da6faf439107b23dee629bb8398}} 
+\#define {\bfseries SMPLRT\+\_\+\+DIV\+\_\+\+REG}~0x19
+\item 
+\mbox{\Hypertarget{mpu6050_8c_ad1d05dc09d0025498687ab7e30ffd4e4}\label{mpu6050_8c_ad1d05dc09d0025498687ab7e30ffd4e4}} 
+\#define {\bfseries ACCEL\+\_\+\+CONFIG\+\_\+\+REG}~0x1C
+\item 
+\mbox{\Hypertarget{mpu6050_8c_a12d3f98f5ae302f7aab5895be9388d69}\label{mpu6050_8c_a12d3f98f5ae302f7aab5895be9388d69}} 
+\#define {\bfseries ACCEL\+\_\+\+XOUT\+\_\+\+H\+\_\+\+REG}~0x3B
+\item 
+\mbox{\Hypertarget{mpu6050_8c_aff3d1ca89fdcdfd99fe28f579b79a041}\label{mpu6050_8c_aff3d1ca89fdcdfd99fe28f579b79a041}} 
+\#define {\bfseries TEMP\+\_\+\+OUT\+\_\+\+H\+\_\+\+REG}~0x41
+\item 
+\mbox{\Hypertarget{mpu6050_8c_a5b1b1a1ea1298b67cdab17a7213c6356}\label{mpu6050_8c_a5b1b1a1ea1298b67cdab17a7213c6356}} 
+\#define {\bfseries GYRO\+\_\+\+CONFIG\+\_\+\+REG}~0x1B
+\item 
+\mbox{\Hypertarget{mpu6050_8c_ae2681bec6196f74ae52136e8af1a4dcf}\label{mpu6050_8c_ae2681bec6196f74ae52136e8af1a4dcf}} 
+\#define {\bfseries GYRO\+\_\+\+XOUT\+\_\+\+H\+\_\+\+REG}~0x43
+\item 
+\mbox{\Hypertarget{mpu6050_8c_ad4d6255d8f7e5dc770e773b787977508}\label{mpu6050_8c_ad4d6255d8f7e5dc770e773b787977508}} 
+\#define {\bfseries MPU6050\+\_\+\+ADDR}~(0x68$<$$<$1)
+\begin{DoxyCompactList}\small\item\em Setup MPU6050. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mpu6050_8c_aafa9c78f858c561cc64af97bbb57e393}{MPU6050\+\_\+\+Init}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$I2\+Cx)
+\item 
+void \mbox{\hyperlink{mpu6050_8c_a5476709bd12c603fc74bae86f72db0d5}{MPU6050\+\_\+\+Read\+\_\+\+Accel}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$I2\+Cx, \mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$Data\+Struct)
+\item 
+void \mbox{\hyperlink{mpu6050_8c_a2329322c6cb1c7e939e00bd43db44b4b}{MPU6050\+\_\+\+Read\+\_\+\+Gyro}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$I2\+Cx, \mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$Data\+Struct)
+\item 
+void \mbox{\hyperlink{mpu6050_8c_a83eafd157dd3df2c9add558904ed62e0}{MPU6050\+\_\+\+Read\+\_\+\+Temp}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$I2\+Cx, \mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$Data\+Struct)
+\item 
+void \mbox{\hyperlink{mpu6050_8c_aabd50bac1ecae86151549a1a8a678382}{MPU6050\+\_\+\+Read\+\_\+\+All}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$I2\+Cx, \mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$Data\+Struct)
+\item 
+\mbox{\Hypertarget{mpu6050_8c_ae076945741048d0c5e3dbfeabc27f5e2}\label{mpu6050_8c_ae076945741048d0c5e3dbfeabc27f5e2}} 
+double {\bfseries Kalman\+\_\+get\+Angle} (\mbox{\hyperlink{struct_kalman__t}{Kalman\+\_\+t}} $\ast$Kalman, double new\+Angle, double new\+Rate, double dt)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{mpu6050_8c_ac339720e63c0ffe1ddaa3ab29e207949}\label{mpu6050_8c_ac339720e63c0ffe1ddaa3ab29e207949}} 
+const uint16\+\_\+t {\bfseries i2c\+\_\+timeout} = 500
+\item 
+\mbox{\Hypertarget{mpu6050_8c_a4b2a23e087dac68793981b718a4f5ff4}\label{mpu6050_8c_a4b2a23e087dac68793981b718a4f5ff4}} 
+const double {\bfseries Accel\+\_\+\+Z\+\_\+corrector} = 14418.\+0
+\item 
+\mbox{\Hypertarget{mpu6050_8c_a0d88807102c8d96e37cb4751f0d5a7d3}\label{mpu6050_8c_a0d88807102c8d96e37cb4751f0d5a7d3}} 
+uint32\+\_\+t {\bfseries timer}
+\item 
+\mbox{\hyperlink{struct_kalman__t}{Kalman\+\_\+t}} \mbox{\hyperlink{mpu6050_8c_af95f7c46fb9b43bb2444904c00426545}{KalmanX}}
+\item 
+\mbox{\hyperlink{struct_kalman__t}{Kalman\+\_\+t}} \mbox{\hyperlink{mpu6050_8c_ab827d411b48396d9a23088aa1adcc919}{KalmanY}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyDate}{Date}
+11/13/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Bulanov Konstantin
+\end{DoxyAuthor}
+\hypertarget{mpu6050_8c_autotoc_md0}{}\doxysubsubsection{Contact information}\label{mpu6050_8c_autotoc_md0}
+e-\/mail \+: \href{mailto:leech001@gmail.com}{\texttt{ leech001@gmail.\+com}} 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{mpu6050_8c_a89e47af0449640d4f15191aba5ca24c6}\label{mpu6050_8c_a89e47af0449640d4f15191aba5ca24c6}} 
+\index{mpu6050.c@{mpu6050.c}!RAD\_TO\_DEG@{RAD\_TO\_DEG}}
+\index{RAD\_TO\_DEG@{RAD\_TO\_DEG}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{RAD\_TO\_DEG}{RAD\_TO\_DEG}}
+{\footnotesize\ttfamily \#define RAD\+\_\+\+TO\+\_\+\+DEG~57.\+295779513082320876798154814105}
+
+$\vert$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- $\vert$ Copyright (C) Bulanov Konstantin,2021 $\vert$ $\vert$ This program is free software\+: you can redistribute it and/or modify $\vert$ it under the terms of the GNU General Public License as published by $\vert$ the Free Software Foundation, either version 3 of the License, or $\vert$ any later version. $\vert$ $\vert$ This program is distributed in the hope that it will be useful, $\vert$ but WITHOUT ANY WARRANTY; without even the implied warranty of $\vert$ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the $\vert$ GNU General Public License for more details. $\vert$ $\vert$ You should have received a copy of the GNU General Public License $\vert$ along with this program. If not, see \href{http://www.gnu.org/licenses/}{\texttt{ http\+://www.\+gnu.\+org/licenses/}}. $\vert$ $\vert$ Kalman filter algorithm used from \href{https://github.com/TKJElectronics/KalmanFilter}{\texttt{ https\+://github.\+com/\+TKJElectronics/\+Kalman\+Filter}} $\vert$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mpu6050_8c_aafa9c78f858c561cc64af97bbb57e393}\label{mpu6050_8c_aafa9c78f858c561cc64af97bbb57e393}} 
+\index{mpu6050.c@{mpu6050.c}!MPU6050\_Init@{MPU6050\_Init}}
+\index{MPU6050\_Init@{MPU6050\_Init}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Init()}{MPU6050\_Init()}}
+{\footnotesize\ttfamily uint8\+\_\+t MPU6050\+\_\+\+Init (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{I2\+Cx }\end{DoxyParamCaption})}
+
+check device ID WHO\+\_\+\+AM\+\_\+I
+
+power management register 0X6B we should write all 0\textquotesingle{}s to wake the sensor up
+
+Set DATA RATE of 1KHz by writing SMPLRT\+\_\+\+DIV register\mbox{\Hypertarget{mpu6050_8c_a5476709bd12c603fc74bae86f72db0d5}\label{mpu6050_8c_a5476709bd12c603fc74bae86f72db0d5}} 
+\index{mpu6050.c@{mpu6050.c}!MPU6050\_Read\_Accel@{MPU6050\_Read\_Accel}}
+\index{MPU6050\_Read\_Accel@{MPU6050\_Read\_Accel}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_Accel()}{MPU6050\_Read\_Accel()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+Accel (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{\mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Read 6 BYTES of data starting from ACCEL\+\_\+\+XOUT\+\_\+H register
+
+convert the RAW values into acceleration in \textquotesingle{}g\textquotesingle{} we have to divide according to the Full scale value set in FS\+\_\+\+SEL have configured FS\+\_\+\+SEL = 0. So I am dividing by 16384.\+0 for more details check ACCEL\+\_\+\+CONFIG Register\mbox{\Hypertarget{mpu6050_8c_aabd50bac1ecae86151549a1a8a678382}\label{mpu6050_8c_aabd50bac1ecae86151549a1a8a678382}} 
+\index{mpu6050.c@{mpu6050.c}!MPU6050\_Read\_All@{MPU6050\_Read\_All}}
+\index{MPU6050\_Read\_All@{MPU6050\_Read\_All}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_All()}{MPU6050\_Read\_All()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+All (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{\mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Read 14 BYTES of data starting from ACCEL\+\_\+\+XOUT\+\_\+H register
+
+Kalman angle solve\mbox{\Hypertarget{mpu6050_8c_a2329322c6cb1c7e939e00bd43db44b4b}\label{mpu6050_8c_a2329322c6cb1c7e939e00bd43db44b4b}} 
+\index{mpu6050.c@{mpu6050.c}!MPU6050\_Read\_Gyro@{MPU6050\_Read\_Gyro}}
+\index{MPU6050\_Read\_Gyro@{MPU6050\_Read\_Gyro}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_Gyro()}{MPU6050\_Read\_Gyro()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+Gyro (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{\mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Read 6 BYTES of data starting from GYRO\+\_\+\+XOUT\+\_\+H register
+
+convert the RAW values into dps ({\ucr}/s) we have to divide according to the Full scale value set in FS\+\_\+\+SEL I have configured FS\+\_\+\+SEL = 0. So I am dividing by 131.\+0 for more details check GYRO\+\_\+\+CONFIG Register\mbox{\Hypertarget{mpu6050_8c_a83eafd157dd3df2c9add558904ed62e0}\label{mpu6050_8c_a83eafd157dd3df2c9add558904ed62e0}} 
+\index{mpu6050.c@{mpu6050.c}!MPU6050\_Read\_Temp@{MPU6050\_Read\_Temp}}
+\index{MPU6050\_Read\_Temp@{MPU6050\_Read\_Temp}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{MPU6050\_Read\_Temp()}{MPU6050\_Read\_Temp()}}
+{\footnotesize\ttfamily void MPU6050\+\_\+\+Read\+\_\+\+Temp (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{I2\+Cx,  }\item[{\mbox{\hyperlink{struct_m_p_u6050__t}{MPU6050\+\_\+t}} $\ast$}]{Data\+Struct }\end{DoxyParamCaption})}
+
+Read 2 BYTES of data starting from TEMP\+\_\+\+OUT\+\_\+\+H\+\_\+\+REG register
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mpu6050_8c_af95f7c46fb9b43bb2444904c00426545}\label{mpu6050_8c_af95f7c46fb9b43bb2444904c00426545}} 
+\index{mpu6050.c@{mpu6050.c}!KalmanX@{KalmanX}}
+\index{KalmanX@{KalmanX}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{KalmanX}{KalmanX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_kalman__t}{Kalman\+\_\+t}} KalmanX}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .Q\_angle = 0.001f,}
+\DoxyCodeLine{    .Q\_bias = 0.003f,}
+\DoxyCodeLine{    .R\_measure = 0.03f\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{mpu6050_8c_ab827d411b48396d9a23088aa1adcc919}\label{mpu6050_8c_ab827d411b48396d9a23088aa1adcc919}} 
+\index{mpu6050.c@{mpu6050.c}!KalmanY@{KalmanY}}
+\index{KalmanY@{KalmanY}!mpu6050.c@{mpu6050.c}}
+\doxysubsubsection{\texorpdfstring{KalmanY}{KalmanY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_kalman__t}{Kalman\+\_\+t}} KalmanY}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .Q\_angle = 0.001f,}
+\DoxyCodeLine{    .Q\_bias = 0.003f,}
+\DoxyCodeLine{    .R\_measure = 0.03f,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
